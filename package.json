@@ -1,6 +1,9 @@
 {
-  "name": "portfolio",
+  "name": "portfolio_maurodviveros",
+  "description": "Portfolio WEB de Mauro Daniel Viveros",
   "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
@@ -8,7 +11,6 @@
     "release:minor": "changelog -m && git add CHANGELOG.md && npm version minor -f && git push && git push --tags",
     "release:patch": "changelog -p && git add CHANGELOG.md && npm version patch -f && git push && git push --tags"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^15.0.0",
     "@angular/common": "^15.0.0",
