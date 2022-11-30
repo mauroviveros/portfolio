@@ -1,0 +1,51 @@
+@use '@angular/material' as mat;
+
+$primary-palette: (
+  50 : #e5e2f3, 100 : #bdb8e0, 200 : #9288cc, 300 : #6658b8, 400 : #4535a8,
+  500 : #241199, 600 : #200f91, 700 : #1b0c86, 800 : #160a7c, 900 : #0d056b,
+  A100 : #9f9bff, A200 : #6e68ff, A400 : #3d35ff, A700 : #251bff,
+  contrast: (
+    50 : #000000, 100 : #000000, 200 : #000000, 300 : #ffffff, 400 : #ffffff,
+    500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff,
+    A100 : #000000, A200 : #ffffff, A400 : #ffffff, A700 : #ffffff,
+  )
+);
+
+$background-palette: (
+  50 : #eeedff, 100 : #d4d2ff, 200 : #b7b4ff, 300 : #9a95ff, 400 : #847fff,
+  500 : #6e68ff, 600 : #6660ff, 700 : #5b55ff, 800 : #514bff, 900 : #3f3aff,
+  A100 : #ffffff, A200 : #ffffff, A400 : #e4e3ff, A700 : #cbc9ff,
+  contrast: (
+    50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #000000,
+    500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff,
+    A100 : #000000, A200 : #000000, A400 : #000000, A700 : #000000,
+  )
+);
+
+$foreground-palette: (
+  50 : #fdfdfd, 100 : #fafafa, 200 : #f7f7f7, 300 : #f3f3f3, 400 : #f1f1f1,
+  500 : #eeeeee, 600 : #ececec, 700 : #e9e9e9, 800 : #e7e7e7, 900 : #e2e2e2,
+  A100 : #ffffff, A200 : #ffffff, A400 : #ffffff, A700 : #ffffff,
+  contrast: (
+    50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #000000,
+    500 : #000000, 600 : #000000, 700 : #000000, 800 : #000000, 900 : #000000,
+    A100 : #000000, A200 : #000000, A400 : #000000, A700 : #000000,
+  )
+);
+
+$primary: mat.define-palette($primary-palette);
+$accent: mat.define-palette($primary-palette);
+$foreground: mat.define-palette($foreground-palette);
+$background: mat.define-palette($background-palette);
+
+$typography: mat.define-typography-config();
+
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    foreground: $foreground,
+    background: $background,
+  ),
+  typography: $typography,
+));
