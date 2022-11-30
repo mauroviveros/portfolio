@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@include mat.core();
+
+@import './styles/themes/light';
+
+
+@include mat.all-component-themes($light-theme);
+
+html, body { height: 100vh; };
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; };
+router-outlet + *{ flex: 1; };
