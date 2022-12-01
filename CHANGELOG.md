@@ -1,3 +1,9 @@
+#### 0.0.2 (2022-12-01)
+
+##### Other Changes
+
+* Add repository and author ([dec4e6b6](https://github.com/maurodviveros/Portfolio/commit/dec4e6b667fcb7a96c7a97a686e0493ed1867b86))
+
 #### 0.0.1 (2022-12-01)
 
 ##### Build System / Dependencies
