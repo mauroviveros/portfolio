@@ -1,0 +1,7 @@
+@use '../app.component.theme.scss' as app;
+@use './components/navbar/navbar.component.theme.scss' as navbar;
+
+@mixin all-component-themes($theme) {
+    @include app.theme($theme);
+    @include navbar.theme($theme);
+};
