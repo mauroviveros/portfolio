@@ -1,3 +1,9 @@
+#### 0.0.3 (2023-02-19)
+
+##### Other Changes
+
+*  Upgrade dependencies ([6fa5fb57](https://github.com/maurodviveros/Portfolio/commit/6fa5fb57025e8d281b12cc68ad41e8772ca58b23))
+
 #### 0.0.2 (2022-12-01)
 
 ##### Other Changes
