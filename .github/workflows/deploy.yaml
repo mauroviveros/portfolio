@@ -2,8 +2,8 @@ name: Deploy
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "**"
 
 jobs:
   build:
@@ -28,11 +28,6 @@ jobs:
     steps:
       - name: Download Build
         uses: actions/download-artifact@v3
-
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: ./artifact
-            
 
       - name: GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
