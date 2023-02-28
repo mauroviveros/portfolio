@@ -1,3 +1,12 @@
+#### 0.0.6 (2023-02-28)
+
+##### Build System / Dependencies
+
+*  Deploy on tags ([67e561bf](https://github.com/maurodviveros/maurodviveros.github.io/commit/67e561bf8a2fa225377cb2faf9fda303a044db71))
+*  add steps archive artifact ([4f273dd6](https://github.com/maurodviveros/maurodviveros.github.io/commit/4f273dd6ea24ea51119cbe2dccd14a1f79c906d6))
+*  split job in 2 jobs build & deploy ([3366eb27](https://github.com/maurodviveros/maurodviveros.github.io/commit/3366eb27da57462d33671a65121f67941f7f139f))
+*  Deploy on tags ([cbdc3f88](https://github.com/maurodviveros/maurodviveros.github.io/commit/cbdc3f888297a890251b2c773c617c9adf5d9d6b))
+
 #### 0.0.5 (2023-02-28)
 
 #### 0.0.4 (2023-02-28)
