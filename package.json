@@ -2,11 +2,12 @@
   "name": "portfolio_maurodviveros",
   "description": "Portfolio WEB de Mauro Daniel Viveros",
   "author": "Mauro Daniel Viveros <maurod.viveros@gmail.com> (TRY Ubbe)",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "private": true,
   "scripts": {
     "start": "ng serve",
+    "build": "ng build",
     "release:major": "changelog -M && git add CHANGELOG.md && npm version major -f && git push && git push --tags",
     "release:minor": "changelog -m && git add CHANGELOG.md && npm version minor -f && git push && git push --tags",
     "release:patch": "changelog -p && git add CHANGELOG.md && npm version patch -f && git push && git push --tags"
