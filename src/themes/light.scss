@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@use '../app/core/core.theme.scss' as core;
+@use '../app/app.theme.scss' as core;
 
 @include mat.core();
 
@@ -17,7 +17,7 @@ $primary-palette: (
 $primary: mat.define-palette($primary-palette);
 $accent: mat.define-palette($primary-palette);
 
-$typography: mat.define-typography-config();
+$typography: mat.define-typography-config($font-family: "Tilt Warp");
 
 $light-theme: mat.define-light-theme((
   color: (
@@ -27,5 +27,6 @@ $light-theme: mat.define-light-theme((
   typography: $typography,
 ));
 
+@include mat.typography-hierarchy($typography);
 @include mat.all-component-themes($light-theme);
 @include core.all-component-themes($light-theme);
