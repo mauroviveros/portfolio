@@ -1,6 +1,6 @@
 <header>
   <picture>
-    <img src="https://picsum.photos/200" />
+    <img [src]="profileURL" />
   </picture>
   <hgroup>
     <h2>Mauro Viveros</h2>
@@ -10,22 +10,15 @@
 
 <nav>
   <mat-nav-list id="menu">
-    <mat-list-item>
+    <mat-list-item routerLink="" routerLinkActive="active">
       <mat-icon matListItemIcon>home</mat-icon>
-      <span matLine>Home</span>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-icon matListItemIcon>home</mat-icon>
-      <span matLine>Home</span>
+      <span matLine>Inicio</span>
     </mat-list-item>
   </mat-nav-list>
 
   <mat-nav-list id="social">
-    <mat-list-item matTooltip="Instagram">
-      <mat-icon>home</mat-icon>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-icon>home</mat-icon>
-    </mat-list-item>
+    <a mat-list-item *ngFor="let router of socials" [matTooltip]="router.title" [href]="router.link" target="_blank">
+      <mat-icon [svgIcon]="router.icon"></mat-icon>
+    </a>
   </mat-nav-list>
 </nav>

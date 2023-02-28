@@ -16,15 +16,8 @@
     mat-list-item{
       mat-icon{ color: mat.get-contrast-color-from-palette($primary-palette, 500) !important; };
       span{ color: mat.get-contrast-color-from-palette($primary-palette, 500); };
+      &.active{ background-color: rgba(0, 0, 0, .1); };
     };
-
-
-
-
-
-    // main{
-    //   background-color: mat.get-contrast-color-from-palette($primary-palette, A700);
-    // };
   };
 };
 
