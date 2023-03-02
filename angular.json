@@ -35,6 +35,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/_variables.scss",
               "src/themes/light.scss",
               "src/styles.scss"
             ],
