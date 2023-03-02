@@ -1,3 +1,18 @@
+#### 0.0.7 (2023-03-02)
+
+##### Build System / Dependencies
+
+*  add name github-actions[bot] ([ed9acec5](https://github.com/maurodviveros/maurodviveros.github.io/commit/ed9acec59433f28ef6138348a634337e5c96eefe))
+*  fix deploy workflow ([e50e6688](https://github.com/maurodviveros/maurodviveros.github.io/commit/e50e66882c789fd3f9213dad47f4d25dcfab077b))
+*  display structure of downloaded files ([b2f497f1](https://github.com/maurodviveros/maurodviveros.github.io/commit/b2f497f19a174080387d5cd360ad71d6500816b9))
+*  updated publish_dir ([7860ac5a](https://github.com/maurodviveros/maurodviveros.github.io/commit/7860ac5a16f228fce9d6e5b1c97400dd612216e5))
+
+##### New Features
+
+*  adapt view to responsive ([7f99bd21](https://github.com/maurodviveros/maurodviveros.github.io/commit/7f99bd21368b407a727fd49976c1ec940af826d7))
+*  import angularMaterial components ([d97fabdc](https://github.com/maurodviveros/maurodviveros.github.io/commit/d97fabdcaf531a4ceba1c897772facdb66c66a81))
+*  add Variables scss file ([0230ee57](https://github.com/maurodviveros/maurodviveros.github.io/commit/0230ee57d1544f5568eb7b3490b44e918c29a4e3))
+
 #### 0.0.6 (2023-02-28)
 
 ##### Build System / Dependencies
