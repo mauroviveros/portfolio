@@ -1,14 +1,13 @@
 <header>
-  <picture>
-    <img [src]="profileURL" />
-  </picture>
-  <hgroup>
-    <h2>Mauro Viveros</h2>
-    <h3>Web Fullstack - DevOps</h3>
-  </hgroup>
+  <ng-container *ngIf="isDesktop; else toolbar">
+    <picture>
+      <ng-container *ngTemplateOutlet="profileImg"></ng-container>
+    </picture>
+    <ng-container [ngTemplateOutlet]="hgroup"></ng-container>
+  </ng-container>
 </header>
 
-<nav>
+<nav [class.active]="!isDesktop && isNavActive">
   <mat-nav-list id="menu">
     <mat-list-item routerLink="" routerLinkActive="active">
       <mat-icon matListItemIcon>home</mat-icon>
@@ -22,3 +21,27 @@
     </a>
   </mat-nav-list>
 </nav>
+
+<div class="overlay" *ngIf="!isDesktop && isNavActive" (click)="showNav(false)"></div>
+
+<ng-template #toolbar>
+  <mat-toolbar color="primary">
+    <ng-container *ngTemplateOutlet="profileImg"></ng-container>
+    <ng-container *ngTemplateOutlet="hgroup"></ng-container>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="showNav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+</ng-template>
+
+<ng-template #hgroup>
+  <hgroup>
+    <h2>{{ profile.fullname }}</h2>
+    <h3>{{ profile.employment }}</h3>
+  </hgroup>
+</ng-template>
+
+<ng-template #profileImg>
+  <img [src]="profile.imageURL" />
+</ng-template>

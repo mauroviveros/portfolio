@@ -1,3 +1,5 @@
+@import "../variables";
+
 :host{
     display: flex;
     width: 100%;
@@ -23,4 +25,18 @@ main{
         max-width: 300px;
         width: 20vw;
     }
+};
+
+
+@media #{$small-and-down}{
+    main{
+        margin: 0;
+        flex-direction: column;
+        border-radius: 0;
+
+        & > core-navbar{
+            width: 100%;
+            max-width: 100%;
+        };
+    };
 };

@@ -13,6 +13,13 @@
       border-color: mat.get-contrast-color-from-palette($primary-palette, 500);
     };
 
+    header{
+      background-color: mat.get-color-from-palette($primary-palette, 500);
+    };
+    nav{
+      background-color: mat.get-color-from-palette($primary-palette, 500);
+    };
+
     mat-list-item{
       mat-icon{ color: mat.get-contrast-color-from-palette($primary-palette, 500) !important; };
       span{ color: mat.get-contrast-color-from-palette($primary-palette, 500); };
