@@ -10,6 +10,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 
 
 import { loadSvgResources } from "src/assets/icons";
+import { PageTitleComponent } from "./components/page-title/page-title.component";
 
 @NgModule({
   exports: [
@@ -18,7 +19,12 @@ import { loadSvgResources } from "src/assets/icons";
     MatIconModule,
     MatListModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
+
+    PageTitleComponent
+  ],
+  declarations: [
+    PageTitleComponent
   ]
 })
 export class SharedModule { 
