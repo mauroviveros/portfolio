@@ -13,18 +13,10 @@ main{
     margin: 1rem;
     border-radius: 8px;
 
-    & > section{
-        display: flex;
-        flex: 1;
-        & > router-outlet + *{
-            flex: 1;
-        };
-    };
-
     & > core-navbar{
         max-width: 300px;
         width: 20vw;
-    }
+    };
 };
 
 
