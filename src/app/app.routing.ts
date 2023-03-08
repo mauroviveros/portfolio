@@ -10,6 +10,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: "skills",
+    loadChildren: () => import("./modules/skills/skills.module").then(m => m.SkillsModule)
+  },
+  {
     path: "**",
     component: NotFoundComponent
   }
