@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
+import { IsActiveMatchOptions, RouterConfigOptions } from "@angular/router";
 import { Subject, takeUntil } from "rxjs";
 
 interface MenuItem{
@@ -16,6 +17,17 @@ interface MenuItem{
 export class NavbarComponent {
   private destroyed = new Subject<void>();
 
+  public routerLinkActiveOptions: IsActiveMatchOptions = {
+    paths: "exact",
+    queryParams: "exact",
+    fragment: "exact",
+    matrixParams: "exact"
+  };
+
+  public routes = [
+    { title: "Inicio", path: "", icon: "home" },
+    { title: "skills", path: "skills", icon: "memory" },
+  ];
 
   public profile = {
     imageURL: "https://avatars.githubusercontent.com/u/44076914",

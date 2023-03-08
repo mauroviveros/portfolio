@@ -9,9 +9,9 @@
 
 <nav [class.active]="!isDesktop && isNavActive">
   <mat-nav-list id="menu">
-    <mat-list-item routerLink="" routerLinkActive="active">
-      <mat-icon matListItemIcon>home</mat-icon>
-      <span matLine>Inicio</span>
+    <mat-list-item [routerLink]="route.path" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkActiveOptions" *ngFor="let route of routes">
+      <mat-icon matListItemIcon>{{ route.icon }}</mat-icon>
+      <span matLine>{{ route.title }}</span>
     </mat-list-item>
   </mat-nav-list>
 
