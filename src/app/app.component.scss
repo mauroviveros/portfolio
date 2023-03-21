@@ -1,4 +1,5 @@
-@import "../variables";
+@use 'sass:map';
+@use '@angular/material' as mat;
 
 :host{
     display: flex;
@@ -20,15 +21,18 @@ main{
 };
 
 
-@media #{$small-and-down}{
-    main{
-        margin: 0;
-        flex-direction: column;
-        border-radius: 0;
+// Theming
+@mixin color($config) {
+  $primary-palette: map.get($config, primary);
 
-        & > core-navbar{
-            width: 100%;
-            max-width: 100%;
-        };
-    };
+  app-root{
+    background-color: mat.get-color-from-palette($primary-palette, A200);
+    main{ background-color: mat.get-contrast-color-from-palette($primary-palette, A700); };
+  };
+};
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+
+  @if $color-config != null { @include color($color-config); };
 };

@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@use '../app/app.theme.scss' as core;
+@use '../app/core/core.theme.scss' as core;
 
 @include mat.core();
 

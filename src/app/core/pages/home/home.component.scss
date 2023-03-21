@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
 :host{
     display: flex;
     flex-direction: column;
@@ -28,4 +31,33 @@ div[data-html]{
     &::before, &::after{ position: absolute; };
     &::before{ top: 0; };
     &::after{ bottom: 0; };
+};
+
+
+// Theming
+@mixin color($config) {
+  $primary-palette: map.get($config, primary);
+
+  app-home{
+    background-color: mat.get-color-from-palette($primary-palette, 900);
+
+    h1, p{ color: mat.get-contrast-color-from-palette($primary-palette, 500); };
+
+
+    [data-html]{
+      &::after, &::before{
+        font-family: "La Belle Aurore";
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: mat.get-color-from-palette($primary-palette, 200);
+      };
+    };
+  };
+};
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+
+  @if $color-config != null { @include color($color-config); };
 };
