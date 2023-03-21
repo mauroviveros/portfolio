@@ -1,7 +1,5 @@
 import { Component } from "@angular/core";
-import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
-import { IsActiveMatchOptions, RouterConfigOptions } from "@angular/router";
-import { Subject, takeUntil } from "rxjs";
+import { IsActiveMatchOptions } from "@angular/router";
 
 interface MenuItem{
   title: string;
@@ -15,8 +13,6 @@ interface MenuItem{
   styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent {
-  private destroyed = new Subject<void>();
-
   public routerLinkActiveOptions: IsActiveMatchOptions = {
     paths: "exact",
     queryParams: "exact",
@@ -40,21 +36,4 @@ export class NavbarComponent {
     { title: "GitHub", icon: "github", link: "https://github.com/maurodviveros" },
     { title: "LinkedIn", icon: "linkedin", link: "https://www.linkedin.com/in/maurod-viveros" }
   ];
-
-  public isDesktop = false;
-  public isNavActive = false;
-
-  constructor(
-    private _breakpointObserver: BreakpointObserver
-  ){
-    this._breakpointObserver
-      .observe([Breakpoints.XSmall, Breakpoints.Small])
-      .pipe(takeUntil(this.destroyed))
-      .subscribe(result => this.isDesktop = !result.matches);
-  }
-
-  public showNav(bool?: boolean): void{
-    if(bool !== undefined) this.isNavActive = bool;
-    else this.isNavActive = !this.isNavActive;
-  }
 }

@@ -1,13 +1,14 @@
 <header>
-  <ng-container *ngIf="isDesktop; else toolbar">
-    <picture>
-      <ng-container *ngTemplateOutlet="profileImg"></ng-container>
-    </picture>
-    <ng-container [ngTemplateOutlet]="hgroup"></ng-container>
-  </ng-container>
+  <picture>
+    <img [src]="profile.imageURL" />
+  </picture>
+  <hgroup>
+    <h2>{{ profile.fullname }}</h2>
+    <h3>{{ profile.employment }}</h3>
+  </hgroup>
 </header>
 
-<nav [class.active]="!isDesktop && isNavActive">
+<nav>
   <mat-nav-list id="menu">
     <mat-list-item [routerLink]="route.path" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkActiveOptions" *ngFor="let route of routes">
       <mat-icon matListItemIcon>{{ route.icon }}</mat-icon>
@@ -21,27 +22,3 @@
     </a>
   </mat-nav-list>
 </nav>
-
-<div class="overlay" *ngIf="!isDesktop && isNavActive" (click)="showNav(false)"></div>
-
-<ng-template #toolbar>
-  <mat-toolbar color="primary">
-    <ng-container *ngTemplateOutlet="profileImg"></ng-container>
-    <ng-container *ngTemplateOutlet="hgroup"></ng-container>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="showNav()">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </mat-toolbar>
-</ng-template>
-
-<ng-template #hgroup>
-  <hgroup>
-    <h2>{{ profile.fullname }}</h2>
-    <h3>{{ profile.employment }}</h3>
-  </hgroup>
-</ng-template>
-
-<ng-template #profileImg>
-  <img [src]="profile.imageURL" />
-</ng-template>
