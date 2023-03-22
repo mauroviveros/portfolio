@@ -1,0 +1,11 @@
+main{
+    display: flex;
+    flex: 1;
+    padding: 2rem;
+
+    aside, section{ flex: 1; };
+
+    section{
+        article{ margin: 1rem; };
+    };
+};
