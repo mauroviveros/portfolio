@@ -1,4 +1,7 @@
 @use '@angular/material' as mat;
+@use "app/core/core.theme.scss" as core;
 @import "themes/primary";
 
+@include mat.typography-hierarchy($primary-typography);
 @include mat.all-component-themes($primary-theme);
+@include core.all-component-themes($primary-theme);
