@@ -1,7 +1,6 @@
 root: true
 ignorePatterns:
 - projects/**/*
-- scripts/*
 overrides:
 - files:
   - "*.ts"
@@ -14,14 +13,18 @@ overrides:
     "@angular-eslint/directive-selector":
     - error
     - type: attribute
+      prefix: app
       style: camelCase
     "@angular-eslint/component-selector":
     - error
     - type: element
+      prefix: app
       style: kebab-case
-    semi:
+    no-tabs:
     - error
-    - always
+    indent:
+    - error
+    - 2
     quotes:
     - error
     - double
@@ -30,4 +33,15 @@ overrides:
   - "*.html"
   extends:
   - plugin:@angular-eslint/template/recommended
-  rules: {}
+  - plugin:@angular-eslint/template/accessibility
+  - plugin:prettier/recommended
+  rules:
+    prettier/prettier:
+    - error
+    - parser: angular
+- files: 
+  - "*"
+  rules:
+    eol-last:
+    - error
+    - always
