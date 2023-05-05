@@ -36,6 +36,7 @@
   },
   "peacock.color": "#241199",
   "conventionalCommits.scopes": [
-    "core.shared"
+    "core.shared",
+    "core"
   ]
 }
