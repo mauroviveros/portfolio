@@ -1,0 +1,17 @@
+mat-toolbar{
+  gap: .5rem;
+}
+
+img{
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: .5rem;
+  border-radius: 50%;
+}
+
+hgroup{
+  flex: 1;
+  font-size: .75rem;
+
+  h2, h3{ margin: 0; }
+}

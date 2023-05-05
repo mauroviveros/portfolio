@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <img [src]="profileURL" [alt]="fullname | titlecase" />
+  <hgroup>
+    <h2>{{ fullname | titlecase }}</h2>
+    <h3>{{ role }}</h3>
+  </hgroup>
+
+  <button mat-icon-button><mat-icon>menu</mat-icon></button>
+</mat-toolbar>
