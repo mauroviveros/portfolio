@@ -3,8 +3,8 @@ Portfolio personal de Mauro Daniel viveros
 
 
 ## 📟 Setup
-- [NodeJS](https://nodejs.org) _v18.15.0_
-- [AngularCLI](https://angular.io) _v15.2.4_
+- [NodeJS](https://nodejs.org) _v18.16.0_
+- [AngularCLI](https://angular.io) _v16.0.0_
 
 ```
 $ npm install
