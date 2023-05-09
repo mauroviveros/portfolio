@@ -1,15 +1,20 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { MaterialModule } from "./modules/material.module";
+import { FabMenuComponent } from "./components/fab-menu/fab-menu.component";
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    FabMenuComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
   ],
   exports: [
+    FabMenuComponent,
     MaterialModule
   ]
 })
