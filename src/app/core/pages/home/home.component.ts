@@ -26,11 +26,18 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(){
     this._activeBrowserLang();
+    this._easterEggCultureLang();
   }
 
   private _activeBrowserLang(){
     const browserLang = this.translate.getBrowserLang();
     this.langMenu.map(langItem => langItem.active = langItem._id === browserLang);
+  }
+
+  private _easterEggCultureLang(){
+    const browserCultureLang = this.translate.getBrowserCultureLang();
+    if(browserCultureLang === "es-AR") this.langMenu[0].imgURL = "https://hatscripts.github.io/circle-flags/flags/ar.svg";
+    if(browserCultureLang === "en-US") this.langMenu[1].imgURL = "https://hatscripts.github.io/circle-flags/flags/us.svg";
   }
 
   updateLang(lang: string){
