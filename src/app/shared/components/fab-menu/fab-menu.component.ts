@@ -14,7 +14,7 @@ import { FabMenuItem } from "../../interfaces/fab-menu";
       transition("false <=> true", animate("0.3s ease"))
     ]),
     trigger("height", [
-      state("false", style({ "max-height": 0 })),
+      state("false", style({ "max-height": 0, "overflow": "hidden" })),
       state("true", style({ "max-height": "100vh" })),
       transition("false <=> true", animate("0.3s ease"))
     ])

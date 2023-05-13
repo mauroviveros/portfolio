@@ -3,7 +3,10 @@
 </button>
 
 <div [@height]="active">
-  <button mat-fab *ngFor="let item of options" (click)="select(item)">
-    <img [src]="item.imgURL" alt="icon" />
+  <button mat-fab *ngFor="let item of options" (click)="select(item)" [ngClass]="item.class">
+    <mat-icon *ngIf="item.icon; else imgURL">{{ item.icon }}</mat-icon>
+    <ng-template #imgURL>
+      <img [src]="item.imgURL" alt="icon" />
+    </ng-template>
   </button>
 </div>
