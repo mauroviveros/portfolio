@@ -19,5 +19,5 @@
 
 <div style="display: flex; position: absolute; flex-direction: column; gap: 0.25rem; right: 0; margin: 1rem">
   <shared-fab-menu icon="language" [options]="langMenu" (selected)="updateLang($event)"></shared-fab-menu>
-  <!-- <shared-fab-menu icon="format_color_fill"></shared-fab-menu> -->
+  <shared-fab-menu icon="format_color_fill" [options]="themeMenu" (selected)="updateTheme($event)"></shared-fab-menu>
 </div>
