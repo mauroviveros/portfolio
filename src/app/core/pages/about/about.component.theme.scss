@@ -1,0 +1,32 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@mixin color($config){
+  $primary: map.get($config, primary);
+
+  core-about{
+    h1{ outline-color: mat.get-color-from-palette($primary, 500); }
+    section{
+      figure{
+        img{ border-color: mat.get-color-from-palette($primary, 500); }
+      }
+
+      b, a{
+        font-weight: normal;
+        color: mat.get-color-from-palette($primary, 500);
+      }
+
+      blockquote{
+        border-color: mat.get-color-from-palette($primary, 500);
+        background-color: mat.get-color-from-palette($primary, A100);
+      }
+    }
+  }
+}
+
+@mixin theme($theme){
+  $color-config: mat.get-color-config($theme);
+  $typography-config: mat.get-typography-config($theme);
+
+  @if $color-config != null { @include color($color-config); }
+}
