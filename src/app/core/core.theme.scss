@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "@angular/material" as mat;
 @use "./pages/home/home.component.theme.scss" as home;
+@use "./pages/about/about.component.theme.scss" as about;
 
 @mixin color($config){
   $primary: map.get($config, primary);
@@ -14,4 +15,5 @@
 @mixin all-component-themes($theme){
   @include theme($theme);
   @include home.theme($theme);
+  @include about.theme($theme);
 }
