@@ -24,6 +24,22 @@ core-navbar-menu{
   width: calc(100% - 1rem);
 }
 
+.overlay{
+  height: calc(100% - 56px);
+  width: 100%;
+  position: fixed;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  top: 56px;
+  left: 0;
+}
+
+:host::ng-deep{
+  core-navbar-menu.active + .overlay{
+    display: block;
+  }
+}
 
 @media #{$media-small-up}{
   :host{
@@ -60,6 +76,10 @@ core-navbar-menu{
     core-navbar-menu{
       margin: 0;
       width: 100%;
+    }
+
+    .overlay{
+      display: none !important;
     }
   }
 }
