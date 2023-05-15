@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule, MatIconRegistry } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
+import { MatRippleModule } from "@angular/material/core";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { DomSanitizer } from "@angular/platform-browser";
 
@@ -14,6 +15,7 @@ import { DomSanitizer } from "@angular/platform-browser";
     MatButtonModule,
     MatIconModule,
     MatListModule,
+    MatRippleModule,
     MatToolbarModule
   ]
 })
