@@ -1,3 +1,25 @@
+# [0.2.0](https://github.com/maurodviveros/maurodviveros.github.io/compare/v0.1.1...v0.2.0) (2023-05-15)
+
+
+### Bug Fixes
+
+* **core:** :iphone: fix structure design markdown ([b15b45e](https://github.com/maurodviveros/maurodviveros.github.io/commit/b15b45e8d514da4016208bf6534f5037134b444f))
+* **core:** :lipstick: fix global styles ([70d13a7](https://github.com/maurodviveros/maurodviveros.github.io/commit/70d13a7d86b329271c353bf05a87bcef2b71a97f))
+* **core:** :truck: move fab-menu on appComponent ([07da08a](https://github.com/maurodviveros/maurodviveros.github.io/commit/07da08a383c5841ae1270ed7bb9d088e2e238b62))
+
+
+### Features
+
+* :hammer: update copyright year ([4930368](https://github.com/maurodviveros/maurodviveros.github.io/commit/49303687548738958b934d6b25d95184407e90a5))
+* :lipstick: add background-color by theme ([8db2e82](https://github.com/maurodviveros/maurodviveros.github.io/commit/8db2e820cc023eefe8e323312bf0043a180afc4e))
+* **core:** :adhesive_bandage: get all markdowns and change by lang ([0efec0d](https://github.com/maurodviveros/maurodviveros.github.io/commit/0efec0db529449a522af06a7d92d3f6325667acd))
+* **core:** :iphone: add responsive design mobile first ([a3eb677](https://github.com/maurodviveros/maurodviveros.github.io/commit/a3eb677e2676efb9992e093ce2e26c454a0ca591))
+* **core:** :lipstick: better theming ([4b4435f](https://github.com/maurodviveros/maurodviveros.github.io/commit/4b4435fac25b74b5810474dbaf9d5adcbec00e6b))
+* **core:** :sparkles: add overlay on nav menu ([f091428](https://github.com/maurodviveros/maurodviveros.github.io/commit/f0914287238699dc63ddce4360b63ce0d5b6da6a))
+* **core.shared:** :arrow_up: add MaterialRipple ([069d763](https://github.com/maurodviveros/maurodviveros.github.io/commit/069d763e59fd328772f557e8f631f86cd22fc4db))
+
+
+
 ## [0.1.1](https://github.com/maurodviveros/maurodviveros.github.io/compare/v0.1.0...v0.1.1) (2023-05-15)
 
 
