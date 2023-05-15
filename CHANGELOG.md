@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/maurodviveros/maurodviveros.github.io/compare/v0.2.0...v0.2.1) (2023-05-15)
+
+
+### Bug Fixes
+
+* **core:** :adhesive_bandage: fix size copyright footer ([b4ed730](https://github.com/maurodviveros/maurodviveros.github.io/commit/b4ed730c69f3d8280518f233c9b193e65f4fe2b0))
+
+
+
 # [0.2.0](https://github.com/maurodviveros/maurodviveros.github.io/compare/v0.1.1...v0.2.0) (2023-05-15)
 
 
