@@ -8,7 +8,7 @@ export const USER = {
   country: "ARGENTINA",
   city: "BUENOS AIRES",
   copyright: {
-    year: 2022,
+    year: 2023,
     title: "Mauro Daniel Viveros",
     site: "https://github.com/maurodviveros",
   },
