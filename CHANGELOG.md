@@ -1,3 +1,80 @@
+# [0.1.0](https://github.com/maurodviveros/maurodviveros.github.io/compare/v0.0.7...v0.1.0) (2023-05-15)
+
+
+### Bug Fixes
+
+* :adhesive_bandage: fix index files ([437b431](https://github.com/maurodviveros/maurodviveros.github.io/commit/437b431763734f417ffd080facf38f74dd94a191))
+* :adhesive_bandage: update favicon ([c3dc55a](https://github.com/maurodviveros/maurodviveros.github.io/commit/c3dc55ab91f7b55c89c70cdc54e0f7de53ab412f))
+* :building_construction: update user data ([0088245](https://github.com/maurodviveros/maurodviveros.github.io/commit/00882454e35d5d7e33fc11392549d2bc60ba74f5))
+* :coffin: remove dead code ([e82afb5](https://github.com/maurodviveros/maurodviveros.github.io/commit/e82afb505b7c41869c86b9ef9f683ec5c0f94167))
+* :lipstick: fix appComponent styles ([522eeac](https://github.com/maurodviveros/maurodviveros.github.io/commit/522eeacd71ff31a2b40de79acd9fc9a611ed0730))
+* :lipstick: fix definition themes ([e6c71db](https://github.com/maurodviveros/maurodviveros.github.io/commit/e6c71dbcad313d768df9af4814228b9873ec5db6))
+* :lipstick: fix root styles ([8aae0e5](https://github.com/maurodviveros/maurodviveros.github.io/commit/8aae0e5b946f34a249c8c8a799cbdee3abcd51e6))
+* **core:** :lipstick: fix hgroup styles in navbar ([9f2aace](https://github.com/maurodviveros/maurodviveros.github.io/commit/9f2aace9e71088212d59a4e8611b794b35cf1736))
+* **core:** :lipstick: fix styles on about and home ([86831ea](https://github.com/maurodviveros/maurodviveros.github.io/commit/86831eae06efba85bffb2333f73ac2d3b09ca6e8))
+* remove styles useless ([87f5e08](https://github.com/maurodviveros/maurodviveros.github.io/commit/87f5e083179e2de3382f8ab80b3ee2749618aec0))
+
+
+### Features
+
+* :adhesive_bandage: use navbar in appComponent ([8eb7294](https://github.com/maurodviveros/maurodviveros.github.io/commit/8eb72949a69f85e1df89419d09e6d039414b4872))
+* :bento: add fonts and typography ([040aac7](https://github.com/maurodviveros/maurodviveros.github.io/commit/040aac7587d44b465d6ec6ef8d69e971cd4860fe))
+* :card_file_box: update environments ([bc88d08](https://github.com/maurodviveros/maurodviveros.github.io/commit/bc88d08f07a447f2f679b27dec3664516cfcda2f))
+* :globe_with_meridians: add i18n texts ([48f4a02](https://github.com/maurodviveros/maurodviveros.github.io/commit/48f4a022e98683b4c1d36d60591b3a6f7d3ccab3))
+* :globe_with_meridians: add TranslateModule ([4ca1641](https://github.com/maurodviveros/maurodviveros.github.io/commit/4ca1641beaccc4b9cdcaea1e84b70dd8668aaf53))
+* :lipstick: add global styles ([8d0f991](https://github.com/maurodviveros/maurodviveros.github.io/commit/8d0f991d7cd58179f2e1ea87fcbbdb23f8ed3a07))
+* :lipstick: add global styles ([f7cc5d7](https://github.com/maurodviveros/maurodviveros.github.io/commit/f7cc5d773788a48a4ef56976bc8888123963c759))
+* :lipstick: define mixin to apply all component-themes ([f162f1c](https://github.com/maurodviveros/maurodviveros.github.io/commit/f162f1c6287f7361e6d83907b8af03f1076662f5))
+* :lipstick: rename breakpoints ([dee302c](https://github.com/maurodviveros/maurodviveros.github.io/commit/dee302ca50f72f6188bce1f81fbcba7dbd0b6dcc))
+* :lipstick: set primary theme ([2d85a3f](https://github.com/maurodviveros/maurodviveros.github.io/commit/2d85a3f47efee5ab860f8cdf67330513c347eaf7))
+* :lipstick: styles for router-outlet childs ([60b72ff](https://github.com/maurodviveros/maurodviveros.github.io/commit/60b72fffc329b087a20d0f3ec51a347aad95f55b))
+* :sparkles: add environment ([4fca801](https://github.com/maurodviveros/maurodviveros.github.io/commit/4fca801ca91f4a48accc00dcdc3e00d94ef806fc))
+* :sparkles: add router-outlet ([a32cad8](https://github.com/maurodviveros/maurodviveros.github.io/commit/a32cad82f87b765c07c5e95accf6690914ea7b4a))
+* :technologist: rename root selector ([a4c68db](https://github.com/maurodviveros/maurodviveros.github.io/commit/a4c68db15713b2aa6543287794e19c97a7f35af0))
+* :truck: move icons socials svg ([548bfb1](https://github.com/maurodviveros/maurodviveros.github.io/commit/548bfb1bb2674f5851f7764a931564d83bebb1b3))
+* add padding router component ([6531eef](https://github.com/maurodviveros/maurodviveros.github.io/commit/6531eefa1231ad478cba34c6f57961d0acfac7de))
+* **core:** :bento: add about assets ([16039f2](https://github.com/maurodviveros/maurodviveros.github.io/commit/16039f29c53b260c2675c99d738fd3a06095130f))
+* **core:** :bento: add markdowns for about ([1bd30c6](https://github.com/maurodviveros/maurodviveros.github.io/commit/1bd30c64281d34bef8fa0e5f3ef3991e1a87456d))
+* **core:** :construction: add homeComponent ([7f3741e](https://github.com/maurodviveros/maurodviveros.github.io/commit/7f3741e31e569b2f6d301e74967a72ff0a056523))
+* **core:** :egg: change flag.svg by CultureLang ([b53859b](https://github.com/maurodviveros/maurodviveros.github.io/commit/b53859b792e67aae8a0f51726b971d170ecd0d24))
+* **core:** :globe_with_meridians: add fabMenu for updateLang ([a1b32c2](https://github.com/maurodviveros/maurodviveros.github.io/commit/a1b32c2e9d9aa3d7271cc08016fef63ce1a9bb18))
+* **core:** :lipstick: add difference variable ([57dfed8](https://github.com/maurodviveros/maurodviveros.github.io/commit/57dfed83f4e88b3eb91595a5150ec9d96e862f1d))
+* **core:** :lipstick: use core theming ([fa95677](https://github.com/maurodviveros/maurodviveros.github.io/commit/fa9567768ff81867af67f8e452b516dd94b89e7c))
+* **core:** :sparkles: add about page ([1513b97](https://github.com/maurodviveros/maurodviveros.github.io/commit/1513b97f2bbcab6bab95d49851bffb559ee56727))
+* **core:** :sparkles: add core-navbar Component ([7514de2](https://github.com/maurodviveros/maurodviveros.github.io/commit/7514de264b29910a545b1ad18242657de2cc4e0e))
+* **core:** :sparkles: add event onSelect theme ([891c59e](https://github.com/maurodviveros/maurodviveros.github.io/commit/891c59ea68044f9969d2049a763dc87d5ea41277))
+* **core:** :sparkles: add navbar component ([caea9b4](https://github.com/maurodviveros/maurodviveros.github.io/commit/caea9b4f1c001b8704eff6803e6d34a953b06048))
+* **core:** :sparkles: add navbarMenu component ([a54be00](https://github.com/maurodviveros/maurodviveros.github.io/commit/a54be00d1ebc3c2ebc947cdf224c2259deae6a5b))
+* **core:** :wheelchair: add about routing ([6952cd1](https://github.com/maurodviveros/maurodviveros.github.io/commit/6952cd144165f7cc6aa1f0af45795bfb3bff54dc))
+* **core:** :wheelchair: add routing module ([69ce3b6](https://github.com/maurodviveros/maurodviveros.github.io/commit/69ce3b6e3eb33817618c82b2598d325e266f65bc))
+* **core:** :wheelchair: use data.navigation on Routes for navbar ([95e0847](https://github.com/maurodviveros/maurodviveros.github.io/commit/95e08473066fa5e4c6b6818651cd94c198a7cf8b))
+* **core.shared:** :arrow_up: update angular/material dependencies ([65eaca8](https://github.com/maurodviveros/maurodviveros.github.io/commit/65eaca82a4db135328ab1498ff087974201f2374))
+* **core.shared:** :children_crossing: set themeService to updateTheme on app-root ([ea0c67a](https://github.com/maurodviveros/maurodviveros.github.io/commit/ea0c67a4abdad0b9c02cb14ad86ae727ad08e3df))
+* **core.shared:** :label: add fab-menu interface ([daf3089](https://github.com/maurodviveros/maurodviveros.github.io/commit/daf3089516d137eede76dcbf6da3bfe70faf28cf))
+* **core.shared:** :recycle: set shared module ([ddb6891](https://github.com/maurodviveros/maurodviveros.github.io/commit/ddb6891fc3832c8f0ac159beba935f2c671e91a3))
+* **core.shared:** :sparkles: add angular/material modules ([1f37fb9](https://github.com/maurodviveros/maurodviveros.github.io/commit/1f37fb903beca8b67abd8f4c8e0eaddbbc1972f4))
+* **core.shared:** :sparkles: add fabMenu component ([4f1734a](https://github.com/maurodviveros/maurodviveros.github.io/commit/4f1734a0ea4498d9c5798bb6b5bb5679236632a3))
+* **core.shared:** :sparkles: fab-menu add property class and style by theme ([b55a8ee](https://github.com/maurodviveros/maurodviveros.github.io/commit/b55a8ee62bca100fbaa97b356105d90f876c5175))
+* **core:** dynamic routes from array ([3221ccf](https://github.com/maurodviveros/maurodviveros.github.io/commit/3221ccfc26b2da210a24a61aee0cfaf3dfc6774a))
+* load children skills ([26e6b87](https://github.com/maurodviveros/maurodviveros.github.io/commit/26e6b87a57c0ab82bd3e09cb0c0de993546bcbd0))
+* **shared:** :art: update page-title component ([d25f0d1](https://github.com/maurodviveros/maurodviveros.github.io/commit/d25f0d1df0a0a6515d1d5933e8fb939e3b59f51e))
+* **shared:** init component page-title ([e1477ed](https://github.com/maurodviveros/maurodviveros.github.io/commit/e1477eddc8ee51d07b4cba0f7cc66efd620dea24))
+* **skills:** :construction: static content ([51a88ab](https://github.com/maurodviveros/maurodviveros.github.io/commit/51a88abac54407471260eecdbc45e41b272b6bee))
+* **skills:** init component page ([a5652b8](https://github.com/maurodviveros/maurodviveros.github.io/commit/a5652b88a06b990edfd6e965466006e9301691bc))
+* **skills:** init module ([b905a15](https://github.com/maurodviveros/maurodviveros.github.io/commit/b905a15f339ff8a0db4bf0e24856cc2fcfe792b8))
+
+
+### Performance Improvements
+
+* **core:** :lipstick: remove component.theme's files ([87b6e39](https://github.com/maurodviveros/maurodviveros.github.io/commit/87b6e391f4c57b0dadfd5257f31d705d7b2b51ad))
+
+
+### Reverts
+
+* **core:** :iphone: remove responsive design ([54590d5](https://github.com/maurodviveros/maurodviveros.github.io/commit/54590d52ec24aad76ad9f4ece815f14ce38501db))
+
+
+
 #### 0.0.7 (2023-03-02)
 
 ##### Build System / Dependencies
