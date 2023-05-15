@@ -1,7 +1,10 @@
+@import "breakpoints";
+
 h1{
   margin: 0;
   margin-bottom: 1rem;
-  height: 6rem;
+  line-height: 6rem;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +30,24 @@ h1{
   }
 }
 
+:host{
+  display: flex;
+  flex-direction: column;
+
+  section{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    @media #{$media-small-up}{
+      padding: 2rem;
+    }
+  }
+}
+
 :host::ng-deep{
+  article{ flex-grow: 1; }
   figure{
     padding-top: .5rem;
     margin: 0 1rem 1.5rem 0;
@@ -51,6 +71,7 @@ h1{
   }
 
   blockquote{
+    width: 75%;
     display: inline-flex;
     border: 2px dotted;
     border-radius: 8px;
@@ -58,7 +79,7 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
+    margin: 1rem auto;
     text-align: center;
   }
 
