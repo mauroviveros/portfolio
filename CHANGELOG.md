@@ -1,3 +1,12 @@
+## [0.2.2](https://github.com/maurodviveros/maurodviveros.github.io/compare/v0.2.1...v0.2.2) (2023-05-15)
+
+
+### Bug Fixes
+
+* :adhesive_bandage: remove ES flag ([36e0ae6](https://github.com/maurodviveros/maurodviveros.github.io/commit/36e0ae62db06018203fbb5e840391933cb7f3018))
+
+
+
 ## [0.2.1](https://github.com/maurodviveros/maurodviveros.github.io/compare/v0.2.0...v0.2.1) (2023-05-15)
 
 
