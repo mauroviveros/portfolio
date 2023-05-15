@@ -1,2 +1,6 @@
 <core-navbar></core-navbar>
 <router-outlet></router-outlet>
+<div>
+  <shared-fab-menu icon="language" [options]="langMenu" (selected)="updateLang($event)"></shared-fab-menu>
+  <shared-fab-menu icon="format_color_fill" [options]="themeMenu" (selected)="updateTheme($event)"></shared-fab-menu>
+</div>
