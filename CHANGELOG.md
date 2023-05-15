@@ -1,3 +1,12 @@
+## [0.1.1](https://github.com/maurodviveros/maurodviveros.github.io/compare/v0.1.0...v0.1.1) (2023-05-15)
+
+
+### Bug Fixes
+
+* :wheelchair: use HashLocationStrategy ([42552ee](https://github.com/maurodviveros/maurodviveros.github.io/commit/42552ee4f46f3b500fce1affaf9fcdf8889200d2))
+
+
+
 # [0.1.0](https://github.com/maurodviveros/maurodviveros.github.io/compare/v0.0.7...v0.1.0) (2023-05-15)
 
 
