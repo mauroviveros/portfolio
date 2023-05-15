@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   @HostBinding("class") themeClass? : string;
 
   langMenu: FabMenuItem[] = [
-    { _id: "es", imgURL: "https://hatscripts.github.io/circle-flags/flags/es.svg" },
+    { _id: "es", imgURL: "https://hatscripts.github.io/circle-flags/flags/ar.svg" },
     { _id: "en", imgURL: "https://hatscripts.github.io/circle-flags/flags/uk.svg" }
   ];
 
@@ -35,7 +35,6 @@ export class AppComponent implements OnInit {
 
   private _easterEggCultureLang(){
     const browserCultureLang = this.translate.getBrowserCultureLang();
-    if(browserCultureLang === "es-AR") this.langMenu[0].imgURL = "https://hatscripts.github.io/circle-flags/flags/ar.svg";
     if(browserCultureLang === "en-US") this.langMenu[1].imgURL = "https://hatscripts.github.io/circle-flags/flags/us.svg";
   }
 
