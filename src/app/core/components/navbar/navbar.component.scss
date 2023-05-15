@@ -1,3 +1,5 @@
+@import "breakpoints";
+
 mat-toolbar{
   gap: .5rem;
 }
@@ -10,11 +12,54 @@ img{
 }
 
 hgroup{
-  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   h2, h3{ margin: 0; line-height: 1em; }
+  h3{ font-size: 1rem; }
 }
 
 core-navbar-menu{
   margin: 0 .5rem;
   width: calc(100% - 1rem);
+}
+
+
+@media #{$media-small-up}{
+  :host{
+    display: flex;
+    flex-direction: column;
+    min-width: 18rem;
+    width: 300px;
+
+    mat-toolbar{
+      flex-direction: column;
+      height: auto;
+      padding: 2rem 0;
+      gap: 1rem;
+
+      img{
+        width: 9rem;
+        height: 9rem;
+        border-width: .125rem;
+        padding: .25rem;
+        border-style: solid;
+      }
+
+      hgroup{
+        text-align: center;
+        gap: .5rem;
+        
+      }
+
+      button[mat-icon-button]{
+        display: none;
+      }
+    }
+
+    core-navbar-menu{
+      margin: 0;
+      width: 100%;
+    }
+  }
 }
