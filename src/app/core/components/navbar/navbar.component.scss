@@ -13,3 +13,8 @@ hgroup{
   flex: 1;
   h2, h3{ margin: 0; line-height: 1em; }
 }
+
+core-navbar-menu{
+  margin: 0 .5rem;
+  width: calc(100% - 1rem);
+}
