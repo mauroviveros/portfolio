@@ -1,7 +1,7 @@
 :host{
   display: flex;
   flex-direction: column;
-  overflow-y: hidden;
+  overflow-y: hidden !important;
   padding: 0 !important;
 }
 [data-tag]{
