@@ -1,13 +1,8 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "projects/**/*"
-  ],
   "overrides": [
     {
-      "files": [
-        "*.ts"
-      ],
+      "files": ["*.ts"],
       "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
@@ -29,50 +24,27 @@
             "type": "element",
             "style": "kebab-case"
           }
-        ],
-        "no-tabs": [
-          "error"
-        ],
-        "indent": [
-          "error",
-          2
-        ],
-        "quotes": [
-          "error",
-          "double",
-          {
-            "allowTemplateLiterals": true
-          }
         ]
       }
     },
     {
-      "files": [
-        "*.html"
+      "files": ["*.html"],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended",
+        "plugin:@angular-eslint/template/accessibility"
       ],
+      "rules": {}
+    },
+    {
+      "files": ["*.html"],
+      "excludedFiles": ["*inline-template-*.component.html"],
       "extends": [
         "plugin:@angular-eslint/template/recommended",
         "plugin:@angular-eslint/template/accessibility",
         "plugin:prettier/recommended"
       ],
       "rules": {
-        "prettier/prettier": [
-          "error",
-          {
-            "parser": "angular"
-          }
-        ]
-      }
-    },
-    {
-      "files": [
-        "*"
-      ],
-      "rules": {
-        "eol-last": [
-          "error",
-          "always"
-        ]
+        "prettier/prettier": ["error", { "parser": "angular" }]
       }
     }
   ]

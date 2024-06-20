@@ -1,9 +1,0 @@
-@use '@angular/material' as mat;
-@include mat.core();
-
-$secondary-theme: mat.define-light-theme((
-  color: (
-    primary: mat.define-palette(mat.$deep_purple-palette),
-    accent: mat.define-palette(mat.$amber-palette),
-  )
-));
