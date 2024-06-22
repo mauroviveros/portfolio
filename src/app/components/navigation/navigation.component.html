@@ -1,0 +1,8 @@
+<mat-nav-list>
+  @for (item of menu; track $index) {
+    <a mat-list-item [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="options">
+      <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+      <span class="mat-body-large" matListItemTitle>{{ item.label }}</span>
+    </a>
+  }
+</mat-nav-list>
