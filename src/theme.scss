@@ -1,0 +1,5 @@
+@use "@angular/material" as mat;
+
+// $typography: mat.define-typography-config();
+$my-typography: mat.define-typography((plain-family: "Tilt Warp"));
+@include mat.typography-hierarchy($my-typography);
