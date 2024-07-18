@@ -1,5 +1,9 @@
 @for (social of socials; track $index) {
-  <a [href]="social.url" target="_blank" [matTooltip]="social.network" mat-icon-button>
+  <a
+    [href]="social.url"
+    target="_blank"
+    [matTooltip]="social.network"
+    mat-icon-button>
     <mat-icon [svgIcon]="social.network"></mat-icon>
   </a>
 }

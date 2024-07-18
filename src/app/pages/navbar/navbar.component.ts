@@ -7,10 +7,13 @@ import { SocialLinksComponent } from '../../components/social-links/social-links
 @Component({
   selector: 'portfolio-navbar',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, NavigationComponent, SocialLinksComponent],
+  imports: [
+    HeaderComponent,
+    FooterComponent,
+    NavigationComponent,
+    SocialLinksComponent,
+  ],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent {
-
-}
+export class NavbarComponent {}

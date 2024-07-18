@@ -13,7 +13,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   imports: [MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './social-links.component.html',
   styleUrl: './social-links.component.scss',
-  providers: [TitleCasePipe]
+  providers: [TitleCasePipe],
 })
 export class SocialLinksComponent {
   private readonly iconRegistry = inject(MatIconRegistry);
@@ -21,11 +21,11 @@ export class SocialLinksComponent {
   private readonly titleCase = inject(TitleCasePipe);
   readonly socials = CV.basics.profiles;
 
-  constructor(){
+  constructor() {
     this.socials.forEach(social => {
-      const iconName = `si${this.titleCase.transform(social.network)}` as keyof typeof icons;
-      const icon : icons.SimpleIcon | undefined = icons[iconName];
-      if(!icon) return;
+      const iconName = `si${this.titleCase.transform(social.network)}`;
+      const icon: icons.SimpleIcon = icons[iconName as keyof typeof icons];
+      if (!icon) return;
       this.iconRegistry.addSvgIconLiteral(
         social.network,
         this.sanitizer.bypassSecurityTrustHtml(icon.svg)

@@ -7,7 +7,7 @@ import { TitleCasePipe } from '@angular/common';
   standalone: true,
   imports: [TitleCasePipe],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   readonly name = CV.basics.name;

@@ -3,10 +3,13 @@ import { HeroComponent } from './pages/hero/hero.component';
 
 export const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: HeroComponent,
     data: {
-      navigation: { icon: "home", label: "home" }
-    }
-  }
+      navigation: { icon: 'home', label: 'home' },
+    },
+  },
+  {
+    path: '',
+  },
 ];

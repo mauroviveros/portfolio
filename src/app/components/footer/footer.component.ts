@@ -6,12 +6,12 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [UpperCasePipe],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
   readonly copyright = {
     year: 2022,
-    owner: "Mauro Daniel Viveros",
-    site: "https://github.com/mauroviveros"
-  }
+    owner: 'Mauro Daniel Viveros',
+    site: 'https://github.com/mauroviveros',
+  };
 }
