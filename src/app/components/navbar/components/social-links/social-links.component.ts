@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { CV } from '../../../environments/cv';
+import { CV } from '@env/cv';
 import { TitleCasePipe } from '@angular/common';
 import * as icons from 'simple-icons';
 import { DomSanitizer } from '@angular/platform-browser';

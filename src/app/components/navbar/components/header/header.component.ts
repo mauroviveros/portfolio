@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CV } from '../../../environments/cv';
+import { CV } from '@env/cv';
 import { TitleCasePipe } from '@angular/common';
 
 @Component({
