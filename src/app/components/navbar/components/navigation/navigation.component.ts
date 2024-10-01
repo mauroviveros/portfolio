@@ -1,12 +1,19 @@
 import { Component, inject } from '@angular/core';
+import { TitleCasePipe } from '@angular/common';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'portfolio-navigation',
   standalone: true,
-  imports: [MatIconModule, MatListModule, RouterLink, RouterLinkActive],
+  imports: [
+    MatIconModule,
+    MatListModule,
+    RouterLink,
+    RouterLinkActive,
+    TitleCasePipe,
+  ],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
 })
