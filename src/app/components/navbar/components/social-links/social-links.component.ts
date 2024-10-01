@@ -25,11 +25,8 @@ export class SocialLinksComponent {
     this.socials.forEach(social => {
       const iconName = `si${this.titleCase.transform(social.network)}`;
       const icon: icons.SimpleIcon = icons[iconName as keyof typeof icons];
-      if (!icon) return;
-      this.iconRegistry.addSvgIconLiteral(
-        social.network,
-        this.sanitizer.bypassSecurityTrustHtml(icon.svg)
-      );
+      const svg = this.sanitizer.bypassSecurityTrustHtml(icon.svg);
+      if (icon) this.iconRegistry.addSvgIconLiteral(social.network, svg);
     });
   }
 }
