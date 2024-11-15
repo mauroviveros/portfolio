@@ -1,4 +1,13 @@
-<portfolio-header />
-<portfolio-navigation />
-<portfolio-social-links />
-<portfolio-footer />
+<mat-toolbar>
+  <portfolio-header />
+
+  <button class="example-icon" (click)="active = !active" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<nav [class]="{ active: active }">
+  <portfolio-navigation />
+  <portfolio-social-links />
+  <portfolio-copyright />
+</nav>

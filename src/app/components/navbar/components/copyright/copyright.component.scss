@@ -1,0 +1,11 @@
+:host{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: .5rem 2rem;
+  font-size: .6rem;
+  gap: .25rem;
+}
+
+:host::after{ content: '─'; }
+a{ color: inherit; order: 1; }

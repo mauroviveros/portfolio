@@ -4,7 +4,6 @@
 
   a[mat-list-item]{
     span, mat-icon{ color: inherit; }
-
     &.active{ background-color: rgba(0, 0, 0, 0.1); }
   }
 }

@@ -1,9 +1,23 @@
-:host{
+nav{
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
-  gap: .5rem;
+  position: absolute;
+  margin: 0 .5rem;
+  padding: 0 .5rem;
+  max-height: 0;
+  width: calc(100% - 1rem);
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: max-height .5s ease-in-out;
+  border-bottom-left-radius: .75rem;
+  border-bottom-right-radius: .75rem;
 
-  width: 30%;
-  max-width: 16rem;
+  // background: var(--mat-toolbar-container-background-color, var(--mat-app-surface)); /*!!!*/
+  background-color: red;
+  &.active{
+    max-height: 100%;
+  }
+}
+.mat-toolbar{
+  background-color: red;
 }
