@@ -1,9 +1,10 @@
 :host{
   flex: 1;
   padding: 0 .5rem;
+  overflow-y: auto;
+}
 
-  a[mat-list-item]{
-    span, mat-icon{ color: inherit; }
-    &.active{ background-color: rgba(0, 0, 0, 0.1); }
-  }
+a[mat-list-item]{
+  span, mat-icon{ color: inherit; }
+  &.active{ background-color: rgba(0, 0, 0, 0.1); }
 }

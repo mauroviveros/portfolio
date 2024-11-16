@@ -1,14 +1,21 @@
+@use 'breakpoints';
+
 :host{
   display: flex;
+  overflow: hidden;
   flex: 1;
-  margin: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 .5rem .125rem rgba(0, 0, 0, 0.75);
-  // overflow: hidden;
 
-  background-color: red;
+  @media #{breakpoints.$mobile}{
+    flex-direction: column;
+  }
+
+  @media #{breakpoints.$desktop}{
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem .125rem rgba(0, 0, 0, 0.75);
+    margin: 2rem;
+
+  }
 }
-
 
 :host::ng-deep > router-outlet + *{
   flex: 1;
