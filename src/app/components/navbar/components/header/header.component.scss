@@ -1,21 +1,51 @@
+@use 'breakpoints';
+
 :host{
   display: flex;
   align-items: center;
   flex-grow: 1;
   gap: 1rem;
+
+  @media #{breakpoints.$desktop}{
+    flex-direction: column;
+  }
+
 }
 
 img{
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 0 .5rem;
   border-radius: 50%;
+
+  @media #{breakpoints.$mobile}{
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 .5rem;
+  }
+
+  @media #{breakpoints.$desktop}{
+    width: 9rem;
+    height: 9rem;
+    padding: .25rem;
+    border-width: .125rem;
+    border-style: solid;
+  }
 }
 
 hgroup{
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 
-  > *{
-    line-height: 1rem;
+
+  @media #{breakpoints.$desktop}{
+    align-items: center;
+
+    > *{ line-height: 1.5rem; }
+    h2{ font-size: 1.25rem; }
+    h3{ font-size: 1rem; }
+  }
+  @media #{breakpoints.$mobile}{
+    > *{ line-height: 1rem; }
+    h2{ font-size: 1rem; }
+    h3{ font-size: .875rem; }
   }
 }

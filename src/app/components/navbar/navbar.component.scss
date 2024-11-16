@@ -1,23 +1,54 @@
+@use 'breakpoints';
+
+:host{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--mat-toolbar-container-background-color); /*!!!*/
+
+  @media #{breakpoints.$desktop}{
+    width: 300px;
+    // box-shadow: 5px 0px 10px -5px rgba(0,0,0,0.75);
+  }
+}
+
 nav{
   display: flex;
   flex-direction: column;
-  position: absolute;
-  margin: 0 .5rem;
+  flex-grow: 1;
+
   padding: 0 .5rem;
-  max-height: 0;
   width: calc(100% - 1rem);
   overflow: hidden;
   box-sizing: border-box;
   transition: max-height .5s ease-in-out;
-  border-bottom-left-radius: .75rem;
-  border-bottom-right-radius: .75rem;
+  background-color: inherit;
 
-  // background: var(--mat-toolbar-container-background-color, var(--mat-app-surface)); /*!!!*/
-  background-color: red;
-  &.active{
-    max-height: 100%;
+  @media #{breakpoints.$mobile} {
+    margin: 0 .5rem;
+    width: calc(100% - 1rem);
+    position: absolute;
+    border-bottom-left-radius: .75rem;
+    border-bottom-right-radius: .75rem;
+    max-height: 0;
+    top: 100%;
+
+    &.active{
+      max-height: 100vh;
+    }
+  }
+
+  @media #{breakpoints.$desktop}{
+    width: 100%;
   }
 }
 .mat-toolbar{
-  background-color: red;
+  background-color: inherit;
+
+  @media #{breakpoints.$desktop}{
+    height: auto;
+    padding: 2rem 0;
+
+    button{ display: none; }
+  }
 }
