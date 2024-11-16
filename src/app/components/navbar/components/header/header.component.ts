@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CV } from '@env/cv';
 import { TitleCasePipe } from '@angular/common';
+import { CV } from '@env/cv';
 
 @Component({
   selector: 'portfolio-header',
