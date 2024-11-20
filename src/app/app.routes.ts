@@ -9,7 +9,4 @@ export const routes: Routes = [
       navigation: { icon: 'home', label: 'home' },
     },
   },
-  {
-    path: '',
-  },
 ];

@@ -4,11 +4,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
   selector: 'portfolio-root',
-  standalone: true,
   imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'portfolio';
-}
+export class AppComponent {}

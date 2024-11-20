@@ -8,7 +8,6 @@ const MATERIAL_MODULES = [MatIconModule, MatListModule];
 
 @Component({
   selector: 'portfolio-navigation',
-  standalone: true,
   imports: [MATERIAL_MODULES, RouterLink, RouterLinkActive, TitleCasePipe],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',

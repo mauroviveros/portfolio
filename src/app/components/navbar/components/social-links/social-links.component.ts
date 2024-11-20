@@ -11,7 +11,6 @@ const MATERIAL_MODULES = [MatButtonModule, MatIconModule, MatTooltipModule];
 
 @Component({
   selector: 'portfolio-social-links',
-  standalone: true,
   imports: [MATERIAL_MODULES],
   providers: [TitleCasePipe],
   templateUrl: './social-links.component.html',

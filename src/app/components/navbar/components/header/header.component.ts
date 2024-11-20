@@ -4,7 +4,6 @@ import { CV } from '@env/cv';
 
 @Component({
   selector: 'portfolio-header',
-  standalone: true,
   imports: [TitleCasePipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',

@@ -11,7 +11,6 @@ const MATERIAL_MODULES = [MatToolbarModule, MatIconModule, MatButtonModule];
 
 @Component({
   selector: 'portfolio-navbar',
-  standalone: true,
   imports: [
     MATERIAL_MODULES,
     CopyrightComponent,

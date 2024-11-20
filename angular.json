@@ -3,7 +3,7 @@
   "version": 1,
   "cli": {
     "packageManager": "pnpm",
-    "analytics": "81bba350-255d-48a2-8894-888e2426f23b",
+    "analytics": "abecd83c-2a67-465a-bd19-8546d381d794",
     "schematicCollections": [
       "@angular-eslint/schematics"
     ]
@@ -60,8 +60,6 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/rose-red.css",
-              "src/theme.scss",
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
@@ -81,8 +79,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
@@ -123,7 +121,6 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/rose-red.css",
               "src/styles.scss"
             ],
             "scripts": []
