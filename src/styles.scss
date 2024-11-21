@@ -8,4 +8,9 @@ body {
   margin: 0;
   display: flex;
   font-family: 'Tilt Warp';
+  background: var(--mat-sys-surface-variant);
+}
+router-outlet + *{
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
 }

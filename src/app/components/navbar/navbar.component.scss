@@ -4,11 +4,12 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: var(--mat-toolbar-container-background-color); /*!!!*/
+  background: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
 
   @media #{breakpoints.$desktop}{
     width: 300px;
-    // box-shadow: 5px 0px 10px -5px rgba(0,0,0,0.75);
+    box-shadow: 5px 0px 10px -5px rgba(0,0,0,.5);
   }
 }
 
@@ -16,7 +17,7 @@ nav{
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-
+  z-index: 1;
   padding: 0 .5rem;
   width: calc(100% - 1rem);
   overflow: hidden;
@@ -44,6 +45,8 @@ nav{
 }
 .mat-toolbar{
   background-color: inherit;
+  color: inherit;
+  button{ color: inherit; }
 
   @media #{breakpoints.$desktop}{
     height: auto;
