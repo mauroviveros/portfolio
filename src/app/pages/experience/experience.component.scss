@@ -21,6 +21,7 @@ ol{
   list-style: none;
   position: relative;
   border-left: 1px solid;
+  border-left-color: var(--mat-sys-secondary);
   padding-left: 1rem;
   margin: 0 1rem;
 }
@@ -37,17 +38,16 @@ li:before{
   height: 1rem;
   border-radius: 50%;
   margin-top: 1rem;
-  // margin-top: .25rem;
-
+  background: var(--mat-sys-primary);
   inset-inline-start: -.55rem;
-  background-color: black;
 }
 
 
-h3{ font: var(--mat-sys-title-medium); }
+h3{ font: var(--mat-sys-title-medium); color: var(--mat-sys-tertiary); }
 h4{ font: var(--mat-sys-label-large); }
 h5{ font: var(--mat-sys-label-medium); }
 section{ font: var(--mat-sys-body-medium); }
+h4 a{ color: inherit; }
 time{
   &:not(:last-child)::after{
     content: ' - ';
