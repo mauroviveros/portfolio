@@ -5,7 +5,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import * as icons from 'simple-icons';
-import { CV } from '@env/cv';
 
 const MATERIAL_MODULES = [MatButtonModule, MatIconModule, MatTooltipModule];
 
@@ -20,7 +19,20 @@ export class SocialLinksComponent {
   private readonly iconRegistry = inject(MatIconRegistry);
   private readonly sanitizer = inject(DomSanitizer);
   private readonly titleCase = inject(TitleCasePipe);
-  readonly socials = CV.basics.profiles;
+  readonly socials = [
+    {
+      network: 'instagram',
+      website: 'https://www.instagram.com/maurogontier/',
+    },
+    {
+      network: 'linkedin',
+      website: 'https://www.linkedin.com/in/mauro-viveros/',
+    },
+    {
+      network: 'github',
+      website: 'https://www.github.com/mauroviveros/',
+    },
+  ];
 
   constructor() {
     this.socials.forEach(social => {

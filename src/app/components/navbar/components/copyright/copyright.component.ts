@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class CopyrightComponent {
   readonly copyright = {
     year: 2022,
-    owner: 'Mauro Daniel Viveros',
-    site: 'https://github.com/mauroviveros',
+    owner: 'MAURO DANIEL VIVEROS',
+    website: 'https://github.com/mauroviveros',
   };
 }
