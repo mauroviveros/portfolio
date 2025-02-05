@@ -1,0 +1,44 @@
+---
+interface Props {
+    milestone: {
+        organization: string
+        title: string
+        url: string
+        type: string
+        startDate: string
+        endDate?: string
+        summary: string
+        highlights?: string[]
+    }
+}
+
+const { milestone } = Astro.props;
+
+const getFormattedDate = (date?: Date | string | number) => {
+    if(typeof date === "string") date = new Date(date);
+
+    return new Intl.DateTimeFormat("es", {
+        month: "long",
+        year: "numeric"
+    }).format(date);
+}
+
+---
+
+<li class="ms-7 mb-7">
+    <div class="absolute w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full mt-1.5 start-[-1.625rem]    border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+
+    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{ milestone.title }</h3>
+        <h5 class="text-lg font-semibold text-gray-900 dark:text-white">{ milestone.organization }</h5>
+
+        <time class="text-sm font-normal leading-none text-gray-400 dark:text-gray-300">
+            <span>{getFormattedDate(milestone.startDate)}</span>
+            <span>–</span>
+            <span>{ milestone.endDate ? getFormattedDate(milestone.endDate) : 'presente' }</span>
+            <!-- <span>(5 años)</span> -->
+        </time>
+
+        <p class="my-3 font-normal text-gray-700 dark:text-gray-400">{ milestone.summary }</p>
+    </div>
+</li>

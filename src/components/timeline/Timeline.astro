@@ -1,0 +1,49 @@
+---
+import TimelineItem from "./TimelineItem.astro";
+
+
+const work = {
+    name: "Teknos Technology Group",
+    position: "DEV Frontend",
+    url: "https://www.teknosgroup.com/",
+    startDate: "2013-01-01",
+    endDate: "2014-01-01",
+    summary: "Description…",
+    highlights: [
+      "Started the company"
+    ]
+}
+
+const education = {
+    institution: "UNAHur",
+    url: "https://unahur.edu.ar/",
+    area: "Licenciatura en Informática",
+    studyType: "bachelor",
+    startDate: "2011-01-01",
+    endDate: undefined,
+    courses: [
+      "DB1101 - Basic SQL"
+    ]
+}
+
+const milestones = [
+    {
+        title: "DEV Frontend",
+        organization: "Teknos Technology Group",
+        type: 'work',
+        url: "https://www.teknosgroup.com/",
+        startDate: "2020-02-03",
+        endDate: undefined,
+        summary: "Description…"
+    }
+]
+
+---
+<ol class="relative border-s-4 border-gray-200 dark:border-gray-700">
+    {
+        milestones.map(milestone => (
+            <TimelineItem milestone={milestone}/>
+        ))
+    }
+</ol>
+
