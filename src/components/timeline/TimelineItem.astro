@@ -1,7 +1,11 @@
 ---
-import type { Milestone } from 'contents/milestones';
-interface Props { milestone: Milestone };
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import type { } from 'contents/milestones';
+interface Props { milestone: CollectionEntry<'milestones'> };
 const { milestone } = Astro.props;
+const { type, title, organization, startDate, endDate } = milestone.data;
+const { Content } = await render(milestone);
 
 const getDateTime = (date: Date) => {
     return date.toLocaleDateString('es', {
@@ -21,28 +25,30 @@ const getDateFormat = (date: Date) => {
 
 <li class="ms-7 mb-7">
     <div class="absolute w-11 h-11 flex items-center justify-center rounded-full mt-1.5 -start-6 bg-primary">
-        {milestone.type === 'work' ? 'T' : 'E'}
+        {type === 'work' ? 'T' : 'E'}
     </div>
 
-    <section class="grid md:grid-cols-7 gap-3">
+    <section class="grid md:grid-cols-8 gap-3">
         <header class="col-span-3 pb-6">
-            <h3 class="text-xl font-bold text-primary">{milestone.title}</h3>
-            <h4 class="font-semibold text-xl text-gray-600">{milestone.organization}</h4>
+            <h3 class="text-xl font-bold text-primary">{title}</h3>
+            <h4 class="font-semibold text-xl text-gray-600">{organization}</h4>
             <div class="text-sm text-gray-600/80">
-                <time datetime={getDateTime(milestone.startDate)}>
-                    {getDateFormat(milestone.startDate)}
+                <time datetime={getDateTime(startDate)}>
+                    {getDateFormat(startDate)}
                 </time>
 
                 <span>-</span>
 
-                <time datetime={getDateTime(milestone.endDate || new Date())}>
-                    { milestone.endDate ?
-                        getDateFormat(milestone.endDate) :
+                <time datetime={getDateTime(endDate || new Date())}>
+                    { endDate ?
+                        getDateFormat(endDate) :
                         'presente'
                     }
                 </time>
             </div>
         </header>
-        <article class="col-span-4 text-gray-600">{milestone.summary}</article>
+        <article class="col-span-5 text-gray-600">
+            <Content/>
+        </article>
     </div>
 </li>

@@ -3,14 +3,21 @@ import { getCollection } from "astro:content";
 import TimelineItem from "./TimelineItem.astro";
 
 
-const collection = await getCollection("milestones")
+const collection = await getCollection("milestones");
+
+collection.sort((a, b) => {
+    const dateA = new Date(a.data.startDate);
+    const dateB = new Date(b.data.startDate);
+
+    return dateB.getTime() - dateA.getTime();
+});
 
 ---
-<ol class="relative border-s-4 mx-11 border-gray-200 dark:border-gray-700">
+<ol class="relative border-s-4 mx-10 border-gray-200 dark:border-gray-700">
 <!-- <ol class="relative border-s-4 border-gray-200 dark:border-gray-700 flex flex-col items-start"> -->
     {
         collection.map(milestone => (
-            <TimelineItem milestone={milestone.data}/>
+            <TimelineItem milestone={milestone}/>
         ))
     }
 </ol>

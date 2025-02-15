@@ -7,8 +7,7 @@ export const schema = z.object({
     type: z.enum(['work', 'education']),
     url: z.string(),
     startDate: z.date(),
-    endDate: z.date().optional(),
-    summary: z.string(),
+    endDate: z.date().optional()
 });
 
 export type Milestone = z.infer<typeof schema>;
