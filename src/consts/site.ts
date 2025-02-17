@@ -1,7 +1,8 @@
 export const SITE = {
-    TITLE: "mviveros",
+    TITLE: "mviveros | portfolio",
     AUTHOR: "Mauro Daniel Viveros",
-    ROLE: "DEV WEB | DEV OPS",
-    DESCRIPTION: "site.description",
-    KEYWORDS: "Mauro Daniel Viveros, Developer, Fullstack, Web, Mobile, DevOps, Programming, Technologies, Software, Development, Mauro Viveros"
+    ROLE: "Senior DEV WEB | Semi Senior DEV OPS",
+    DESCRIPTION: "Portfolio personal de Mauro Viveros. Desarrollo frontend, optimización web y automatización con DevOps.",
+    KEYWORDS: "Mauro Daniel Viveros, Senior Frontend Engineer, DevOps, Angular, TypeScript, React, Web Performance, Remote, Freelance, Software Engineer, Frontend Developer, UI Developer, Web Developer, JavaScript, Cloud, CI/CD, GitHub Actions, AWS, Docker, Kubernetes",
+    FAVICON: "https://res.cloudinary.com/mviveros/image/upload/v1738690096/golang.png",
 };
