@@ -6,6 +6,7 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["./components/*"],
+      "@consts": ["./consts/index.ts"],
       "@layouts/*": ["./layouts/*"],
     }
   }

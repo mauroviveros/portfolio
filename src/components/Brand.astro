@@ -1,6 +1,11 @@
+---
+import { SITE } from "@consts";
+---
+
 <a
   href="/"
-  class="flex items-center"
+  class="flex items-center gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out font-semibold"
 >
-  <img src="https://res.cloudinary.com/mviveros/image/upload/v1738690096/golang.png" alt="" class="size-14 rounded-full" />
+  <img src="https://res.cloudinary.com/mviveros/image/upload/v1738690096/golang.png" alt="" class="size-7 rounded-full" />
+  <span>{SITE.TITLE}</span>
 </a>
