@@ -1,4 +1,5 @@
 ---
+import { LINKS } from "@consts";
 import GithubIcon from "./icons/GithubIcon.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
 ---
@@ -10,12 +11,12 @@ import LinkedIn from "./icons/LinkedIn.astro";
         <p class="text-xl md:text-3xl font-bold text-slate-700">Desarrollador WEB | DEV-OPS</p>
 
         <article class="flex justify-center md:justify-normal items-center gap-4">
-            <button class="relative text-slate-100 bg-primary py-3 px-4 rounded-lg font-semibold shadow duration-300 hover:shadow-xl hover:-translate-y-1">Descargar CV</button>
+            <a href={LINKS.CV} target="_blank" class="relative text-slate-100 bg-primary py-3 px-4 rounded-lg font-semibold shadow duration-300 hover:shadow-xl hover:-translate-y-1">Descargar CV</a>
 
-            <a href="https://github.com/mauroviveros" class="duration-500 text-slate-800 hover:text-primary">
+            <a href={LINKS.GITHUB} target="_blank" class="duration-500 text-slate-800 hover:text-primary">
                 <GithubIcon/>
             </a>
-            <a href="https://github.com/mauroviveros" class="duration-500 text-slate-800 hover:text-primary">
+            <a href={LINKS.LINKEDIN} target="_blank" class="duration-500 text-slate-800 hover:text-primary">
                 <LinkedIn/>
             </a>
         </article>
