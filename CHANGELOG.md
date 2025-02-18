@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/maurodviveros/portfolio/compare/v1.0.1...v1.0.2) (2025-02-18)
+
+
+### Features
+
+* :sparkles: add links on Hero ([c603e6f](https://github.com/maurodviveros/portfolio/commit/c603e6f2fc10c285935b9973b0e7c6138bba6199))
+
+
+
 ## [1.0.1](https://github.com/maurodviveros/portfolio/compare/v1.0.0...v1.0.1) (2025-02-18)
 
 
