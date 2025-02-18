@@ -16,6 +16,9 @@ import { SITE } from "@consts";
     <meta name="keywords" content={SITE.KEYWORDS}>
     <meta name="author" content={SITE.AUTHOR}>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   </head>
   <body class="bg-slate-100">
     <slot />
@@ -23,45 +26,6 @@ import { SITE } from "@consts";
 </html>
 
 <style is:global>
-  @font-face {
-    font-family: "Space Grotesk";
-    src: url("/fonts/space-grotesk/SpaceGrotesk-Light.ttf");
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "Space Grotesk";
-    src: url("/fonts/space-grotesk/SpaceGrotesk-Regular.ttf");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "Space Grotesk";
-    src: url("/fonts/space-grotesk/SpaceGrotesk-Medium.ttf");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "Space Grotesk";
-    src: url("/fonts/space-grotesk/SpaceGrotesk-SemiBold.ttf");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "Space Grotesk";
-    src: url("/fonts/space-grotesk/SpaceGrotesk-Bold.ttf");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-  }
 
   html {
     overflow-y: scroll;
