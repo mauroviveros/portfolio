@@ -1,3 +1,12 @@
+## [1.0.1](https://github.com/maurodviveros/portfolio/compare/v1.0.0...v1.0.1) (2025-02-18)
+
+
+### Bug Fixes
+
+* :fire: remove useless static assets ([7c8f8db](https://github.com/maurodviveros/portfolio/commit/7c8f8dbcba3b6ce8cb6d299f8ea19be51bfe6edc))
+
+
+
 # [1.0.0](https://github.com/maurodviveros/portfolio/compare/v0.2.2...v1.0.0) (2025-02-18)
 
 
