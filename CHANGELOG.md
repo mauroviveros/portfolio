@@ -1,3 +1,50 @@
+# [1.0.0](https://github.com/maurodviveros/portfolio/compare/v0.2.2...v1.0.0) (2025-02-18)
+
+
+### Bug Fixes
+
+* :adhesive_bandage: fix navbar ([5743142](https://github.com/maurodviveros/portfolio/commit/5743142927a9c32578e066f0e5b0003eb54b905a))
+* :adhesive_bandage: fix variables without env ([f616f1b](https://github.com/maurodviveros/portfolio/commit/f616f1bb81b5e423a77b9eea3dde3ad06df33e3b))
+* :construction: disable and remove environments in experience section ([267efa6](https://github.com/maurodviveros/portfolio/commit/267efa6482f8110a5b7c35684f47ceac1002f37e))
+* :construction: hidden temporarily experience ([4211f0f](https://github.com/maurodviveros/portfolio/commit/4211f0f484cf9355e3479f65034e3e5c837cfc56))
+* :iphone: add responsive in navbar ([bffdd8e](https://github.com/maurodviveros/portfolio/commit/bffdd8e3557f5d0be4147b5c803d483af32582e3))
+* :iphone: fix overflow and appComponent ([067e0a8](https://github.com/maurodviveros/portfolio/commit/067e0a8006f464f4c115ee2a2abe07ede795b0bb))
+* :iphone: fix responsive in navbar ([93d9da4](https://github.com/maurodviveros/portfolio/commit/93d9da43af8fc1780ff986e5a6588054cbf86b6f))
+* :lipstick: fix theming colors in experiencePage ([ef07021](https://github.com/maurodviveros/portfolio/commit/ef0702146798847421b13a90d5083c4ece386956))
+* :package: update dependencies ([66d14e7](https://github.com/maurodviveros/portfolio/commit/66d14e7d06400c3b756247323d800e60a542fb06))
+* :sparkles: add copyright info ([f3a064f](https://github.com/maurodviveros/portfolio/commit/f3a064f0df9af990566799a7fc3745680d62b425))
+* :sparkles: better layout structure ([47e3cf1](https://github.com/maurodviveros/portfolio/commit/47e3cf14943787e505b173d1bede4a4647a52a7f))
+* :sparkles: init main files ([e9f4d14](https://github.com/maurodviveros/portfolio/commit/e9f4d147da2b1e9e079d2017cbaad40f46d3463d))
+* :wastebasket: clean code in iconRegistry ([3979b95](https://github.com/maurodviveros/portfolio/commit/3979b959c1769eedb31e17e8b8d358d21e31ae85))
+
+
+### Features
+
+* :card_file_box: add content collections ([032dbbb](https://github.com/maurodviveros/portfolio/commit/032dbbbd2582856d616741d23eb490149e1c7386))
+* :construction: improve timeline in experience ([c6e2605](https://github.com/maurodviveros/portfolio/commit/c6e2605e3f7558b2227db809ad2b6bb37395e4ca))
+* :construction: init ExperiencePage ([76af16e](https://github.com/maurodviveros/portfolio/commit/76af16e2dfa84f40fcc76372816b97c159a1e777))
+* :construction: init Header ([7230240](https://github.com/maurodviveros/portfolio/commit/7230240b0f9282efcb1e44507f6ff9a9d743906d))
+* :construction: init timeline in experience ([fe48454](https://github.com/maurodviveros/portfolio/commit/fe48454e86a6ca8376752891d763070d0ef6ad2f))
+* :heavy_plus_sign: add simpleIcons ([9c690ff](https://github.com/maurodviveros/portfolio/commit/9c690ff5f488557031cd6cf38972b54688226605))
+* :lipstick: add color-scheme ([a65d4a3](https://github.com/maurodviveros/portfolio/commit/a65d4a37d924cae22cfde0e174e87aadc75f5f4f))
+* :lipstick: add theming with @angular/material ([2533c8b](https://github.com/maurodviveros/portfolio/commit/2533c8bd33f585012620adbbe14e602712a2ce2d))
+* :lipstick: include typographies ([9bbc7d8](https://github.com/maurodviveros/portfolio/commit/9bbc7d88998cf31bb7ebb646be4d003c110a6f4d))
+* :mag: improve SEO ([01021af](https://github.com/maurodviveros/portfolio/commit/01021af629c458bd49145c06169ce61dee369fd6))
+* :sparkles: add footer and header components ([0c58df6](https://github.com/maurodviveros/portfolio/commit/0c58df673333bd4f938a223444b01f5996ff227e))
+* :sparkles: add Hero ([7b6db11](https://github.com/maurodviveros/portfolio/commit/7b6db112254b4a1f0359311a0f745be4e91b031f))
+* :sparkles: add navbarComponent and init HeroComponent ([5f6c15b](https://github.com/maurodviveros/portfolio/commit/5f6c15bfe933e9090d3731377aa2c2da96f69ceb))
+* :sparkles: add navigation component ([ec37170](https://github.com/maurodviveros/portfolio/commit/ec371709afe948726eed8e72ba05564da999b179))
+* :sparkles: add socialLinks Component ([de7b418](https://github.com/maurodviveros/portfolio/commit/de7b4189a08727f037986e9aa6ad6548a21bea94))
+* :sparkles: add summary on milestones ([6fe94e3](https://github.com/maurodviveros/portfolio/commit/6fe94e333844e13d277a15ceaba0e80e6f7b0fa7))
+* :sparkles: add titleCasePipe on navigation ([c941e7f](https://github.com/maurodviveros/portfolio/commit/c941e7fe4c927af871a77c5cd03181bc6e86bc73))
+* :sparkles: init appComponent ([2ff3fdb](https://github.com/maurodviveros/portfolio/commit/2ff3fdb2cc9279a5b8c29b26964db54390b0c06a))
+* :sparkles: init index and add font ([6bdc494](https://github.com/maurodviveros/portfolio/commit/6bdc494eb70750686d89f9ba0ef1772031bdd2d3))
+* :sparkles: update brand ([17d1329](https://github.com/maurodviveros/portfolio/commit/17d132911c211e0834bb722f4bc70bff6700ed89))
+* :sparkles: update summary on milestone ([e20a8c0](https://github.com/maurodviveros/portfolio/commit/e20a8c0e812c76d0391bd9fca15deca1b6e8e146))
+* :sparkles: upgrade dynamically iconRegistry ([1d26f0a](https://github.com/maurodviveros/portfolio/commit/1d26f0a8d9684286536107e937e7547a77f906f9))
+
+
+
 ## [0.2.2](https://github.com/maurodviveros/maurodviveros.github.io/compare/v0.2.1...v0.2.2) (2023-05-15)
 
 
