@@ -1,11 +1,9 @@
 {
-  "name": "portfolio",
-  "description": "My personal portfolio",
-  "version": "0.0.0",
-  "author": {
-    "name": "Mauro Daniel Viveros",
-    "email": "maurod.viveros@gmail.com"
-  },
+  "name": "portfolio_mauroviveros",
+  "description": "Personal portfolio of Mauro Daniel Viveros",
+  "author": "Mauro Daniel Viveros <maurod.viveros@gmail.com> (TRY Ubbe)",
+  "version": "0.2.2",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "repository": {
