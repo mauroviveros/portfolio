@@ -1,3 +1,12 @@
+## [1.0.5](https://github.com/maurodviveros/portfolio/compare/v1.0.4...v1.0.5) (2025-02-19)
+
+
+### Bug Fixes
+
+* :iphone: improve responsive sizes ([8fb7b91](https://github.com/maurodviveros/portfolio/commit/8fb7b91b58e51b477a32b485b5ae6c60662a3d41))
+
+
+
 ## [1.0.4](https://github.com/maurodviveros/portfolio/compare/v1.0.3...v1.0.4) (2025-02-19)
 
 
