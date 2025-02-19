@@ -20,34 +20,17 @@ import { SITE } from "@consts";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-slate-100">
+  <body>
     <slot />
   </body>
 </html>
 
-<style is:global>
-
-  html {
-    overflow-y: scroll;
-    color-scheme: light;
-    background-color: white;
-  }
-  html.dark {
-    color-scheme: dark;
-    background-color: black;
-  }
-</style>
-
 <style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-
   html {
     scroll-behavior: smooth;
     font-family: "Space Grotesk", system-ui, sans-serif;
   }
+
+  body{ @apply bg-slate-100 }
+  body.dark{ @apply bg-slate-900 }
 </style>
