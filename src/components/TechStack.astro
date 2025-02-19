@@ -1,0 +1,13 @@
+---
+import Icons from './icons/languajes';
+import UnknownIcon from './icons/UnknownIcon.astro';
+
+interface Props { techs: string[]; }
+const { techs } = Astro.props;
+---
+<ul class="flex gap-2">
+    {techs.map(tech => {
+        const Icon = Icons[tech] || UnknownIcon;
+        return (<li><Icon/></li>)
+    })}
+</ul>
