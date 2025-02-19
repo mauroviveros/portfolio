@@ -1,0 +1,25 @@
+---
+interface Props {
+    href: string;
+    label: string;
+    type: 'icon' | 'flat';
+    target?: '_blank' | '_self' | '_parent' | '_top';
+}
+
+const { href, label, type, target="_blank" } = Astro.props;
+
+const getClass = (type: string) => {
+    switch (type) {
+        case 'icon': return 'duration-500 text-slate-800 hover:text-primary';
+        case 'flat': return 'relative text-slate-100 bg-primary py-3 px-4 rounded-lg font-semibold shadow duration-300 hover:shadow-xl hover:-translate-y-1';
+        default: return '';
+    }
+}
+---
+<a href={href}
+    aria-label={label}
+    target={target}
+    class:list={[getClass(type), 'flex gap-2']}
+>
+    <slot/>
+</a>
