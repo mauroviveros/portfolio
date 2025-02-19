@@ -1,8 +1,24 @@
+import { SRC } from "./links"
+
 export const SITE = {
-    TITLE: "mviveros | portfolio",
-    AUTHOR: "Mauro Daniel Viveros",
-    ROLE: "Senior DEV WEB | Semi Senior DEV OPS",
-    DESCRIPTION: "Portfolio personal de Mauro Viveros. Desarrollo frontend, optimización web y automatización con DevOps.",
-    KEYWORDS: "Mauro Daniel Viveros, Senior Frontend Engineer, DevOps, Angular, TypeScript, React, Web Performance, Remote, Freelance, Software Engineer, Frontend Developer, UI Developer, Web Developer, JavaScript, Cloud, CI/CD, GitHub Actions, AWS, Docker, Kubernetes",
-    FAVICON: "https://res.cloudinary.com/mviveros/image/upload/v1739931515/golang.webp",
-};
+    title:          "Mauro Daniel Viveros | portfolio",
+    author:         "Mauro Daniel Viveros",
+    description:    "Portfolio personal de Mauro Daniel Viveros. Desarrollador WEB y DevOps.",
+    robots:         "index, follow",
+    canonical:      "https://mauroviveros.com.ar",
+    favicon:        SRC.brand,
+    keywords: [
+        "Mauro Daniel Viveros", "Senior Frontend Engineer",
+        "DevOps", "Angular", "TypeScript", "Web Performance",
+        "Remote", "Freelance", "Software Engineer",
+        "Frontend Developer", "UI Developer", "Web Developer",
+        "JavaScript", "Cloud", "CI/CD", "GitHub Actions",
+        "AWS", "Docker", "Kubernetes"
+    ].join(", "),
+}
+
+export const BRAND = {
+    logo    : SRC.brand,
+    label   : "mviveros | portfolio",
+    alt     : 'Logo de mviveros',
+}

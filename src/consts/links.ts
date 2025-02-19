@@ -7,8 +7,8 @@ export const HREF: Links = {
 }
 
 export const SRC: Links = {
-    BRAND: 'https://res.cloudinary.com/mviveros/image/upload/v1739931515/golang.webp',
-    AVATAR: 'https://avatars.githubusercontent.com/u/44076914?v=4'
+    brand: 'https://res.cloudinary.com/mviveros/image/upload/v1739931515/golang.webp',
+    avatar: 'https://avatars.githubusercontent.com/u/44076914?v=4'
 }
 
 // type Langs = 'es' | 'en';
