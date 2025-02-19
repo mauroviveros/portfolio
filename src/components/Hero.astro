@@ -13,10 +13,10 @@ import LinkedIn from "./icons/LinkedIn.astro";
         <article class="flex justify-center md:justify-normal items-center gap-4">
             <a href={LINKS.CV} target="_blank" class="relative text-slate-100 bg-primary py-3 px-4 rounded-lg font-semibold shadow duration-300 hover:shadow-xl hover:-translate-y-1">Descargar CV</a>
 
-            <a href={LINKS.GITHUB} target="_blank" class="duration-500 text-slate-800 hover:text-primary">
+            <a href={LINKS.GITHUB} target="_blank" aria-label="Ir a mi perfil de GitHub" class="duration-500 text-slate-800 hover:text-primary">
                 <GithubIcon/>
             </a>
-            <a href={LINKS.LINKEDIN} target="_blank" class="duration-500 text-slate-800 hover:text-primary">
+            <a href={LINKS.LINKEDIN} target="_blank" aria-label="Ir a mi perfil de LinkedIn" class="duration-500 text-slate-800 hover:text-primary">
                 <LinkedIn/>
             </a>
         </article>
