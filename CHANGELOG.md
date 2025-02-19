@@ -1,3 +1,17 @@
+## [1.0.4](https://github.com/maurodviveros/portfolio/compare/v1.0.3...v1.0.4) (2025-02-19)
+
+
+### Bug Fixes
+
+* :technologist: improve consts links ([f6458fd](https://github.com/maurodviveros/portfolio/commit/f6458fd47bcdf25dc4992e3e10d3901f2041e151))
+
+
+### Features
+
+* 🔍 improve SEO meta tags ([e56c10e](https://github.com/maurodviveros/portfolio/commit/e56c10ef53bdf93757305360f97aef2d2f8a5364))
+
+
+
 ## [1.0.3](https://github.com/maurodviveros/portfolio/compare/v1.0.2...v1.0.3) (2025-02-19)
 
 
