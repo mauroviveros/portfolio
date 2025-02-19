@@ -1,3 +1,14 @@
+## [1.0.3](https://github.com/maurodviveros/portfolio/compare/v1.0.2...v1.0.3) (2025-02-19)
+
+
+### Bug Fixes
+
+* :bento: optimize assets ([8f66cb9](https://github.com/maurodviveros/portfolio/commit/8f66cb9beb5da2ee09b9e0ea7a1b3ec97e8fc3db))
+* :mag: improve SEO ([1035a5b](https://github.com/maurodviveros/portfolio/commit/1035a5b7b29606a20cd5c685a44ef853cdf60ec8))
+* 📱 improve in responsive design ([32cc6c5](https://github.com/maurodviveros/portfolio/commit/32cc6c5b435631376e016c0cb5953efa0a1d023d))
+
+
+
 ## [1.0.2](https://github.com/maurodviveros/portfolio/compare/v1.0.1...v1.0.2) (2025-02-18)
 
 
