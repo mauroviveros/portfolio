@@ -1,8 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Button from "@components/Button.astro";
-import ExternalLinkIcon from "@components/icons/ExternalLinkIcon.astro";
-import GithubIcon from "@components/icons/GithubIcon.astro";
+import Icons from "@components/icons";
 import TechStack from "@components/TechStack.astro";
 
 const projects = await getCollection("projects");
@@ -13,11 +12,10 @@ const projects = await getCollection("projects");
         const { Content } = await render(project);
         return (
             <li class="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-8">
-                <a href="" class="rounded-lg overflow-hidden flex-grow">
-                    <picture>
-                        <img src={project.data.image} alt={project.data.title}/>
-                    </picture>
-                </a>
+                <picture class="rounded-lg overflow-hidden">
+                    <img src={project.data.image} alt={project.data.title}/>
+                </picture>
+
                 <article class="flex flex-col gap-4">
                     <h3 class="text-4xl font-bold">{project.data.title}</h3>
                     <div class="text-xl font-medium text-pretty text-slate-700 flex-grow">
@@ -28,12 +26,12 @@ const projects = await getCollection("projects");
                     <nav class="flex gap-4">
                         { project.data.repo && (
                             <Button href={project.data.repo} type="flat" label={`Código fuente de ${project.data.title}`}>
-                                Código <GithubIcon/>
+                                Código <Icons.github/>
                             </Button>
                         )}
                         { project.data.url && (
                             <Button href={project.data.url} type="flat" label={`Demo de ${project.data.title}`}>
-                                Demo <ExternalLinkIcon/>
+                                Demo <Icons.externalLink/>
                             </Button>
                         )}
                     </nav>
