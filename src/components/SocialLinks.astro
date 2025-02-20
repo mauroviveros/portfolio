@@ -1,12 +1,12 @@
 ---
-import { SOCIALS } from "consts/socials";
+import { SOCIALS } from "@consts";
 import Button from "./Button.astro";
 import Icons from "./icons";
 ---
-{SOCIALS.map(({ href, name, icon }) => {
+{SOCIALS.map(({ href, name, icon, color }) => {
     const Icon = Icons.socials[icon] || Icons.unknown;
     return (
-        <Button href={href} label={name} type="icon">
+        <Button href={href} label={name} type="icon" style={`background-color: ${color}`}>
             <Icon/>
         </Button>
     )

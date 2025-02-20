@@ -1,8 +1,12 @@
 ---
+import type { string } from 'astro:schema';
+
 interface Props {
     href: string;
     label: string;
     type: 'icon' | 'flat';
+    class?: string;
+    style?: string;
     target?: '_blank' | '_self' | '_parent' | '_top';
 }
 
@@ -10,8 +14,8 @@ const { href, label, type, target="_blank" } = Astro.props;
 
 const getClass = (type: string) => {
     switch (type) {
-        case 'icon': return 'duration-500 text-slate-800 hover:text-primary';
-        case 'flat': return 'relative text-slate-100 bg-primary py-3 px-4 rounded-lg font-semibold shadow duration-300 hover:shadow-xl hover:-translate-y-1';
+        case 'icon': return 'rounded-full p-3';
+        case 'flat': return 'bg-primary py-3 px-4 rounded-lg font-semibold shadow';
         default: return '';
     }
 }
@@ -19,7 +23,8 @@ const getClass = (type: string) => {
 <a href={href}
     aria-label={label}
     target={target}
-    class:list={[getClass(type), 'flex gap-2']}
+    class:list={[getClass(type), 'flex gap-2 duration-300 text-slate-100 hover:shadow-xl hover:-translate-y-1', Astro.props.class]}
+    style={Astro.props.style}
 >
     <slot/>
 </a>

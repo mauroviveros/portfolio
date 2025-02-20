@@ -5,8 +5,9 @@ const Icons: Record<string, any> = {
         tailwindcss: (await import('./languages/tailwindcss.astro')).default,
     },
     socials: {
-        // github: (await import('./socials/github.astro')).default,
-        // linkedin: (await import('./socials/linkedin.astro')).default,
+        github: (await import('./socials/github.astro')).default,
+        linkedin: (await import('./socials/linkedin.astro')).default,
+        instagram: (await import('./socials/instagram.astro')).default,
     },
     github: (await import('./github.astro')).default,
     externalLink: (await import('./external-link.astro')).default,
