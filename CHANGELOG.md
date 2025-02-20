@@ -1,3 +1,24 @@
+# [1.1.0](https://github.com/maurodviveros/portfolio/compare/v1.0.5...v1.1.0) (2025-02-20)
+
+
+### Bug Fixes
+
+* :iphone: improve on responsive design ([e7b3f10](https://github.com/maurodviveros/portfolio/commit/e7b3f106b14fb6629216514d65caac0b06906db8))
+
+
+### Features
+
+* :children_crossing: improve on Sections ([5c7f2f1](https://github.com/maurodviveros/portfolio/commit/5c7f2f10274bd0d2a3542888aade97e822feb067))
+* :children_crossing: improve social links ([d1ecfe1](https://github.com/maurodviveros/portfolio/commit/d1ecfe1552d4e4cf2eda74a3f1f4bb51ef0d2de1))
+* :iphone: improve responsive on hero avatar ([bad75b0](https://github.com/maurodviveros/portfolio/commit/bad75b0f861565a350b3428b506cb40ba3262a6c))
+* :iphone: improve responsive on Portfolio section ([b0472b9](https://github.com/maurodviveros/portfolio/commit/b0472b9d54feb3323acd47c0739c01eb600a353d))
+* :recycle: refactor icons and links ([352c10b](https://github.com/maurodviveros/portfolio/commit/352c10b2d61683272ba8bbeb02cc9dd4cd3f283b))
+* :sparkles: add icons components ([03c8dfa](https://github.com/maurodviveros/portfolio/commit/03c8dfa5ee0a7c8d9b2e017924e2bc1e47d6d003))
+* :sparkles: add projects using collections ([8715d57](https://github.com/maurodviveros/portfolio/commit/8715d5731bdedc976fc6dcbbc0687e446672f85a))
+* :sparkles: add TechStach ([f11d871](https://github.com/maurodviveros/portfolio/commit/f11d87158169040f7ec9533224e69ce632f22a1e))
+
+
+
 ## [1.0.5](https://github.com/maurodviveros/portfolio/compare/v1.0.4...v1.0.5) (2025-02-19)
 
 
