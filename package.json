@@ -15,8 +15,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
-    "postversion": "git push && git push --tags"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "dependencies": {
     "@astrojs/tailwind": "^6.0.0",
