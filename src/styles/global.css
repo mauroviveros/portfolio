@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme{
+    --color-primary: #241199;
+}
+
+body{ @apply bg-slate-100 }
+body.dark{ @apply bg-slate-900 }
+
+body{
+    & > main,
+    & > header,
+    & > footer {
+        @apply container mx-auto px-4 md:px-8 md:max-w-6xl;
+    }
+}
