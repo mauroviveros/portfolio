@@ -1,3 +1,13 @@
+## [1.1.1](https://github.com/maurodviveros/portfolio/compare/v1.1.0...v1.1.1) (2025-02-20)
+
+
+### Features
+
+* :construction: improve toast WIP ([eaf69c3](https://github.com/maurodviveros/portfolio/commit/eaf69c315d66d72215bb29bb015d8ecec37236a7))
+* :sparkles: add Footer with Contact section ([9889275](https://github.com/maurodviveros/portfolio/commit/988927521ad70ba7c454cfd44265b76424808247))
+
+
+
 # [1.1.0](https://github.com/maurodviveros/portfolio/compare/v1.0.5...v1.1.0) (2025-02-20)
 
 
