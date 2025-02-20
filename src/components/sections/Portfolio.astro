@@ -3,11 +3,11 @@ import { getCollection, render } from "astro:content";
 import Button from "@components/Button.astro";
 import Icons from "@components/icons";
 import TechStack from "@components/TechStack.astro";
+import Section from "@components/Section.astro";
 
 const projects = await getCollection("projects");
 ---
-<section>
-
+<Section title="Proyectos" icon="code">
     <ul>{ projects.map(async project => {
         const { Content } = await render(project);
         return (
@@ -17,13 +17,14 @@ const projects = await getCollection("projects");
                 </picture>
 
                 <article class="flex flex-1 flex-col gap-4">
-                    <h3 class="text-4xl font-bold break-words">{project.data.title}</h3>
-                    
+                    <h3 class="text-4xl font-bold break-words text-slate-800">{project.data.title}</h3>
+
                     <div class="text-xl font-medium text-pretty text-slate-700 truncate w-full overflow-hidden whitespace-nowrap">
                         <Content />
                     </div>
 
                     <TechStack techs={project.data.techStack}/>
+
                     <nav class="flex gap-4">
                         { project.data.repo && (
                             <Button href={project.data.repo} type="flat" label={`Código fuente de ${project.data.title}`}>
@@ -40,4 +41,4 @@ const projects = await getCollection("projects");
             </li>
         )
     }) }</ul>
-</section>
+</Section>
