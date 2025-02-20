@@ -1,5 +1,6 @@
 ---
 import Experience from '@components/Experience.astro';
+import Footer from '@components/Footer.astro';
 import Header from '@components/Header.astro';
 import Hero from '@components/sections/Hero.astro';
 import Portfolio from '@components/sections/Portfolio.astro';
@@ -9,7 +10,7 @@ import Layout from '@layouts/Layout.astro';
 <Layout>
 	<Header/>
 	<!-- <Navigation/> -->
-	<main class="container mx-auto px-8 md:max-w-6xl h-full">
+	<main>
 		<Hero/>
 		<!-- <Experience/> -->
 		<Portfolio/>
@@ -17,6 +18,11 @@ import Layout from '@layouts/Layout.astro';
 		<!-- <About/> -->
 		<!-- <Contact/> -->
 	</main>
-	<!-- <footer class="container mx-auto px-8 md:max-w-6xl h-full">
-	</footer> -->
+	<Footer/>
 </Layout>
+
+<style is:global>
+	body > main, body > header, body > footer{
+		@apply container mx-auto px-4 md:px-8 md:max-w-6xl;
+	}
+</style>

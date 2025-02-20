@@ -19,6 +19,8 @@ const Icons: Record<string, any> = {
     externalLink: (await import('./external-link.astro')).default,
     code: (await import('./code.astro')).default,
     mailForward: (await import('./mail-forward.astro')).default,
+    copy: (await import('./copy.astro')).default,
+    send: (await import('./send.astro')).default,
     unknown: (await import('./unknown.astro')).default
 }
 

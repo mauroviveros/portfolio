@@ -1,5 +1,5 @@
 export const SITE = {
-    title:          "Mauro Daniel Viveros | portfolio",
+    title:          "Mauro Viveros | portfolio",
     author:         "Mauro Daniel Viveros",
     description:    "Portfolio personal de Mauro Daniel Viveros. Desarrollador WEB y DevOps.",
     robots:         "index, follow",
