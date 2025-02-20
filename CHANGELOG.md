@@ -1,3 +1,12 @@
+## [1.1.2](https://github.com/maurodviveros/portfolio/compare/v1.1.1...v1.1.2) (2025-02-20)
+
+
+### Bug Fixes
+
+* :bug: fix text in Project description ([8eb84fb](https://github.com/maurodviveros/portfolio/commit/8eb84fb38dcb2b60f9e453ceff3c3e88e289bc7d))
+
+
+
 ## [1.1.1](https://github.com/maurodviveros/portfolio/compare/v1.1.0...v1.1.1) (2025-02-20)
 
 
