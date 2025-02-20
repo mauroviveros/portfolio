@@ -11,15 +11,16 @@ const projects = await getCollection("projects");
     <ul>{ projects.map(async project => {
         const { Content } = await render(project);
         return (
-            <li class="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-8">
-                <picture class="rounded-lg overflow-hidden">
-                    <img src={project.data.image} alt={project.data.title}/>
+            <li class="flex flex-col md:flex-row gap-8">
+                <picture class="flex flex-1 flex-col justify-center">
+                    <img class="rounded-lg w-auto" src={project.data.image} alt={project.data.title}/>
                 </picture>
 
-                <article class="flex flex-col gap-4">
-                    <h3 class="text-4xl font-bold">{project.data.title}</h3>
-                    <div class="text-xl font-medium text-pretty text-slate-700 flex-grow">
-                        <Content/>
+                <article class="flex flex-1 flex-col gap-4">
+                    <h3 class="text-4xl font-bold break-words">{project.data.title}</h3>
+                    
+                    <div class="text-xl font-medium text-pretty text-slate-700 truncate w-full overflow-hidden whitespace-nowrap">
+                        <Content />
                     </div>
 
                     <TechStack techs={project.data.techStack}/>
