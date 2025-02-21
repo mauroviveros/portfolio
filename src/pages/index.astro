@@ -2,9 +2,11 @@
 import Hero from '@sections/Hero.astro';
 import Portfolio from '@sections/Portfolio.astro';
 import Layout from '@layouts/Layout.astro';
----
 
-<Layout title="Mauro Viveros | portfolio" description="Portfolio personal de Mauro Daniel Viveros. Desarrollador WEB y DevOps.">
+const title = "Mauro Viveros | portfolio";
+const description = "Portfolio personal de Mauro Daniel Viveros. Desarrollador WEB y DevOps. Conocé quién soy, explorá mis proyectos y revisá mi experiencia profesional.";
+---
+<Layout title={title} description={description}>
 	<Hero/>
 	<Portfolio/>
 	<!-- <Experience/> -->
