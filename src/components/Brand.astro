@@ -1,8 +1,7 @@
 ---
-import { BRAND } from "@consts";
+const label = "mviveros | portfolio";
 ---
-
-<a href="/" class="flex items-center gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out font-semibold">
-  <img src={BRAND.logo} alt={BRAND.alt} class="size-8 rounded-full" />
-  <span>{BRAND.label}</span>
+<a href="/" class="flex items-center gap-1 text-current hover:text-black transition-colors duration-300 ease-in-out font-semibold">
+  <img src="/favicon.svg" alt=`Logo de ${label}` class="size-8 rounded-full" />
+  <span>{label}</span>
 </a>
