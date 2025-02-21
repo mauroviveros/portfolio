@@ -1,15 +1,14 @@
 ---
 import { SOCIALS } from "@consts";
-import Button from "./Button.astro";
-import Icons from "@icons";
+import { Icon } from 'astro-icon/components'
 ---
 <article class="flex gap-2">
-    {SOCIALS.map(({ href, name, icon, color }) => {
-        const Icon = Icons.socials[icon] || Icons.unknown;
-        return (
-            <Button href={href} label={name} type="icon" style={`background-color: ${color}`}>
-                <Icon/>
-            </Button>
-        )
-    })}
+    {SOCIALS.map(({href, label, icon, color}) => (
+        <a href={href} target="_blank" aria-label={label}
+            class="btn rounded-full"
+            style={`background-color: ${color};`}
+        >
+            <Icon name={icon} size="1rem" class="text-slate-100"/>
+        </a>
+    ))}
 </article>
