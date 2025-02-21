@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import Section from "@components/Section.astro";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
 const projects = await getCollection("projects");
 ---
@@ -10,9 +11,13 @@ const projects = await getCollection("projects");
         const { Content } = await render(project);
         return (
             <li class="flex flex-col md:flex-row gap-8">
-                <picture class="flex flex-1 flex-col justify-center">
-                    <img class="rounded-lg w-auto" src={`/projects/${project.data.title}.webp`} alt={project.data.title} loading="lazy"/>
-                </picture>
+                <Image
+                    src={`/projects/${project.data.title}.webp`}
+                    width={480} height={320}
+                    class="rounded-lg"
+                    alt={project.data.title}
+                
+                />
 
                 <article class="flex flex-1 flex-col gap-4">
                     <h3 class="text-4xl font-bold break-words text-slate-800">{project.data.title}</h3>
