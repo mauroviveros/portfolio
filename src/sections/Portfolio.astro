@@ -11,7 +11,7 @@ const projects = await getCollection("projects");
         return (
             <li class="flex flex-col md:flex-row gap-8">
                 <picture class="flex flex-1 flex-col justify-center">
-                    <img class="rounded-lg w-auto" src={`/projects/${project.data.title}.webp`} alt={project.data.title}/>
+                    <img class="rounded-lg w-auto" src={`/projects/${project.data.title}.webp`} alt={project.data.title} loading="lazy"/>
                 </picture>
 
                 <article class="flex flex-1 flex-col gap-4">

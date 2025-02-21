@@ -16,10 +16,16 @@ import SocialLinks from "@components/SocialLinks.astro";
         </article>
     </hgroup>
     
-    <img
-        class="border-primary border-4 size-48 sm:size-64 md:size-80 lg:size-[26rem]"
-        style="box-shadow: 0 15px 25px #0000004d; border-radius: 63% 37% 48% 52% / 60% 57% 43% 40%;"
-        src="/assets/mviveros-july.webp"
-        alt="Mauro Daniel Viveros Desarrollador WEB"
-    >
+    <picture>
+        <source srcset="/assets/mviveros-july-192x192.webp" media="(width < 40rem)">
+        <source srcset="/assets/mviveros-july-256x256.webp" media="(width >= 40rem)">
+        <source srcset="/assets/mviveros-july-320x320.webp" media="(width >= 48rem)">
+        <source srcset="/assets/mviveros-july-416x416.webp" media="(width >= 64rem)">
+        <img
+            src="/assets/mviveros-july.webp" alt="Mauro Daniel Viveros Desarrollador WEB" 
+            class="border-primary border-4 size-48 ms:size-64 md:size-80 lg:size-[26rem]"
+            style="border-radius: 63% 37% 48% 52% / 60% 57% 43% 40%;"
+            loading="lazy"
+        />
+    </picture>
 </section>
