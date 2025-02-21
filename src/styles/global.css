@@ -4,13 +4,13 @@
     --color-primary: #241199;
 }
 
+html { font-family: "Space Grotesk Variable", system-ui, sans-serif; }
+html, body{ height: 100%; }
+
 body{ @apply bg-slate-100 }
 body.dark{ @apply bg-slate-900 }
+body > main, body > header, body > footer { @apply container mx-auto px-4 md:px-8 md:max-w-6xl; }
 
-body{
-    & > main,
-    & > header,
-    & > footer {
-        @apply container mx-auto px-4 md:px-8 md:max-w-6xl;
-    }
-}
+.btn{ @apply flex gap-2 font-semibold shadow duration-300 hover:shadow-xl hover:-translate-y-1; }
+.btn.rounded-lg{ @apply py-2 px-4; }
+.btn.rounded-full{ @apply p-3; }
