@@ -1,5 +1,7 @@
 ---
 import SocialLinks from "@components/SocialLinks.astro";
+import { Picture } from "astro:assets";
+import image from "../assets/mviveros-july.webp"; // Image is 1600x900
 ---
 
 <section class="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between h-dvh py-16 gap-4 md:gap-8">
@@ -15,18 +17,12 @@ import SocialLinks from "@components/SocialLinks.astro";
             <SocialLinks/>
         </article>
     </hgroup>
-    
-    <picture>
-        <source srcset="/assets/mviveros-july-256x256.webp" media="(width >= 40rem)">
-        <source srcset="/assets/mviveros-july-320x320.webp" media="(width >= 48rem)">
-        <source srcset="/assets/mviveros-july-416x416.webp" media="(width >= 64rem)">
-        <source srcset="/assets/mviveros-july.webp" media="(width >= 80rem)">
 
-        <img
-            src="/assets/mviveros-july-192x192.webp" alt="Mauro Daniel Viveros Desarrollador WEB" 
-            class="border-primary border-4 size-48 ms:size-64 md:size-80 lg:size-[26rem]"
-            style="border-radius: 63% 37% 48% 52% / 60% 57% 43% 40%;"
-            loading="lazy"
-        />
-    </picture>
+    <Picture
+        src={image}
+        widths={[192, 256, 320, 416, 512]}
+        alt="Mauro Daniel Viveros Desarrollador WEB"
+        class="object-cover border-primary border-4 size-48 ms:size-64 md:size-80 lg:size-[26rem]"
+        style="border-radius: 63% 37% 48% 52% / 60% 57% 43% 40%;"
+    />
 </section>
