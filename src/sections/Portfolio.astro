@@ -14,7 +14,7 @@ const projects = await getCollection("projects");
                 <Image
                     src={`/projects/${project.data.title}.webp`}
                     width={480} height={320}
-                    class="rounded-lg"
+                    class="object-cover rounded-lg"
                     alt={project.data.title}
                 
                 />
