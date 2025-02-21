@@ -7,7 +7,6 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@consts": ["./consts/index.ts"],
-      "@icons": ["./icons/index.ts"],
       "@layouts/*": ["./layouts/*"],
       "@sections/*": ["./sections/*"],
       "@styles/*": ["./styles/*"],
