@@ -3,7 +3,6 @@ import { defineCollection, z } from "astro:content";
 
 export const schema = z.object({
     title: z.string(),
-    image: z.string().url(),
     url: z.string().url().optional(),
     repo: z.string().url().optional(),
     techStack: z.array(z.string()),

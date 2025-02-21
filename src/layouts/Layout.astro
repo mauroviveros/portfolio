@@ -1,38 +1,32 @@
 ---
-import '@fontsource-variable/space-grotesk';
-import "../styles/global.css";
-import { SITE } from "@consts";
+import Brand from '@components/Brand.astro';
+import SEO from '@components/SEO.astro';
+import SocialLinks from '@components/SocialLinks.astro';
+import Contact from '@sections/Contact.astro';
+
+interface Props { title: string, description: string; };
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width" />
-
-    <title>{ SITE.title }</title>
-
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={SITE.description}>
-    <meta name="keywords" content={SITE.keywords}>
-    <meta name="author" content={SITE.author}>
-    <meta name="robots" content={SITE.robots}>
-    <meta name="canonical" content={SITE.canonical}>
-
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/webp" href={SITE.favicon}/>
+    <SEO title={title} description={description}/>
   </head>
   <body>
-    <slot />
+    <header class="absolute left-0 right-0 py-4">
+      <Brand/>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="h-dvh p-4 md:p-8 flex flex-col items-center justify-center gap-4 md:gap-8">
+      <Contact/>
+      <SocialLinks/>
+      <p class="text-base font-medium text-slate-600 text-center max-w-72">
+          Diseñado y construido con ❤️ por
+          <span class="text-primary">Mauro Daniel viveros</span>
+      </p>
+    </footer>
   </body>
 </html>
-
-<style>
-  html {
-    scroll-behavior: smooth;
-    font-family: "Space Grotesk Variable", system-ui, sans-serif;
-  }
-
-  html, body{ height: 100%; }
-</style>

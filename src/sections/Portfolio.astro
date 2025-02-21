@@ -1,19 +1,17 @@
 ---
 import { getCollection, render } from "astro:content";
-import Button from "@components/Button.astro";
-import Icons from "@icons";
-import TechStack from "@components/TechStack.astro";
 import Section from "@components/Section.astro";
+import { Icon } from "astro-icon/components";
 
 const projects = await getCollection("projects");
 ---
-<Section title="Proyectos" icon="code">
+<Section title="Proyectos" icon="tabler:code">
     <ul>{ projects.map(async project => {
         const { Content } = await render(project);
         return (
             <li class="flex flex-col md:flex-row gap-8">
                 <picture class="flex flex-1 flex-col justify-center">
-                    <img class="rounded-lg w-auto" src={project.data.image} alt={project.data.title}/>
+                    <img class="rounded-lg w-auto" src={`/projects/${project.data.title}.webp`} alt={project.data.title}/>
                 </picture>
 
                 <article class="flex flex-1 flex-col gap-4">
@@ -23,18 +21,24 @@ const projects = await getCollection("projects");
                         <Content />
                     </div>
 
-                    <TechStack techs={project.data.techStack}/>
+                    <ul class="flex gap-2">
+                        {project.data.techStack.map(tech => (
+                            <li>
+                                <Icon name={`logos:${tech}-icon`} size="2rem"/>
+                            </li>
+                        ))}
+                    </ul>
 
                     <nav class="flex gap-4">
                         { project.data.repo && (
-                            <Button href={project.data.repo} type="flat" label={`Código fuente de ${project.data.title}`}>
-                                Código <Icons.github/>
-                            </Button>
+                            <a href={project.data.repo} target="_blank" aria-label={`Código fuente de ${project.data.title}`} class="btn rounded-lg bg-primary text-slate-100">
+                                Código <Icon name="tabler:brand-github" size="1.5rem"/>
+                            </a>
                         )}
                         { project.data.url && (
-                            <Button href={project.data.url} type="flat" label={`Demo de ${project.data.title}`}>
-                                Demo <Icons.externalLink/>
-                            </Button>
+                            <a href={project.data.url} target="_blank" aria-label={`Demo de ${project.data.title}`} class="btn rounded-lg bg-primary text-slate-100">
+                                Demo <Icon name="tabler:external-link" size="1.5rem"/>
+                            </a>
                         )}
                     </nav>
                 </article>
