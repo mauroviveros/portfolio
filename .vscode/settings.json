@@ -4,7 +4,6 @@
         "**/src/components/**/*.astro": "${filename} -  components 🧩",
         "**/src/layouts/**/*.astro": "${filename} - layouts 🏗️",
         "**/src/consts/**/*.ts": "${filename} - consts 📦",
-        "**/src/icons/**/*.ts": "${filename} - icons 🌀",
         "**/src/sections/**/*.ts": "${filename} - sections 📐",
         "**/src/styles/**/*.ts": "${filename} - styles 🎨",
         "**/src/**/*.ts": "${filename} 📜",

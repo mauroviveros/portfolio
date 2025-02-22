@@ -10,6 +10,6 @@ export const schema = z.object({
 
 export type Project = z.infer<typeof schema>;
 export const projects = defineCollection({
-    loader: glob({ pattern: './src/contents/projects/*.md' }),
+    loader: glob({ base: './src/contents/projects/', pattern: '*.md' }),
     schema
 });

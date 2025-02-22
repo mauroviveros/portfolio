@@ -12,6 +12,6 @@ export const schema = z.object({
 
 export type Milestone = z.infer<typeof schema>;
 export const milestones = defineCollection({
-    loader: glob({ pattern: './src/contents/milestones/*.md' }),
+    loader: glob({ base: './src/contents/milestones/', pattern: '*.md',  }),
     schema
 });

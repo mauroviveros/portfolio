@@ -1,47 +1,57 @@
 ---
 import { getCollection, render } from "astro:content";
-import Section from "@components/Section.astro";
-import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Section from "@components/Section.astro";
 
 const projects = await getCollection("projects");
 ---
 <Section title="Proyectos" icon="tabler:code">
     <ul>{ projects.map(async project => {
         const { Content } = await render(project);
+        const image = import(`../assets/projects/${project.id}.webp`);
+        const { title, techStack, repo, url} = project.data;
+
         return (
             <li class="flex flex-col md:flex-row gap-8">
                 <Image
-                    src={`/projects/${project.data.title}.webp`}
+                    src={image}
                     width={480} height={320}
                     class="object-cover rounded-lg"
-                    alt={project.data.title}
-                
+                    alt={title}
                 />
 
                 <article class="flex flex-1 flex-col gap-4">
-                    <h3 class="text-4xl font-bold break-words text-slate-800">{project.data.title}</h3>
+                    <h3 class="text-4xl font-bold break-words text-slate-800">{title}</h3>
 
                     <div class="text-xl font-medium text-pretty text-slate-700 w-full">
                         <Content />
                     </div>
 
                     <ul class="flex gap-2">
-                        {project.data.techStack.map(tech => (
-                            <li>
-                                <Icon name={`logos:${tech}-icon`} size="2rem"/>
-                            </li>
+                        {techStack.map(tech => (
+                            <li><Icon name={`logos:${tech}-icon`} size="2rem"/></li>
                         ))}
                     </ul>
 
                     <nav class="flex gap-4">
-                        { project.data.repo && (
-                            <a href={project.data.repo} target="_blank" aria-label={`Código fuente de ${project.data.title}`} class="btn rounded-lg bg-primary text-slate-100">
+                        { repo && (
+                            <a
+                                href={repo}
+                                target="_blank"
+                                aria-label={`Código fuente de ${title}`}
+                                class="btn rounded-lg bg-primary text-slate-100"
+                            >
                                 Código <Icon name="tabler:brand-github" size="1.5rem"/>
                             </a>
                         )}
-                        { project.data.url && (
-                            <a href={project.data.url} target="_blank" aria-label={`Demo de ${project.data.title}`} class="btn rounded-lg bg-primary text-slate-100">
+                        { url && (
+                            <a
+                                href={url}
+                                target="_blank"
+                                aria-label={`Demo de ${title}`}
+                                class="btn rounded-lg bg-primary text-slate-100"
+                            >
                                 Demo <Icon name="tabler:external-link" size="1.5rem"/>
                             </a>
                         )}

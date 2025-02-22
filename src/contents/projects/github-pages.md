@@ -1,5 +1,5 @@
 ---
-title: mauroviveros.github.io
+title: Github Pages
 url: https://mauroviveros.github.io
 repo: https://github.com/mauroviveros/mauroviveros.github.io
 techStack:
