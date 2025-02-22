@@ -1,5 +1,6 @@
 @import "@fontsource-variable/space-grotesk";
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme{
     --color-primary: #241199;
@@ -15,3 +16,10 @@ body > main, body > header, body > footer { @apply container mx-auto px-4 md:px-
 .btn{ @apply flex gap-2 font-semibold shadow duration-300 hover:shadow-xl hover:-translate-y-1; }
 .btn.rounded-lg{ @apply py-2 px-4; }
 .btn.rounded-full{ @apply p-3; }
+
+#about-me{
+    @apply prose-xl text-pretty text-slate-700 prose-strong:text-primary prose-a:text-primary prose-a:underline prose-blockquote:p-1;
+}
+#about-me > p{
+ @apply text-2xl font-medium;
+}
