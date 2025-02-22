@@ -1,6 +1,5 @@
 ---
-import '@fontsource-variable/space-grotesk';
-import "@styles/global.css";
+import styles from "@styles/global.css?url";
 import image from '../assets/mviveros-july.webp'
 
 interface Props { title: string, description: string; };
@@ -44,3 +43,6 @@ const keywords = [
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <!-- <meta name="apple-mobile-web-app-title" content="mauroviveros" /> -->
 <!-- <link rel="manifest" href="/site.webmanifest" /> -->
+
+<link rel="preload" href={styles} as="style">
+<link rel="stylesheet" href={styles}>
