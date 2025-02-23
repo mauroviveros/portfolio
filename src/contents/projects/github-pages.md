@@ -1,5 +1,6 @@
 ---
 title: Github Pages
+repo: https://github.com/mauroviveros/mauroviveros.github.io/tree/9cda271
 techStack:
     - astro
     - tailwindcss-light
