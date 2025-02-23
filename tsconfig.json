@@ -6,7 +6,7 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["./components/*"],
-      "@consts": ["./consts/index.ts"],
+      "@constants": ["./constants/index.ts"],
       "@layouts/*": ["./layouts/*"],
       "@sections/*": ["./sections/*"],
       "@styles/*": ["./styles/*"],

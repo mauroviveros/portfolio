@@ -1,7 +1,7 @@
 ---
 import Brand from '@components/Brand.astro';
+import Networks from '@components/Networks.astro';
 import SEO from '@components/SEO.astro';
-import SocialLinks from '@components/SocialLinks.astro';
 import Contact from '@sections/Contact.astro';
 
 interface Props { title: string, description: string; };
@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
     </main>
     <footer class="h-dvh p-4 md:p-8 flex flex-col items-center justify-center gap-4 md:gap-8">
       <Contact/>
-      <SocialLinks/>
+      <Networks/>
       <p class="text-base font-medium text-slate-600 text-center max-w-72">
           Diseñado y construido con ❤️ por
           <span class="text-primary">Mauro Daniel viveros</span>

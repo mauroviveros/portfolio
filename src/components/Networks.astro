@@ -1,10 +1,14 @@
 ---
-import { SOCIALS } from "@consts";
+import { NETWORKS } from "@constants";
 import { Icon } from 'astro-icon/components'
 ---
 <article class="flex gap-2">
-    {SOCIALS.map(({href, label, icon, color}) => (
-        <a href={href} target="_blank" aria-label={label}
+    {NETWORKS.map(({network, username, url, icon, color}) => (
+        <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Visit el perfil de ${username} en ${network}`}
             class="btn rounded-full"
             style={`background-color: ${color};`}
         >
