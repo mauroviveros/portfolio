@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@iconify-json/line-md": "^1.2.5",
-    "@iconify-json/logos": "^1.2.4",
+    "@iconify-json/skill-icons": "^1.2.0",
     "@iconify-json/tabler": "^1.2.16",
     "@tailwindcss/typography": "^0.5.16",
     "@typescript-eslint/parser": "^8.24.1",
