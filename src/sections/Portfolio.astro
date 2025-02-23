@@ -7,7 +7,7 @@ import Section from "@components/Section.astro";
 const projects = await getCollection("projects");
 ---
 <Section title="Proyectos" icon="tabler:code">
-    <ul>{ projects.map(async project => {
+    <ul class="flex flex-col gap-8">{ projects.map(async project => {
         const { Content } = await render(project);
         const image = import(`../assets/projects/${project.id}.webp`);
         const { title, techStack, repo, url} = project.data;
