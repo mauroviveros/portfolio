@@ -1,4 +1,5 @@
 ---
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 import Brand from '@components/Brand.astro';
 import Networks from '@components/Networks.astro';
 import SEO from '@components/SEO.astro';
@@ -28,5 +29,7 @@ const { title, description } = Astro.props;
           <span class="text-primary">Mauro Daniel viveros</span>
       </p>
     </footer>
+
+    <SpeedInsights>
   </body>
 </html>
