@@ -21,5 +21,5 @@ body > main, body > header, body > footer { @apply container mx-auto px-4 md:px-
     @apply prose-xl text-pretty text-slate-700 prose-strong:text-primary prose-a:text-primary prose-a:underline prose-blockquote:p-1;
 }
 #about-me > p{
- @apply text-2xl font-medium;
+ @apply text-xl sm:text-2xl font-medium;
 }
