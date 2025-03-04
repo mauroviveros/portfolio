@@ -17,23 +17,22 @@ collection.sort((a, b) => {
 ---
 
 <Section title="Experiencia" icon="tabler:certificate">
-    <ol class="relative border-s-4 mx-0 md:mx-10 border-gray-200 dark:border-gray-700">
-    <!-- <ol class="relative border-s-4 border-gray-200 dark:border-gray-700 flex flex-col items-start"> -->
+    <ol class="relative border-s-4 mx-0 md:mx-10 border-foreground">
         {
             collection.map(async milestone => {
                 const { type, title, organization, startDate, endDate } = milestone.data;
                 const { Content } = await render(milestone);
 
                 return (<li class="ms-7 mb-7">
-                    <div class="absolute w-11 h-11 flex items-center justify-center rounded-full mt-1.5 -start-6 bg-primary text-slate-200">
+                    <div class="absolute w-11 h-11 flex items-center justify-center rounded-full mt-1.5 -start-6 bg-primary text-background-hover">
                         <Icon name={`tabler:${type === 'work' ? 'building-skyscraper' : 'school'}`} size="1.5rem"/>
                     </div>
 
                     <section class="grid grid-cols-8 gap-3">
                         <header class="col-span-8 md:col-span-3 pb-6">
                             <h3 class="text-xl font-bold text-primary">{title}</h3>
-                            <h4 class="font-semibold text-xl text-gray-600">{organization}</h4>
-                            <div class="text-sm text-gray-600/80">
+                            <h4 class="font-semibold text-xl text-foreground-dark">{organization}</h4>
+                            <div class="text-sm text-foreground-light">
                                 <time datetime={getDateTime(startDate)}>
                                     {getDateFormat(startDate)}
                                 </time>
@@ -48,7 +47,7 @@ collection.sort((a, b) => {
                                 </time>
                             </div>
                         </header>
-                        <article class="col-span-8 md:col-span-5 text-gray-600">
+                        <article class="col-span-8 md:col-span-5 text-foreground">
                             <Content/>
                         </article>
                     </section>

@@ -22,9 +22,9 @@ const projects = await getCollection("projects");
                 />
 
                 <article class="flex flex-1 flex-col gap-4">
-                    <h3 class="text-4xl font-bold break-words text-slate-800">{title}</h3>
+                    <h3 class="text-4xl font-bold break-words text-foreground">{title}</h3>
 
-                    <div class="text-xl font-medium text-pretty text-slate-700 w-full">
+                    <div class="text-xl font-medium text-pretty text-foreground-light w-full h-full">
                         <Content />
                     </div>
 
@@ -40,7 +40,7 @@ const projects = await getCollection("projects");
                                 href={repo}
                                 target="_blank"
                                 aria-label={`Código fuente de ${title}`}
-                                class="btn rounded-lg bg-primary text-slate-100"
+                                class="btn rounded-lg bg-primary text-background-hover"
                             >
                                 Código <Icon name="tabler:brand-github" size="1.5rem"/>
                             </a>
@@ -50,7 +50,7 @@ const projects = await getCollection("projects");
                                 href={url}
                                 target="_blank"
                                 aria-label={`Demo de ${title}`}
-                                class="btn rounded-lg bg-primary text-slate-100"
+                                class="btn rounded-lg bg-primary text-background-hover"
                             >
                                 Demo <Icon name="tabler:external-link" size="1.5rem"/>
                             </a>
