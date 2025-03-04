@@ -1,7 +1,7 @@
 {
     "workbench.editor.customLabels.patterns": {
         "**/src/pages/**/*.astro": "${filename} - pages 📚",
-        "**/src/components/**/*.astro": "${filename} -  components 🧩",
+        "**/src/**/*.astro": "${filename} -  components 🧩",
         "**/src/layouts/**/*.astro": "${filename} - layouts 🏗️",
         "**/src/constants/**/*.ts": "${filename} - constants 🧱",
         "**/src/sections/**/*.ts": "${filename} - sections 📐",
