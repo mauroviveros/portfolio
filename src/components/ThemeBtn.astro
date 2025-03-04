@@ -1,0 +1,72 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Theme {
+    _id: string;
+    name: string;
+    icon: string;
+}
+
+const themes: Theme[] = [
+    { _id: 'dark', name: 'oscuro', icon: 'mdi:weather-night' },
+    { _id: 'light', name: 'claro', icon: 'mdi:white-balance-sunny' },
+    { _id: 'system', name: 'sistema', icon: 'mdi:monitor' },
+]
+
+---
+<article class="relative w-fit">
+    <button type="button" class="p-3 rounded-lg cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-800 transition-all duration-300 ease-in-out">
+        <Icon name="mdi:theme-light-dark" size="1.5rem"/>
+    </button>
+    <ul data-active class="hidden data-[active=true]:block absolute z-10 right-0 top-full mt-1 rounded border overflow-hidden border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900">
+        { themes.map(({ _id, name, icon }) => (
+            <li id={`theme-${_id}`} class="p-4 font-medium hover:bg-gray-200 dark:hover:bg-slate-800 data-[active=true]:bg-gray-300 data-[active=true]:dark:bg-slate-700 cursor-pointer flex gap-2 items-center">
+                <Icon name={icon} size="1.5rem"/>
+                <span>{ name }</span>
+            </li>
+        ))}
+    </ul>
+</article>
+
+<script>
+    const query = window.matchMedia("(prefers-color-scheme: dark)");
+    const btn = document.querySelector('button');
+    const ul = document.querySelector('ul');
+    const lis = document.querySelectorAll('li');
+
+    const setLiActive = (theme : string | null) => {
+        lis.forEach(li => {
+            const isActive = li.id.split('-')[1] === (theme || 'system');
+            li.setAttribute('data-active', String(isActive));
+        });
+    };
+
+    const changeTheme = () => {
+        const localTheme = localStorage.getItem('theme');
+        let theme = query?.matches ? 'dark' : 'light';
+        if(localTheme) theme = localTheme;
+        document.documentElement.setAttribute('data-theme', theme);
+        setLiActive(localTheme);
+    };
+
+    btn?.addEventListener('click', () => {
+        const isActive = ul?.getAttribute('data-active') === 'true';
+        ul?.setAttribute('data-active', String(!isActive));
+    });
+
+    lis.forEach(li => {
+        li.addEventListener('click', () => {
+            ul?.setAttribute('data-active', 'false');
+            const theme = li.id.split('-')[1];
+
+            if(theme === 'system') localStorage.removeItem('theme');
+            else localStorage.setItem('theme', theme);
+            changeTheme();
+        });
+    });
+
+    window.onload = () => {
+        query.addEventListener('change', () => changeTheme());
+        changeTheme();
+    }
+</script>
