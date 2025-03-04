@@ -1,13 +1,24 @@
-# Portfolio Mauro Daniel Viveros
+<div align="center">
+
+![Portfolio](https://drive.google.com/thumbnail?id=1FrUEiJhTyDv9zD1xPxMtXy3T3KLAARRq&sz=w960)
+
+# [Portfolio](https://mauroviveros.com.ar/)
+
 Personal portfolio of Mauro Daniel Viveros.
 This site showcases my projects, skills, and experience in frontend development.
 
+![GitHub last commit](https://img.shields.io/github/last-commit/mauroviveros/portfolio?logo=git)
+![GitHub License](https://img.shields.io/github/license/mauroviveros/portfolio?logo=github)
+![GitHub Repo stars](https://img.shields.io/github/stars/mauroviveros/portfolio)
+![GitHub watchers](https://img.shields.io/github/watchers/mauroviveros/portfolio)
+
 [![Astro][astro-badge]][astro-link]
 [![TailwindCSS][tailwind-badge]][tailwind-link]
+</div>
 
 ## 📦 Requirements
-- [NodeJS][nodejs-link] _v22.11.0_
-- [PNPM][pnpm-link] _v9.15.0_
+- [NodeJS][nodejs-link] _v22.14.0_
+- [PNPM][pnpm-link] _v10.5.2_
 
 ## 🧞 Commands
 | Command                | Action                                                         |
