@@ -1,0 +1,61 @@
+---
+import { getCollection, render } from "astro:content";
+import Section from "@components/Section.astro";
+import { Icon } from "astro-icon/components";
+
+const getDateTime = (date: Date) => date.toLocaleDateString('es', { year: 'numeric', month: 'long', day: 'numeric' });
+const getDateFormat = (date: Date) => date.toLocaleDateString('es', { year: 'numeric', month: 'long' });
+
+const collection = await getCollection("milestones");
+
+collection.sort((a, b) => {
+    const dateA = new Date(a.data.startDate);
+    const dateB = new Date(b.data.startDate);
+
+    return dateB.getTime() - dateA.getTime();
+});
+---
+
+<Section title="Experiencia" icon="tabler:certificate">
+    <ol class="relative border-s-4 mx-0 md:mx-10 border-gray-200 dark:border-gray-700">
+    <!-- <ol class="relative border-s-4 border-gray-200 dark:border-gray-700 flex flex-col items-start"> -->
+        {
+            collection.map(async milestone => {
+                const { type, title, organization, startDate, endDate } = milestone.data;
+                const { Content } = await render(milestone);
+
+                return (<li class="ms-7 mb-7">
+                    <div class="absolute w-11 h-11 flex items-center justify-center rounded-full mt-1.5 -start-6 bg-primary text-slate-200">
+                        <Icon name={`tabler:${type === 'work' ? 'building-skyscraper' : 'school'}`} size="1.5rem"/>
+                    </div>
+
+                    <section class="grid grid-cols-8 gap-3">
+                        <header class="col-span-8 md:col-span-3 pb-6">
+                            <h3 class="text-xl font-bold text-primary">{title}</h3>
+                            <h4 class="font-semibold text-xl text-gray-600">{organization}</h4>
+                            <div class="text-sm text-gray-600/80">
+                                <time datetime={getDateTime(startDate)}>
+                                    {getDateFormat(startDate)}
+                                </time>
+
+                                <span>-</span>
+
+                                <time datetime={getDateTime(endDate || new Date())}>
+                                    { endDate ?
+                                        getDateFormat(endDate) :
+                                        'presente'
+                                    }
+                                </time>
+                            </div>
+                        </header>
+                        <article class="col-span-8 md:col-span-5 text-gray-600">
+                            <Content/>
+                        </article>
+                    </section>
+                </li>
+            )})
+        }
+    </ol>
+</Section>
+
+
