@@ -1,9 +1,15 @@
 ---
 import Section from "@components/Section.astro";
-import {Content} from '../markdown/about.md';
+// import {Content} from '../markdown/about.md';
 import { useTranslations } from "@i18n";
+import { getEntry, render } from "astro:content";
 
-const t = useTranslations(Astro.currentLocale);
+const { currentLocale } = Astro;
+const t = useTranslations(currentLocale);
+
+const about = await getEntry("about", currentLocale || 'es');
+if(!about) return;
+const { Content } = await render(about);
 ---
 
 <Section title={t('section.about')} icon="tabler:info-circle">
@@ -11,11 +17,11 @@ const t = useTranslations(Astro.currentLocale);
         <Content/>
 
         <blockquote class="w-full md:w-3/4 border-2 border-dotted rounded-lg flex flex-col justify-center items-center mx-auto">
-            <p style="margin: 0;" class="text-center text-pretty italic font-medium">"Un experto es un hombre que ha dejado de pensar"</p>
+            <p style="margin: 0;" class="text-center text-pretty italic font-medium">{t('about.blockquote')}</p>
             <div class="text-center flex flex-col md:flex-row gap-0 md:gap-1 text-foreground-light">
                 <span>Frank Lloyd Wright</span>
                 <span>(1867-1959)</span>
-                <span>Arquitecto estadounidense</span>
+                <span>{t('about.blockquote.role')}</span>
             </div>
             
             <span></span>
