@@ -1,5 +1,8 @@
 ---
+import { useTranslations } from "@i18n";
 import { Icon } from "astro-icon/components";
+
+const t = useTranslations(Astro.currentLocale);
 
 interface Theme {
     _id: string;
@@ -8,14 +11,14 @@ interface Theme {
 }
 
 const themes: Theme[] = [
-    { _id: 'dark', name: 'oscuro', icon: 'mdi:weather-night' },
-    { _id: 'light', name: 'claro', icon: 'mdi:white-balance-sunny' },
-    { _id: 'system', name: 'sistema', icon: 'mdi:monitor' },
+    { _id: 'dark', name: t('theme.dark'), icon: 'mdi:weather-night' },
+    { _id: 'light', name: t('theme.light'), icon: 'mdi:white-balance-sunny' },
+    { _id: 'system', name: t('theme.system'), icon: 'mdi:monitor' },
 ]
 
 ---
 <article class="relative w-fit">
-    <button type="button" aria-label="Open theme dropdown" class="p-3 rounded-lg cursor-pointer hover:bg-background-hover transition-all duration-300 ease-in-out">
+    <button type="button" aria-label="Abre el menú de temas" class="p-3 rounded-lg cursor-pointer hover:bg-background-hover transition-all duration-300 ease-in-out">
         <Icon name="mdi:theme-light-dark" size="1.5rem"/>
     </button>
     <ul data-active class="hidden data-[active=true]:block absolute z-10 right-0 top-full mt-1 rounded border overflow-hidden border-background-hover bg-background">

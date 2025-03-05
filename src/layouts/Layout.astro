@@ -5,13 +5,15 @@ import Networks from '@components/Networks.astro';
 import SEO from '@components/SEO.astro';
 import Contact from '@sections/Contact.astro';
 import ThemeBtn from "@components/ThemeBtn.astro";
+import { useTranslations } from "@i18n";
 
 interface Props { title: string, description: string; };
-const { title, description } = Astro.props;
+const { currentLocale, props: { title, description } } = Astro;
+const t = useTranslations(currentLocale);
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={currentLocale}>
   <head>
     <SEO title={title} description={description}/>
   </head>
@@ -27,7 +29,7 @@ const { title, description } = Astro.props;
       <Contact/>
       <Networks/>
       <p class="text-base font-medium text-foreground-light text-center max-w-72">
-          Diseñado y construido con ❤️ por
+          {t('footer')}
           <span class="text-primary">Mauro Daniel viveros</span>
       </p>
     </footer>

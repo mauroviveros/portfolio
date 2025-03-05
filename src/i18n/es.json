@@ -1,0 +1,25 @@
+{
+    "theme.dark": "Oscuro",
+    "theme.light": "Claro",
+    "theme.system": "Sistema",
+
+    "hero.grettings": "¡Hola!",
+    "hero.name": "Soy",
+    "hero.role": "Desarrollador WEB | DEV-OPS",
+
+    "contact.invitation": "Mi correo está abierto a nuevas oportunidades… Si tenés algo en mente, mandá un mail y lo charlamos.",
+
+    "btn.download": "Descargar CV",
+    "btn.code": "Código",
+    "btn.demo": "Demo",
+
+    "label.network" : "Visita el perfil de ${username} en ${network}",
+    "label.dropdown": "Abre el menú de ${label}",
+    "label.email"   : "Enviar un correo a ${email}",
+    "label.copy"    : "Copia el correo de ${email}",
+    "label.cv"      : "Descargar el CV de ${name}",
+    "label.code"    : "Ver el código fuente de ${name}",
+    "label.demo"    : "Ver la demo de ${name}",
+
+    "footer": "Diseñado y construido con ❤️ por"
+}

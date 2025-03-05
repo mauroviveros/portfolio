@@ -10,7 +10,8 @@
       "@layouts/*": ["./layouts/*"],
       "@sections/*": ["./sections/*"],
       "@styles/*": ["./styles/*"],
-      "@utils/*": ["./utils/*"]
+      "@utils/*": ["./utils/*"],
+      "@i18n": ["./i18n"],
     }
   }
 }
