@@ -9,7 +9,9 @@ const t = useTranslations(currentLocale);
 const getDateTime = (date: Date) => date.toLocaleDateString(currentLocale, { year: 'numeric', month: 'long', day: 'numeric' });
 const getDateFormat = (date: Date) => date.toLocaleDateString(currentLocale, { year: 'numeric', month: 'long' });
 
-const collection = await getCollection("milestones");
+const collection = await getCollection("milestones", (item) => {
+    return item.id.startsWith(`${currentLocale}/`);
+});
 
 collection.sort((a, b) => {
     const dateA = new Date(a.data.startDate);
@@ -45,7 +47,7 @@ collection.sort((a, b) => {
                                 <time datetime={getDateTime(endDate || new Date())}>
                                     { endDate ?
                                         getDateFormat(endDate) :
-                                        'presente'
+                                        t('experience.current')
                                     }
                                 </time>
                             </div>
