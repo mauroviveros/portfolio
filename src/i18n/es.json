@@ -7,8 +7,6 @@
     "hero.identity": "Soy",
     "hero.role": "Desarrollador WEB | DEV-OPS",
 
-    "contact.invitation": "Mi correo está abierto a nuevas oportunidades… Si tenés algo en mente, mandá un mail y lo charlamos.",
-
     "btn.download": "Descargar CV",
     "btn.repo": "Código",
     "btn.demo": "Demo",
@@ -28,5 +26,7 @@
     "section.portfolio": "Proyectos",
     "section.experience": "Experiencia",
 
+    "seo.description": "Portfolio personal de Mauro Daniel Viveros. Desarrollador WEB y DevOps. Conocé quién soy, explorá mis proyectos y revisá mi experiencia profesional.",
+    "contact.invitation": "Mi correo está abierto a nuevas oportunidades… Si tenés algo en mente, mandá un mail y lo charlamos.",
     "footer": "Diseñado y construido con ❤️ por"
 }

@@ -7,8 +7,6 @@
     "hero.identity": "I'm",
     "hero.role": "WEB Developer | DEV-OPS",
 
-    "contact.invitation": "My email is open to new opportunities... If you have something in mind, send me an email and we'll talk about it.",
-
     "btn.download": "Download resume",
     "btn.repo": "Code",
     "btn.demo": "Demo",
@@ -21,11 +19,14 @@
     "label.resume"          : "Download {{name}}'s resume",
     "label.repo"            : "View the source code of {{title}}",
     "label.demo"            : "View the demo of {{title}}",
+    "label.language"        : "Change the language to {{language}}",
 
     "section.about": "About me",
     "section.contact": "Contact me",
     "section.portfolio": "Projects",
     "section.experience": "Experience",
 
+    "seo.description": "Personal portfolio of Mauro Daniel Viveros. WEB Developer and DevOps. Know who I am, explore my projects and check my professional experience.",
+    "contact.invitation": "My email is open to new opportunities... If you have something in mind, send me an email and we'll talk about it.",
     "footer": "Designed and built with ❤️ by"
 }
