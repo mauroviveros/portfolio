@@ -5,14 +5,14 @@ import { Icon } from "astro-icon/components";
 import Section from "@components/Section.astro";
 import { useTranslations } from "@i18n";
 
-const t = useTranslations(Astro.currentLocale);
+const { currentLocale } = Astro;
+const t = useTranslations(currentLocale);
 const projects = await getCollection("projects");
 ---
 <Section title={t('section.portfolio')} icon="tabler:code">
     <ul class="flex flex-col gap-8">{ projects.map(async project => {
-        const { Content } = await render(project);
         const image = import(`../assets/projects/${project.id}.webp`);
-        const { title, techStack, repo, url} = project.data;
+        const { title, techStack, repo, url, description} = project.data;
 
         return (
             <li class="flex flex-col md:flex-row gap-8">
@@ -27,7 +27,7 @@ const projects = await getCollection("projects");
                     <h3 class="text-4xl font-bold break-words text-foreground">{title}</h3>
 
                     <div class="text-xl font-medium text-pretty text-foreground-light w-full h-full">
-                        <Content />
+                        {description[currentLocale as 'es' | 'en' || 'es']}
                     </div>
 
                     <ul class="flex gap-2">

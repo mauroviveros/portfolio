@@ -1,3 +1,4 @@
+import { locales } from "@i18n";
 import { glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
@@ -6,6 +7,10 @@ export const schema = z.object({
     url: z.string().url().optional(),
     repo: z.string().url().optional(),
     techStack: z.array(z.string()),
+    description: z.object({
+        es: z.string(),
+        en: z.string(),
+    }),
 });
 
 export type Project = z.infer<typeof schema>;
