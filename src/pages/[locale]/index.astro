@@ -1,0 +1,10 @@
+---
+import App from "@components/App.astro";
+import { locales } from "@i18n";
+
+export const getStaticPaths = (() => {
+    return locales.map(({ _id }) => ({ params: { locale: _id } }));
+});
+
+---
+<App/>

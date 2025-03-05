@@ -1,0 +1,31 @@
+{
+    "theme.dark": "Dark",
+    "theme.light": "light",
+    "theme.system": "System",
+
+    "hero.grettings": "Hi!",
+    "hero.identity": "I'm",
+    "hero.role": "WEB Developer | DEV-OPS",
+
+    "contact.invitation": "My email is open to new opportunities... If you have something in mind, send me an email and we'll talk about it.",
+
+    "btn.download": "Download resume",
+    "btn.repo": "Code",
+    "btn.demo": "Demo",
+
+    "label.network"         : "Visit {{username}}'s profile on {{network}}",
+    "label.dropdown.theme"  : "Open the Theme menu",
+    "label.dropdown.lang"   : "Open the Language menu",
+    "label.email"           : "Send an email to {{email}}",
+    "label.copy"            : "Copy {{email}}'s email",
+    "label.resume"          : "Download {{name}}'s resume",
+    "label.repo"            : "View the source code of {{title}}",
+    "label.demo"            : "View the demo of {{title}}",
+
+    "section.about": "About me",
+    "section.contact": "Contact me",
+    "section.portfolio": "Projects",
+    "section.experience": "Experience",
+
+    "footer": "Designed and built with ❤️ by"
+}

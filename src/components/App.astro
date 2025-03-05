@@ -1,0 +1,17 @@
+---
+import Hero from '@sections/Hero.astro';
+import Portfolio from '@sections/Portfolio.astro';
+import Layout from '@layouts/Layout.astro';
+import About from '@sections/About.astro';
+import Experience from '@sections/Experience.astro';
+
+const title = "Mauro Viveros | portfolio";
+const description = "Portfolio personal de Mauro Daniel Viveros. Desarrollador WEB y DevOps. Conocé quién soy, explorá mis proyectos y revisá mi experiencia profesional.";
+---
+<Layout title={title} description={description}>
+	<Hero/>
+	<Portfolio/>
+	<Experience/>
+	<!-- <Skills/> -->
+	<About/>
+</Layout>

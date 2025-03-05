@@ -1,7 +1,11 @@
 import es from './es.json';
+import en from './en.json';
 
-const translations = { es, en: {} };
-export const locales = Object.keys(translations);
+const translations = { es, en };
+export const locales = [
+    { _id: 'es', name: 'Español', icon: "twemoji:flag-argentina" },
+    { _id: 'en', name: 'English', icon: "twemoji:flag-united-states" },
+]
 
 const replaceVars = (string: string, variables?: Record<string, string>) => {
     if(!variables) return string;

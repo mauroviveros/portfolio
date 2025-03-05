@@ -17,11 +17,11 @@ const themes: Theme[] = [
 ]
 
 ---
-<article class="relative w-fit">
+<article class="relative w-fit" id="dropdown-theme">
     <button type="button" aria-label={t('label.dropdown.theme')} class="p-3 rounded-lg cursor-pointer hover:bg-background-hover transition-all duration-300 ease-in-out">
         <Icon name="mdi:theme-light-dark" size="1.5rem"/>
     </button>
-    <ul data-active class="hidden data-[active=true]:block absolute z-10 right-0 top-full mt-1 rounded border overflow-hidden border-background-hover bg-background">
+    <ul  data-active class="hidden data-[active=true]:block absolute z-10 right-0 top-full mt-1 rounded border overflow-hidden border-background-hover bg-background">
         { themes.map(({ _id, name, icon }) => (
             <li id={`theme-${_id}`} class="p-4 font-medium hover:bg-background-hover data-[active=true]:bg-background-active cursor-pointer flex gap-2 items-center">
                 <Icon name={icon} size="1.5rem"/>
@@ -33,9 +33,9 @@ const themes: Theme[] = [
 
 <script>
     const query = window.matchMedia("(prefers-color-scheme: dark)");
-    const btn = document.querySelector('button');
-    const ul = document.querySelector('ul');
-    const lis = document.querySelectorAll('li');
+    const btn = document.querySelector('#dropdown-theme button');
+    const ul = document.querySelector('#dropdown-theme ul');
+    const lis = document.querySelectorAll('#dropdown-theme ul li');
 
     const setLiActive = (theme : string | null) => {
         lis.forEach(li => {

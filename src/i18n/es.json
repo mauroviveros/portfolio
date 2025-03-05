@@ -15,11 +15,13 @@
 
     "label.network"         : "Visita el perfil de {{username}} en {{network}}",
     "label.dropdown.theme"  : "Abre el menú de Temas",
+    "label.dropdown.lang"   : "Abre el menú de Idiomas",
     "label.email"           : "Enviar un correo a {{email}}",
     "label.copy"            : "Copia el correo de {{email}}",
     "label.resume"          : "Descargar el CV de {{name}}",
     "label.repo"            : "Ver el código fuente de {{title}}",
     "label.demo"            : "Ver la demo de {{title}}",
+    "label.language"        : "Cambiar el idioma a {{language}}",
 
     "section.about": "Sobre mí",
     "section.contact": "Contáctame",
