@@ -68,8 +68,13 @@ const themes: Theme[] = [
         });
     });
 
+    document.addEventListener('click', e => {
+        if(!(!btn?.contains(e.target as Node) && !ul?.contains(e.target as Node))) return;
+        ul?.setAttribute('data-active', 'false');
+    });
+
     window.onload = () => {
         query.addEventListener('change', () => changeTheme());
         changeTheme();
-    }
+    };
 </script>

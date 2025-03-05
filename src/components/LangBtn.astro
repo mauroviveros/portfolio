@@ -38,4 +38,9 @@ const t = useTranslations(currentLocale);
             ul?.setAttribute('data-active', 'false');
         });
     });
+
+    document.addEventListener('click', e => {
+        if(!(!btn?.contains(e.target as Node) && !ul?.contains(e.target as Node))) return;
+        ul?.setAttribute('data-active', 'false');
+    });
 </script>
