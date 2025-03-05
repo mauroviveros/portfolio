@@ -3,10 +3,12 @@ import { getCollection, render } from "astro:content";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Section from "@components/Section.astro";
+import { useTranslations } from "@i18n";
 
+const t = useTranslations(Astro.currentLocale);
 const projects = await getCollection("projects");
 ---
-<Section title="Proyectos" icon="tabler:code">
+<Section title={t('section.portfolio')} icon="tabler:code">
     <ul class="flex flex-col gap-8">{ projects.map(async project => {
         const { Content } = await render(project);
         const image = import(`../assets/projects/${project.id}.webp`);
@@ -39,20 +41,20 @@ const projects = await getCollection("projects");
                             <a
                                 href={repo}
                                 target="_blank"
-                                aria-label={`Código fuente de ${title}`}
+                                aria-label={t('label.repo', { title })}
                                 class="btn rounded-lg bg-primary text-background-hover"
                             >
-                                Código <Icon name="tabler:brand-github" size="1.5rem"/>
+                                {t('btn.repo')} <Icon name="tabler:brand-github" size="1.5rem"/>
                             </a>
                         )}
                         { url && (
                             <a
                                 href={url}
                                 target="_blank"
-                                aria-label={`Demo de ${title}`}
+                                aria-label={t('label.demo', { title })}
                                 class="btn rounded-lg bg-primary text-background-hover"
                             >
-                                Demo <Icon name="tabler:external-link" size="1.5rem"/>
+                                {t('btn.demo')} <Icon name="tabler:external-link" size="1.5rem"/>
                             </a>
                         )}
                     </nav>

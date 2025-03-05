@@ -18,7 +18,7 @@ const themes: Theme[] = [
 
 ---
 <article class="relative w-fit">
-    <button type="button" aria-label="Abre el menú de temas" class="p-3 rounded-lg cursor-pointer hover:bg-background-hover transition-all duration-300 ease-in-out">
+    <button type="button" aria-label={t('label.dropdown.theme')} class="p-3 rounded-lg cursor-pointer hover:bg-background-hover transition-all duration-300 ease-in-out">
         <Icon name="mdi:theme-light-dark" size="1.5rem"/>
     </button>
     <ul data-active class="hidden data-[active=true]:block absolute z-10 right-0 top-full mt-1 rounded border overflow-hidden border-background-hover bg-background">

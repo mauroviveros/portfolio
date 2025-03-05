@@ -1,10 +1,12 @@
 ---
 import Section from "@components/Section.astro";
 import {Content} from '../markdown/about.md';
+import { useTranslations } from "@i18n";
 
+const t = useTranslations(Astro.currentLocale);
 ---
 
-<Section title="Sobre mí" icon="tabler:info-circle">
+<Section title={t('section.about')} icon="tabler:info-circle">
     <article id="about-me">
         <Content/>
 

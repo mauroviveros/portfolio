@@ -1,6 +1,9 @@
 ---
 import { NETWORKS } from "@constants";
+import { useTranslations } from "@i18n";
 import { Icon } from 'astro-icon/components'
+
+const t = useTranslations(Astro.currentLocale);
 ---
 <article class="flex gap-2">
     {NETWORKS.map(({network, username, url, icon, color}) => (
@@ -8,7 +11,7 @@ import { Icon } from 'astro-icon/components'
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Visit el perfil de ${username} en ${network}`}
+            aria-label={t('label.network', { username, network })}
             class="btn rounded-full"
             style={`background-color: ${color};`}
         >

@@ -2,9 +2,12 @@
 import { getCollection, render } from "astro:content";
 import Section from "@components/Section.astro";
 import { Icon } from "astro-icon/components";
+import { useTranslations } from "@i18n";
 
-const getDateTime = (date: Date) => date.toLocaleDateString('es', { year: 'numeric', month: 'long', day: 'numeric' });
-const getDateFormat = (date: Date) => date.toLocaleDateString('es', { year: 'numeric', month: 'long' });
+const { currentLocale } = Astro;
+const t = useTranslations(currentLocale);
+const getDateTime = (date: Date) => date.toLocaleDateString(currentLocale, { year: 'numeric', month: 'long', day: 'numeric' });
+const getDateFormat = (date: Date) => date.toLocaleDateString(currentLocale, { year: 'numeric', month: 'long' });
 
 const collection = await getCollection("milestones");
 
@@ -16,7 +19,7 @@ collection.sort((a, b) => {
 });
 ---
 
-<Section title="Experiencia" icon="tabler:certificate">
+<Section title={t('section.experience')} icon="tabler:certificate">
     <ol class="relative border-s-4 mx-0 md:mx-10 border-background-hover">
         {
             collection.map(async milestone => {

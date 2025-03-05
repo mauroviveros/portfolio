@@ -4,22 +4,27 @@
     "theme.system": "Sistema",
 
     "hero.grettings": "¡Hola!",
-    "hero.name": "Soy",
+    "hero.identity": "Soy",
     "hero.role": "Desarrollador WEB | DEV-OPS",
 
     "contact.invitation": "Mi correo está abierto a nuevas oportunidades… Si tenés algo en mente, mandá un mail y lo charlamos.",
 
     "btn.download": "Descargar CV",
-    "btn.code": "Código",
+    "btn.repo": "Código",
     "btn.demo": "Demo",
 
-    "label.network" : "Visita el perfil de ${username} en ${network}",
-    "label.dropdown": "Abre el menú de ${label}",
-    "label.email"   : "Enviar un correo a ${email}",
-    "label.copy"    : "Copia el correo de ${email}",
-    "label.cv"      : "Descargar el CV de ${name}",
-    "label.code"    : "Ver el código fuente de ${name}",
-    "label.demo"    : "Ver la demo de ${name}",
+    "label.network"         : "Visita el perfil de {{username}} en {{network}}",
+    "label.dropdown.theme"  : "Abre el menú de Temas",
+    "label.email"           : "Enviar un correo a {{email}}",
+    "label.copy"            : "Copia el correo de {{email}}",
+    "label.resume"          : "Descargar el CV de {{name}}",
+    "label.repo"            : "Ver el código fuente de {{title}}",
+    "label.demo"            : "Ver la demo de {{title}}",
+
+    "section.about": "Sobre mí",
+    "section.contact": "Contáctame",
+    "section.portfolio": "Proyectos",
+    "section.experience": "Experiencia",
 
     "footer": "Diseñado y construido con ❤️ por"
 }

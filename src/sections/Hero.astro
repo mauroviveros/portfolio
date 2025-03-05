@@ -14,13 +14,13 @@ const resume: Record<string, string> = {
 <section class="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between h-dvh py-16 gap-4 md:gap-8">
     <hgroup class="flex flex-col gap-3 text-center md:text-left">
         <h1 class="text-3xl md:text-6xl font-bold text-foreground">{t('hero.grettings')} ✌️</h1>
-        <h2 class="text-3xl md:text-6xl font-bold text-foreground">{t('hero.name')} <span class="text-primary">Mauro Viveros</span></h2>
+        <h2 class="text-3xl md:text-6xl font-bold text-foreground">{t('hero.identity')} <span class="text-primary">Mauro Viveros</span></h2>
         <p class="text-xl md:text-3xl font-bold text-foreground-light">{t('hero.role')}</p>
         <article class="flex justify-center md:justify-normal items-center flex-wrap-reverse gap-4">
             <a
                 href={resume[currentLocale || 'es']}
                 target="_blank"
-                aria-label="Descargar mi curriculum profesional"
+                aria-label={t('label.resume', { name: 'Mauro Viveros' })}
                 class="btn rounded-lg bg-primary text-background-hover"
             >
                 {t('btn.download')}
