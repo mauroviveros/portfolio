@@ -29,6 +29,13 @@ html, body{ height: 100%; }
 body{ @apply transition-colors duration-300 bg-background text-foreground}
 body > main, body > header, body > footer { @apply container mx-auto px-4 md:px-8 md:max-w-6xl; }
 
+body:after, body:before{
+    @apply bg-primary opacity-10 content-[''] fixed w-56 h-56 rounded-full blur-3xl -z-10;
+}
+body:after{ @apply top-1/4 right-1/4; }
+body:before{ @apply bottom-1/4 left-1/4; }
+
+
 .btn{ @apply flex gap-2 font-semibold shadow duration-300 hover:shadow-xl hover:-translate-y-1; }
 .btn.rounded-lg{ @apply py-2 px-4; }
 .btn.rounded-full{ @apply p-3; }
