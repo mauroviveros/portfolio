@@ -7,19 +7,19 @@ const t = useTranslations(currentLocale);
 ---
 
 <article class="relative w-fit" id="dropdown-lang">
-    <button type="button" aria-label={t('label.dropdown.lang')} class="p-3 rounded-lg cursor-pointer hover:bg-background-hover transition-all duration-300 ease-in-out">
-        <Icon name="mdi:translate" size="1.5rem"/>
-    </button>
-    <ul data-active class="hidden data-[active=true]:block absolute z-10 right-0 top-full mt-1 rounded border overflow-hidden border-background-hover bg-background">
-        { locales.map(({ _id, name, icon }) => (
-            <li data-active={currentLocale === _id ? 'true' : 'false'} id={`theme-${_id}`} class="font-medium hover:bg-background-hover data-[active=true]:bg-background-active cursor-pointer">
-                <a href={`/${_id}`} aria-label={t('label.language', { language: name })} class="p-4 flex gap-2 items-center">
-                    <Icon name={icon} size="1.5rem"/>
-                    <span>{ name }</span>
-                </a>
-            </li>
-        ))}
-    </ul>
+  <button type="button" aria-label={t('label.dropdown.lang')} class="p-3 rounded-lg cursor-pointer hover:bg-background-hover transition-all duration-300 ease-in-out">
+    <Icon name="mdi:translate" size="1.5rem"/>
+  </button>
+  <ul data-active class="hidden data-[active=true]:block absolute z-10 right-0 top-full mt-1 rounded border overflow-hidden border-background-hover bg-background">
+    { locales.map(({ _id, name, icon }) => (
+      <li data-active={currentLocale === _id ? 'true' : 'false'} id={`theme-${_id}`} class="font-medium hover:bg-background-hover data-[active=true]:bg-background-active cursor-pointer">
+        <a href={`/${_id}`} aria-label={t('label.language', { language: name })} class="p-4 flex gap-2 items-center">
+          <Icon name={icon} size="1.5rem"/>
+          <span>{ name }</span>
+        </a>
+      </li>
+    ))}
+  </ul>
 </article>
 
 <script>
@@ -29,18 +29,18 @@ const t = useTranslations(currentLocale);
 
 
     btn?.addEventListener('click', () => {
-        const isActive = ul?.getAttribute('data-active') === 'true';
-        ul?.setAttribute('data-active', String(!isActive));
+      const isActive = ul?.getAttribute('data-active') === 'true';
+      ul?.setAttribute('data-active', String(!isActive));
     });
 
     lis.forEach(li => {
-        li.addEventListener('click', () => {
-            ul?.setAttribute('data-active', 'false');
-        });
+      li.addEventListener('click', () => {
+        ul?.setAttribute('data-active', 'false');
+      });
     });
 
     document.addEventListener('click', e => {
-        if(!(!btn?.contains(e.target as Node) && !ul?.contains(e.target as Node))) return;
-        ul?.setAttribute('data-active', 'false');
+      if(!(!btn?.contains(e.target as Node) && !ul?.contains(e.target as Node))) return;
+      ul?.setAttribute('data-active', 'false');
     });
 </script>

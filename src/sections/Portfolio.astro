@@ -10,56 +10,56 @@ const t = useTranslations(currentLocale);
 const projects = await getCollection("projects");
 ---
 <Section title={t('section.portfolio')} icon="tabler:code">
-    <ul class="flex flex-col gap-8">{ projects.map(async project => {
-        const image = import(`../assets/projects/${project.id}.webp`);
-        const { title, techStack, repo, url, description} = project.data;
+  <ul class="flex flex-col gap-8">{ projects.map(async project => {
+    const image = import(`../assets/projects/${project.id}.webp`);
+    const { title, techStack, repo, url, description} = project.data;
 
-        return (
-            <li class="flex flex-col md:flex-row gap-8">
-                <Image
-                    src={image}
-                    width={480} height={320}
-                    class="object-cover rounded-lg"
-                    alt={title}
-                />
+    return (
+      <li class="flex flex-col md:flex-row gap-8">
+        <Image
+          src={image}
+          width={480} height={320}
+          class="object-cover rounded-lg"
+          alt={title}
+        />
 
-                <article class="flex flex-1 flex-col gap-4">
-                    <h3 class="text-4xl font-bold break-words text-foreground">{title}</h3>
+        <article class="flex flex-1 flex-col gap-4">
+          <h3 class="text-4xl font-bold break-words text-foreground">{title}</h3>
 
-                    <div class="text-xl font-medium text-pretty text-foreground-light w-full h-full">
-                        {description[currentLocale as 'es' | 'en' || 'es']}
-                    </div>
+          <div class="text-xl font-medium text-pretty text-foreground-light w-full h-full">
+            {description[currentLocale as 'es' | 'en' || 'es']}
+          </div>
 
-                    <ul class="flex gap-2">
-                        {techStack.map(tech => (
-                            <li><Icon name={`skill-icons:${tech}`} size="2rem"/></li>
-                        ))}
-                    </ul>
+          <ul class="flex gap-2">
+            {techStack.map(tech => (
+              <li><Icon name={`skill-icons:${tech}`} size="2rem"/></li>
+            ))}
+          </ul>
 
-                    <nav class="flex gap-4">
-                        { repo && (
-                            <a
-                                href={repo}
-                                target="_blank"
-                                aria-label={t('label.repo', { title })}
-                                class="btn rounded-lg bg-primary text-background-hover"
-                            >
-                                {t('btn.repo')} <Icon name="tabler:brand-github" size="1.5rem"/>
-                            </a>
-                        )}
-                        { url && (
-                            <a
-                                href={url}
-                                target="_blank"
-                                aria-label={t('label.demo', { title })}
-                                class="btn rounded-lg bg-primary text-background-hover"
-                            >
-                                {t('btn.demo')} <Icon name="tabler:external-link" size="1.5rem"/>
-                            </a>
-                        )}
-                    </nav>
-                </article>
-            </li>
-        )
-    }) }</ul>
+          <nav class="flex gap-4">
+            { repo && (
+              <a
+                href={repo}
+                target="_blank"
+                aria-label={t('label.repo', { title })}
+                class="btn rounded-lg bg-primary text-background-hover"
+              >
+                {t('btn.repo')} <Icon name="tabler:brand-github" size="1.5rem"/>
+              </a>
+            )}
+            { url && (
+              <a
+                href={url}
+                target="_blank"
+                aria-label={t('label.demo', { title })}
+                class="btn rounded-lg bg-primary text-background-hover"
+              >
+                {t('btn.demo')} <Icon name="tabler:external-link" size="1.5rem"/>
+              </a>
+            )}
+          </nav>
+        </article>
+      </li>
+    )
+  }) }</ul>
 </Section>

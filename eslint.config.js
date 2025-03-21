@@ -5,6 +5,7 @@ export default [
   ...eslintPluginAstro.configs.recommended,
   {
     rules: {
+      "indent": ["error", 2]
       // override/add rules settings here, such as:
       // "astro/no-set-html-directive": "error"
     }

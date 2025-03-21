@@ -11,24 +11,24 @@ interface Theme {
 }
 
 const themes: Theme[] = [
-    { _id: 'dark', name: t('theme.dark'), icon: 'mdi:weather-night' },
-    { _id: 'light', name: t('theme.light'), icon: 'mdi:white-balance-sunny' },
-    { _id: 'system', name: t('theme.system'), icon: 'mdi:monitor' },
+  { _id: 'dark', name: t('theme.dark'), icon: 'mdi:weather-night' },
+  { _id: 'light', name: t('theme.light'), icon: 'mdi:white-balance-sunny' },
+  { _id: 'system', name: t('theme.system'), icon: 'mdi:monitor' },
 ]
 
 ---
 <article class="relative w-fit" id="dropdown-theme">
-    <button type="button" aria-label={t('label.dropdown.theme')} class="p-3 rounded-lg cursor-pointer hover:bg-background-hover transition-all duration-300 ease-in-out">
-        <Icon name="mdi:theme-light-dark" size="1.5rem"/>
-    </button>
-    <ul  data-active class="hidden data-[active=true]:block absolute z-10 right-0 top-full mt-1 rounded border overflow-hidden border-background-hover bg-background">
-        { themes.map(({ _id, name, icon }) => (
-            <li id={`theme-${_id}`} class="p-4 font-medium hover:bg-background-hover data-[active=true]:bg-background-active cursor-pointer flex gap-2 items-center">
-                <Icon name={icon} size="1.5rem"/>
-                <span>{ name }</span>
-            </li>
-        ))}
-    </ul>
+  <button type="button" aria-label={t('label.dropdown.theme')} class="p-3 rounded-lg cursor-pointer hover:bg-background-hover transition-all duration-300 ease-in-out">
+    <Icon name="mdi:theme-light-dark" size="1.5rem"/>
+  </button>
+  <ul  data-active class="hidden data-[active=true]:block absolute z-10 right-0 top-full mt-1 rounded border overflow-hidden border-background-hover bg-background">
+    { themes.map(({ _id, name, icon }) => (
+      <li id={`theme-${_id}`} class="p-4 font-medium hover:bg-background-hover data-[active=true]:bg-background-active cursor-pointer flex gap-2 items-center">
+        <Icon name={icon} size="1.5rem"/>
+        <span>{ name }</span>
+      </li>
+    ))}
+  </ul>
 </article>
 
 <script>
@@ -38,43 +38,43 @@ const themes: Theme[] = [
     const lis = document.querySelectorAll('#dropdown-theme ul li');
 
     const setLiActive = (theme : string | null) => {
-        lis.forEach(li => {
-            const isActive = li.id.split('-')[1] === (theme || 'system');
-            li.setAttribute('data-active', String(isActive));
-        });
+      lis.forEach(li => {
+        const isActive = li.id.split('-')[1] === (theme || 'system');
+        li.setAttribute('data-active', String(isActive));
+      });
     };
 
     const changeTheme = () => {
-        const localTheme = localStorage.getItem('theme');
-        let theme = query?.matches ? 'dark' : 'light';
-        if(localTheme) theme = localTheme;
-        document.documentElement.setAttribute('data-theme', theme);
-        setLiActive(localTheme);
+      const localTheme = localStorage.getItem('theme');
+      let theme = query?.matches ? 'dark' : 'light';
+      if(localTheme) theme = localTheme;
+      document.documentElement.setAttribute('data-theme', theme);
+      setLiActive(localTheme);
     };
 
     btn?.addEventListener('click', () => {
-        const isActive = ul?.getAttribute('data-active') === 'true';
-        ul?.setAttribute('data-active', String(!isActive));
+      const isActive = ul?.getAttribute('data-active') === 'true';
+      ul?.setAttribute('data-active', String(!isActive));
     });
 
     lis.forEach(li => {
-        li.addEventListener('click', () => {
-            ul?.setAttribute('data-active', 'false');
-            const theme = li.id.split('-')[1];
+      li.addEventListener('click', () => {
+        ul?.setAttribute('data-active', 'false');
+        const theme = li.id.split('-')[1];
 
-            if(theme === 'system') localStorage.removeItem('theme');
-            else localStorage.setItem('theme', theme);
-            changeTheme();
-        });
+        if(theme === 'system') localStorage.removeItem('theme');
+        else localStorage.setItem('theme', theme);
+        changeTheme();
+      });
     });
 
     document.addEventListener('click', e => {
-        if(!(!btn?.contains(e.target as Node) && !ul?.contains(e.target as Node))) return;
-        ul?.setAttribute('data-active', 'false');
+      if(!(!btn?.contains(e.target as Node) && !ul?.contains(e.target as Node))) return;
+      ul?.setAttribute('data-active', 'false');
     });
 
     window.onload = () => {
-        query.addEventListener('change', () => changeTheme());
-        changeTheme();
+      query.addEventListener('change', () => changeTheme());
+      changeTheme();
     };
 </script>

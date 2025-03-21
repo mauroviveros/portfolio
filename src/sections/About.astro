@@ -13,20 +13,20 @@ const { Content } = await render(about);
 ---
 
 <Section title={t('section.about')} icon="tabler:info-circle">
-    <article id="about-me">
-        <Content/>
+  <article id="about-me">
+    <Content/>
 
-        <blockquote class="w-full md:w-3/4 border-2 border-dotted rounded-lg flex flex-col justify-center items-center mx-auto">
-            <p style="margin: 0;" class="text-center text-pretty italic font-medium">{t('about.blockquote')}</p>
-            <div class="text-center flex flex-col md:flex-row gap-0 md:gap-1 text-foreground-light">
-                <span>Frank Lloyd Wright</span>
-                <span>(1867-1959)</span>
-                <span>{t('about.blockquote.role')}</span>
-            </div>
+    <blockquote class="w-full md:w-3/4 border-2 border-dotted rounded-lg flex flex-col justify-center items-center mx-auto">
+      <p style="margin: 0;" class="text-center text-pretty italic font-medium">{t('about.blockquote')}</p>
+      <div class="text-center flex flex-col md:flex-row gap-0 md:gap-1 text-foreground-light">
+        <span>Frank Lloyd Wright</span>
+        <span>(1867-1959)</span>
+        <span>{t('about.blockquote.role')}</span>
+      </div>
             
-            <span></span>
-        </blockquote>
-    </article>
+      <span></span>
+    </blockquote>
+  </article>
 </Section>
 
 <!-- width: 75%;

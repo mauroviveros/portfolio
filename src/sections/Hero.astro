@@ -7,36 +7,36 @@ import { useTranslations } from "@i18n";
 const { currentLocale } = Astro;
 const t = useTranslations(currentLocale);
 const resume: Record<string, string> = {
-    es: "https://drive.google.com/file/d/1VcraKv9SzyZbt4AdjD0nrj4b5g8gS8LI/view?usp=sharing",
-    en: "https://drive.google.com/file/d/1Cjb48NV1ENIvhqeOpkLUYK9TcXXzh4z_/view?usp=sharing"
+  es: "https://drive.google.com/file/d/1VcraKv9SzyZbt4AdjD0nrj4b5g8gS8LI/view?usp=sharing",
+  en: "https://drive.google.com/file/d/1Cjb48NV1ENIvhqeOpkLUYK9TcXXzh4z_/view?usp=sharing"
 }
 ---
 
 <section class="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between h-dvh py-16 gap-4 md:gap-8">
-    <hgroup class="flex flex-col gap-3 text-center md:text-left">
-        <h1 class="text-3xl md:text-6xl font-bold text-foreground">{t('hero.grettings')} ✌️</h1>
-        <h2 class="text-3xl md:text-6xl font-bold text-foreground">{t('hero.identity')} <span class="text-primary">Mauro Viveros</span></h2>
-        <p class="text-xl md:text-3xl font-bold text-foreground-light">{t('hero.role')}</p>
-        <article class="flex justify-center md:justify-normal items-center flex-wrap-reverse gap-4">
-            <a
-                href={resume[currentLocale || 'es']}
-                target="_blank"
-                aria-label={t('label.resume', { name: 'Mauro Viveros' })}
-                class="btn rounded-lg bg-primary text-background-hover"
-            >
-                {t('btn.download')}
-            </a>
+  <hgroup class="flex flex-col gap-3 text-center md:text-left">
+    <h1 class="text-3xl md:text-6xl font-bold text-foreground">{t('hero.grettings')} ✌️</h1>
+    <h2 class="text-3xl md:text-6xl font-bold text-foreground">{t('hero.identity')} <span class="text-primary">Mauro Viveros</span></h2>
+    <p class="text-xl md:text-3xl font-bold text-foreground-light">{t('hero.role')}</p>
+    <article class="flex justify-center md:justify-normal items-center flex-wrap-reverse gap-4">
+      <a
+        href={resume[currentLocale || 'es']}
+        target="_blank"
+        aria-label={t('label.resume', { name: 'Mauro Viveros' })}
+        class="btn rounded-lg bg-primary text-background-hover"
+      >
+        {t('btn.download')}
+      </a>
 
-            <Networks/>
-        </article>
-    </hgroup>
+      <Networks/>
+    </article>
+  </hgroup>
 
-    <Picture
-        src={image}
-        width={400} height={400}
-        alt="Mauro Daniel Viveros"
-        class="object-cover border-primary border-4 size-48 ms:size-64 md:size-80 lg:size-[26rem]"
-        style="border-radius: 63% 37% 48% 52% / 60% 57% 43% 40%;"
-        loading="eager"
-    />
+  <Picture
+    src={image}
+    width={400} height={400}
+    alt="Mauro Daniel Viveros"
+    class="object-cover border-primary border-4 size-48 ms:size-64 md:size-80 lg:size-[26rem]"
+    style="border-radius: 63% 37% 48% 52% / 60% 57% 43% 40%;"
+    loading="eager"
+  />
 </section>

@@ -5,6 +5,7 @@ import Layout from '@layouts/Layout.astro';
 import About from '@sections/About.astro';
 import Experience from '@sections/Experience.astro';
 import { useTranslations } from '@i18n';
+import TopBtn from './TopBtn.astro';
 
 const t = useTranslations(Astro.currentLocale);
 
@@ -12,9 +13,11 @@ const title = "Mauro Viveros | portfolio";
 
 ---
 <Layout title={title} description={t('seo.description')}>
-	<Hero/>
-	<Portfolio/>
-	<Experience/>
-	<!-- <Skills/> -->
-	<About/>
+  <Hero/>
+  <Portfolio/>
+  <Experience/>
+  <!-- <Skills/> -->
+  <About/>
+
+  <TopBtn/>
 </Layout>
