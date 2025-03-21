@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<button type="button"
+  id="top-btn"
+  aria-label="Back to top"
+  data-hidden="true"
+  class="fixed data-[hidden=true]:hidden bottom-6 right-6 p-3 rounded-lg cursor-pointer border-2 border-background-active bg-background-hover hover:bg-background-active transition-all duration-300 ease-in-out"
+>
+  <Icon name="mdi:arrow-up" size="1.5rem"/>
+
+</button>
+
+<script is:inline>
+  const btn = document.querySelector('#top-btn');
+  btn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  window.addEventListener('scroll', () => {
+    const isHidden = window.scrollY < 200;
+    btn.setAttribute('data-hidden', String(isHidden));
+  });
+</script>

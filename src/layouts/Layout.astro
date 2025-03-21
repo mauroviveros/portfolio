@@ -7,6 +7,7 @@ import Contact from '@sections/Contact.astro';
 import ThemeBtn from "@components/ThemeBtn.astro";
 import { useTranslations } from "@i18n";
 import LangBtn from "@components/LangBtn.astro";
+import TopBtn from "@components/TopBtn.astro";
 
 interface Props { title: string, description: string; };
 const { currentLocale, props: { title, description } } = Astro;
@@ -38,6 +39,7 @@ const t = useTranslations(currentLocale);
       </p>
     </footer>
 
+    <TopBtn client:load/>
     <SpeedInsights/>
   </body>
 </html>
