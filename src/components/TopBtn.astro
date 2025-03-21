@@ -16,7 +16,7 @@ import { Icon } from "astro-icon/components";
   const btn = document.querySelector('#top-btn');
   btn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
   window.addEventListener('scroll', () => {
-    const isHidden = window.scrollY < 200;
+    const isHidden = window.scrollY < window.innerHeight;
     btn.setAttribute('data-hidden', String(isHidden));
   });
 </script>
