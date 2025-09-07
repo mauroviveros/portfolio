@@ -16,6 +16,7 @@
     "astro": "astro",
     "lint": "eslint"
   },
+  "packageManager": "pnpm@10.15.1",
   "dependencies": {
     "@astrojs/vercel": "^8.2.7",
     "@fontsource-variable/space-grotesk": "^5.2.8",
