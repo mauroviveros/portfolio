@@ -1,0 +1,11 @@
+{
+  "username": "mviveros",
+  "name": ["Mauro" , "Daniel"],
+  "surname": ["Viveros"],
+  "email": "maurod.viveros@gmail.com",
+  "role": "Desarrollador WEB | DEV-OPS",
+  "cv_url": {
+    "es": "https://drive.google.com/file/d/1VcraKv9SzyZbt4AdjD0nrj4b5g8gS8LI/view?usp=sharing",
+    "en": "https://drive.google.com/file/d/1Cjb48NV1ENIvhqeOpkLUYK9TcXXzh4z_/view?usp=sharing"
+  }
+}

@@ -1,22 +1,28 @@
 ---
-import { Icon } from "astro-icon/components";
+import { useTranslations } from '@i18n';
+import { Icon } from 'astro-icon/components';
+
+const t = useTranslations(Astro.currentLocale);
 ---
 
-<button type="button"
+<button
+  type="button"
   id="top-btn"
-  aria-label="Back to top"
+  aria-label={t('label.back_to_top')}
   data-hidden="true"
-  class="fixed data-[hidden=true]:hidden bottom-6 right-6 p-3 rounded-lg cursor-pointer border-2 border-background-active bg-background-hover hover:bg-background-active transition-all duration-300 ease-in-out"
+  class="border-background-active bg-background-hover hover:bg-background-active fixed right-6 bottom-6 cursor-pointer rounded-lg border-2 p-3 transition-all duration-300 ease-in-out data-[hidden=true]:hidden"
 >
-  <Icon name="mdi:arrow-up" size="1.5rem"/>
-
+  <Icon name="tabler:arrow-up" size="1.5rem" />
 </button>
 
 <script is:inline>
+  // eslint-disable-next-line prettier/prettier
   const btn = document.querySelector('#top-btn');
-  btn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  btn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
   window.addEventListener('scroll', () => {
     const isHidden = window.scrollY < window.innerHeight;
-    btn.setAttribute('data-hidden', String(isHidden));
+    btn?.setAttribute('data-hidden', String(isHidden));
   });
 </script>

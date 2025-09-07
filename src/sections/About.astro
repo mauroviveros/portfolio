@@ -1,41 +1,27 @@
 ---
-import Section from "@components/Section.astro";
-// import {Content} from '../markdown/about.md';
-import { useTranslations } from "@i18n";
-import { getEntry, render } from "astro:content";
+import { getEntry, render } from 'astro:content';
+import { Section } from '@components';
+import { locales, useTranslations } from '@i18n';
 
-const { currentLocale } = Astro;
-const t = useTranslations(currentLocale);
+const t = useTranslations(Astro.currentLocale);
 
-const about = await getEntry("about", currentLocale || 'es');
-if(!about) return;
+const about = await getEntry('about', Astro.currentLocale || locales[0].code);
+if (!about) return;
 const { Content } = await render(about);
+const { quote, author, lifespan, occupation } = about.data;
 ---
 
 <Section title={t('section.about')} icon="tabler:info-circle">
-  <article id="about-me">
-    <Content/>
-
-    <blockquote class="w-full md:w-3/4 border-2 border-dotted rounded-lg flex flex-col justify-center items-center mx-auto">
-      <p style="margin: 0;" class="text-center text-pretty italic font-medium">{t('about.blockquote')}</p>
-      <div class="text-center flex flex-col md:flex-row gap-0 md:gap-1 text-foreground-light">
-        <span>Frank Lloyd Wright</span>
-        <span>(1867-1959)</span>
-        <span>{t('about.blockquote.role')}</span>
-      </div>
-            
-      <span></span>
-    </blockquote>
+  <article
+    class="prose-xl text-foreground-light prose-strong:text-primary prose-a:text-primary prose-a:underline prose-blockquote:p-1; prose-p:text-balance text-xl font-medium sm:text-2xl md:px-8"
+  >
+    <Content />
   </article>
+  <blockquote class="mx-auto mt-4 w-full rounded-lg border-2 border-dotted p-1 md:w-3/4">
+    <p class="text-center font-medium text-balance italic">{quote}</p>
+    <div class="flex flex-col justify-center gap-0 text-center text-xs md:flex-row md:gap-1">
+      <span>{author} ({lifespan})</span>
+      <span>{occupation}</span>
+    </div>
+  </blockquote>
 </Section>
-
-<!-- width: 75%;
-    display: inline-flex;
-    border: 2px dotted;
-    border-radius: 8px;
-    padding: 0.5rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem auto;
-    text-align: center; -->

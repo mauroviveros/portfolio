@@ -1,34 +1,40 @@
 ---
-import Section from "@components/Section.astro";
-import { useTranslations } from "@i18n";
-import { Icon } from "astro-icon/components";
+import { Section } from '@components';
+import { useTranslations } from '@i18n';
+import { Icon } from 'astro-icon/components';
 
 const t = useTranslations(Astro.currentLocale);
-const email = "maurod.viveros@gmail.com";
-
+const email = 'maurod.viveros@gmail.com';
 ---
-<Section title={t('section.contact')} icon="tabler:mail-forward">
-  <p class="text-2xl font-medium text-center text-pretty text-foreground-light max-w-lg mx-auto my-10">{t('contact.invitation')}</p>
 
-  <article class="flex justify-center items-center gap-2 max-w-sm mx-auto">
-    <span id="portfolio_email" class="flex-1 p-2 rounded-lg truncate border text-zinc-800 dark:text-zinc-300 dark border-zinc-800 dark:border-zinc-300 bg-zinc-300 dark:bg-zinc-800">{email}</span>
-    <a href={"mailto:" + email} aria-label={t('label.email', { email })} class="btn rounded-lg bg-primary text-background-hover">
-      <Icon name="tabler:send" size="1.5rem"/>
+<Section title={t('section.contact')} icon="tabler:mail-forward">
+  <p
+    class="text-foreground-light mx-auto my-10 max-w-lg text-center text-2xl font-medium text-pretty"
+  >
+    {t('contact.invitation')}
+  </p>
+
+  <article class="mx-auto flex max-w-sm justify-center gap-2">
+    <span
+      class="flex-1 truncate rounded-lg border border-zinc-800 bg-zinc-300 p-2 text-zinc-800 dark:border-zinc-300 dark:bg-zinc-800 dark:text-zinc-300"
+    >
+      {email}
+    </span>
+
+    <a
+      href={`mailto:${email}`}
+      aria-label={t('label.send_email', { email })}
+      class="btn bg-primary text-background-hover rounded-lg"
+    >
+      <Icon name="tabler:send" size="1.5rem" />
     </a>
 
-    <button type="button" aria-label={t('label.copy', { email })} class="btn rounded-lg bg-primary text-background-hover">
-      <Icon name="tabler:copy" size="1.5rem"/>
+    <button
+      type="button"
+      aria-label={t('label.copy_email', { email })}
+      class="btn bg-primary text-background-hover rounded-lg"
+    >
+      <Icon name="tabler:copy" size="1.5rem" />
     </button>
   </article>
 </Section>
-
-<!-- <script>
-    const copyToClipboard = () => {
-        const email = document.querySelector('#portfolio_email')?.textContent || '';
-        navigator.clipboard.writeText(email);
-    };
-
-    document.querySelector('#btn_copy')?.addEventListener('click', () => {
-        copyToClipboard();
-    });
-</script> -->

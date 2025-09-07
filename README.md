@@ -17,8 +17,8 @@ This site showcases my projects, skills, and experience in frontend development.
 </div>
 
 ## 📦 Requirements
-- [NodeJS][nodejs-link] _v22.14.0_
-- [PNPM][pnpm-link] _v10.6.3_
+- [NodeJS][nodejs-link] _v22.19.0_
+- [PNPM][pnpm-link] _v10.15.1_
 
 ## 🧞 Commands
 | Command                | Action                                                         |

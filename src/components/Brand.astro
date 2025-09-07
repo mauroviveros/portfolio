@@ -1,13 +1,20 @@
 ---
-import { Image } from "astro:assets";
+import { useTranslations } from '@i18n';
+import { Image } from 'astro:assets';
+import { USER } from '@constants';
 
-const label = "mviveros | portfolio";
+const { username } = USER;
+const t = useTranslations(Astro.currentLocale);
 ---
-<a href="/" class="flex items-center gap-1 text-current transition-colors duration-300 ease-in-out font-semibold">
-  <Image
-    src="/favicon.svg" width={32} height={32}
-    alt={`${label}`}
-    class="size-8 rounded-full"/>
 
-  <span>{label}</span>
+<a href="/" class="flex items-center gap-1 font-semibold">
+  <Image
+    src="/favicon.svg"
+    height={32}
+    width={32}
+    alt={t('label.brand', { username })}
+    class="size-8 rounded-full"
+    loading="eager"
+  />
+  <span>{t('seo.brand', { username })}</span>
 </a>

@@ -1,46 +1,62 @@
 ---
-import { locales, useTranslations } from "@i18n";
-import { Icon } from "astro-icon/components";
+import { locales, useTranslations } from '@i18n';
+import { Icon } from 'astro-icon/components';
 
-const { currentLocale } = Astro;
-const t = useTranslations(currentLocale);
+const t = useTranslations(Astro.currentLocale);
 ---
 
 <article class="relative w-fit" id="dropdown-lang">
-  <button type="button" aria-label={t('label.dropdown.lang')} class="p-3 rounded-lg cursor-pointer hover:bg-background-hover transition-all duration-300 ease-in-out">
-    <Icon name="mdi:translate" size="1.5rem"/>
+  <button
+    type="button"
+    aria-label={t('label.dropdown_lang')}
+    class="hover:bg-background-hover cursor-pointer rounded-lg p-3 transition-all duration-300 ease-in-out"
+  >
+    <Icon name="tabler:language" size="1.5rem" />
   </button>
-  <ul data-active class="hidden data-[active=true]:block absolute z-10 right-0 top-full mt-1 rounded border overflow-hidden border-background-hover bg-background">
-    { locales.map(({ _id, name, icon }) => (
-      <li data-active={currentLocale === _id ? 'true' : 'false'} id={`theme-${_id}`} class="font-medium hover:bg-background-hover data-[active=true]:bg-background-active cursor-pointer">
-        <a href={`/${_id}`} aria-label={t('label.language', { language: name })} class="p-4 flex gap-2 items-center">
-          <Icon name={icon} size="1.5rem"/>
-          <span>{ name }</span>
-        </a>
-      </li>
-    ))}
+  <ul
+    data-active
+    class="border-background-hover bg-background absolute top-full right-0 z-10 mt-1 hidden overflow-hidden rounded border data-[active=true]:block"
+  >
+    {
+      locales.map(({ code, language, icon }) => (
+        <li
+          data-active={Astro.currentLocale === code ? 'true' : 'false'}
+          id={`theme-${code}`}
+          class="hover:bg-background-hover data-[active=true]:bg-background-active cursor-pointer font-medium"
+        >
+          <a
+            href={`/${code}`}
+            aria-label={t('label.language', { language })}
+            class="flex items-center gap-2 p-4"
+          >
+            <Icon name={icon} size="1.5rem" />
+            <span>{language}</span>
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </article>
 
 <script>
-    const btn = document.querySelector('#dropdown-lang button');
-    const ul = document.querySelector('#dropdown-lang ul');
-    const lis = document.querySelectorAll('#dropdown-lang ul li');
+  // eslint-disable-next-line prettier/prettier
+  const btn = document.querySelector('#dropdown-lang button');
+  const ul = document.querySelector('#dropdown-lang ul');
+  const lis = document.querySelectorAll('#dropdown-lang ul li');
 
+  btn?.addEventListener('click', () => {
+    const isActive = ul?.getAttribute('data-active') === 'true';
+    ul?.setAttribute('data-active', String(!isActive));
+  });
 
-    btn?.addEventListener('click', () => {
-      const isActive = ul?.getAttribute('data-active') === 'true';
-      ul?.setAttribute('data-active', String(!isActive));
-    });
-
-    lis.forEach(li => {
-      li.addEventListener('click', () => {
-        ul?.setAttribute('data-active', 'false');
-      });
-    });
-
-    document.addEventListener('click', e => {
-      if(!(!btn?.contains(e.target as Node) && !ul?.contains(e.target as Node))) return;
+  lis.forEach((li) => {
+    li.addEventListener('click', () => {
       ul?.setAttribute('data-active', 'false');
     });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!(!btn?.contains(e.target as Node) && !ul?.contains(e.target as Node))) return;
+    ul?.setAttribute('data-active', 'false');
+  });
 </script>

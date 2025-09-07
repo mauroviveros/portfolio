@@ -1,45 +1,43 @@
 ---
-import  SpeedInsights  from "@vercel/speed-insights/astro"
-import Brand from '@components/Brand.astro';
-import Networks from '@components/Networks.astro';
-import SEO from '@components/SEO.astro';
-import Contact from '@sections/Contact.astro';
-import ThemeBtn from "@components/ThemeBtn.astro";
-import { useTranslations } from "@i18n";
-import LangBtn from "@components/LangBtn.astro";
-import TopBtn from "@components/TopBtn.astro";
+import SpeedInsights from '@vercel/speed-insights/astro';
+import { Brand, Networks, SEO, TopBtn, ThemeBtn, LangBtn } from '@components';
+import { useTranslations } from '@i18n';
+import { Contact } from '@sections';
 
-interface Props { title: string, description: string; };
-const { currentLocale, props: { title, description } } = Astro;
-const t = useTranslations(currentLocale);
+const t = useTranslations(Astro.currentLocale);
 ---
 
 <!doctype html>
-<html lang={currentLocale}>
+<html lang={Astro.currentLocale}>
   <head>
-    <SEO title={title} description={description}/>
+    <SEO />
   </head>
   <body>
-    <header class="absolute left-0 right-0 py-4 flex justify-between">
-      <Brand/>
-      <section class="flex gap-2">
-        <LangBtn/>
-        <ThemeBtn/>
-      </section>
+    <header class="absolute right-0 left-0 z-10 flex h-20 items-center py-4">
+      <div class="container mx-auto flex justify-between px-4">
+        <Brand />
+        <section class="flex gap-2">
+          <LangBtn />
+          <ThemeBtn />
+        </section>
+      </div>
     </header>
     <main>
       <slot />
     </main>
-    <footer class="h-dvh p-4 md:p-8 flex flex-col items-center justify-center gap-4 md:gap-8">
-      <Contact/>
-      <Networks/>
-      <p class="text-base font-medium text-foreground-light text-center max-w-72">
-        {t('footer')}
-        <span class="text-primary">Mauro Daniel viveros</span>
-      </p>
+    <footer class="flex h-dvh flex-col items-center justify-center">
+      <div class="container mx-auto flex flex-col items-center gap-4 md:gap-8">
+        <Contact />
+        <Networks />
+
+        <p
+          class="text-foreground-light max-w-72 text-center font-medium"
+          set:html={t('footer.credit', { name: 'Mauro Daniel Viveros' })}
+        />
+      </div>
     </footer>
 
-    <TopBtn/>
-    <SpeedInsights/>
+    <TopBtn />
+    <SpeedInsights />
   </body>
 </html>

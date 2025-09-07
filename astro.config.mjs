@@ -1,22 +1,25 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
-import { locales } from './src/i18n/index';
+import { locales } from './src/i18n';
+import { WEBSITE } from './src/constants';
+import vercel from '@astrojs/vercel';
 
-const localesList = locales.map((locale) => locale._id);
+const localesList = locales.map((locale) => locale.code);
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://mauroviveros.com.ar",
+  site: WEBSITE.url,
   adapter: vercel(),
   integrations: [icon()],
+
   i18n: {
     locales: localesList,
     defaultLocale: localesList[0],
   },
+
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
 });

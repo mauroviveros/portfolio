@@ -1,21 +1,23 @@
 ---
-import { NETWORKS } from "@constants";
-import { useTranslations } from "@i18n";
-import { Icon } from 'astro-icon/components'
-
+import { NETWORKS } from '@constants';
+import { useTranslations } from '@i18n';
+import { Icon } from 'astro-icon/components';
 const t = useTranslations(Astro.currentLocale);
 ---
-<article class="flex gap-2">
-  {NETWORKS.map(({network, username, url, icon, color}) => (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={t('label.network', { username, network })}
-      class="btn rounded-full"
-      style={`background-color: ${color};`}
-    >
-      <Icon name={icon} size="1rem" class="text-zinc-100"/>
-    </a>
-  ))}
-</article>
+
+<div class="flex gap-2">
+  {
+    NETWORKS.map(({ network, username, url, color, icon }) => (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={t('label.network', { username, network })}
+        class="btn rounded-full"
+        style={`background-color: ${color};`}
+      >
+        <Icon name={icon} class="text-zinc-100" />
+      </a>
+    ))
+  }
+</div>
