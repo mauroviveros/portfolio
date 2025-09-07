@@ -14,7 +14,8 @@ const t = useTranslations(Astro.currentLocale);
     width={32}
     alt={t('label.brand', { username })}
     class="size-8 rounded-full"
-    loading="eager"
+    loading="lazy"
+    decoding="async"
   />
   <span>{t('seo.brand', { username })}</span>
 </a>

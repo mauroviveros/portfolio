@@ -40,12 +40,13 @@ const name = getName();
 
     <Picture
       src={image}
-      width={400}
-      height={400}
+      width={320}
+      height={320}
       alt={t('hero.picture_alt', { name })}
-      class="border-primary ms:size-64 size-48 border-4 object-cover md:size-80 lg:size-[26rem]"
+      class="border-primary ms:w-64 w-48 border-4 object-cover md:w-80 lg:w-[26rem]"
       style="border-radius: 63% 37% 48% 52% / 60% 57% 43% 40%;"
-      loading="eager"
+      loading="lazy"
+      decoding="async"
     />
   </article>
 </Section>
