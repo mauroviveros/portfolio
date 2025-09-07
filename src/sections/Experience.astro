@@ -1,15 +1,17 @@
 ---
-import { getCollection, render } from "astro:content";
-import Section from "@components/Section.astro";
-import { Icon } from "astro-icon/components";
-import { useTranslations } from "@i18n";
+import { getCollection, render } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+import { useTranslations } from '@i18n';
+import { Section } from '@components';
 
 const { currentLocale } = Astro;
 const t = useTranslations(currentLocale);
-const getDateTime = (date: Date) => date.toLocaleDateString(currentLocale, { year: 'numeric', month: 'long', day: 'numeric' });
-const getDateFormat = (date: Date) => date.toLocaleDateString(currentLocale, { year: 'numeric', month: 'long' });
+const getDateTime = (date: Date) =>
+  date.toLocaleDateString(currentLocale, { year: 'numeric', month: 'long', day: 'numeric' });
+const getDateFormat = (date: Date) =>
+  date.toLocaleDateString(currentLocale, { year: 'numeric', month: 'long' });
 
-const collection = await getCollection("milestones", (item) => {
+const collection = await getCollection('experiences', (item) => {
   return item.id.startsWith(`${currentLocale}/`);
 });
 
@@ -22,44 +24,42 @@ collection.sort((a, b) => {
 ---
 
 <Section title={t('section.experience')} icon="tabler:certificate">
-  <ol class="relative border-s-4 mx-0 md:mx-10 border-background-hover">
+  <ol class="border-background-hover relative mx-0 border-s-4 md:mx-10">
     {
-      collection.map(async milestone => {
+      collection.map(async (milestone) => {
         const { type, title, organization, startDate, endDate } = milestone.data;
         const { Content } = await render(milestone);
 
-        return (<li class="ms-7 mb-7">
-          <div class="absolute w-11 h-11 flex items-center justify-center rounded-full mt-1.5 -start-6 bg-primary text-background-hover">
-            <Icon name={`tabler:${type === 'work' ? 'building-skyscraper' : 'school'}`} size="1.5rem"/>
-          </div>
+        return (
+          <li class="ms-7 mb-7">
+            <div class="bg-primary text-background-hover absolute -start-6 mt-1.5 flex h-11 w-11 items-center justify-center rounded-full">
+              <Icon
+                name={`tabler:${type === 'work' ? 'building-skyscraper' : 'school'}`}
+                size="1.5rem"
+              />
+            </div>
 
-          <section class="grid grid-cols-8 gap-3">
-            <header class="col-span-8 md:col-span-3 pb-6">
-              <h3 class="text-xl font-bold text-primary">{title}</h3>
-              <h4 class="font-semibold text-xl text-foreground-dark">{organization}</h4>
-              <div class="text-sm text-foreground-light">
-                <time datetime={getDateTime(startDate)}>
-                  {getDateFormat(startDate)}
-                </time>
+            <section class="grid grid-cols-8 gap-3">
+              <header class="col-span-8 pb-6 md:col-span-3">
+                <h3 class="text-primary text-xl font-bold">{title}</h3>
+                <h4 class="text-foreground-dark text-xl font-semibold">{organization}</h4>
+                <div class="text-foreground-light text-sm">
+                  <time datetime={getDateTime(startDate)}>{getDateFormat(startDate)}</time>
 
-                <span>-</span>
+                  <span>-</span>
 
-                <time datetime={getDateTime(endDate || new Date())}>
-                  { endDate ?
-                    getDateFormat(endDate) :
-                    t('experience.current')
-                  }
-                </time>
-              </div>
-            </header>
-            <article class="col-span-8 md:col-span-5 text-foreground">
-              <Content/>
-            </article>
-          </section>
-        </li>
-        )})
+                  <time datetime={getDateTime(endDate || new Date())}>
+                    {endDate ? getDateFormat(endDate) : t('experience.current_date')}
+                  </time>
+                </div>
+              </header>
+              <article class="text-foreground col-span-8 md:col-span-5">
+                <Content />
+              </article>
+            </section>
+          </li>
+        );
+      })
     }
   </ol>
 </Section>
-
-

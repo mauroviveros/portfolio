@@ -10,8 +10,7 @@ export const schema = z.object({
     endDate: z.date().optional()
 });
 
-export type Milestone = z.infer<typeof schema>;
-export const milestones = defineCollection({
-    loader: glob({ base: './src/contents/milestones/', pattern: '**/*.md', }),
+export const experiences = defineCollection({
+    loader: glob({ base: './src/contents/experiences/', pattern: '**/*.md', }),
     schema
 });

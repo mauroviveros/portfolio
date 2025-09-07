@@ -1,4 +1,4 @@
 import { about } from "contents/about";
-// import { milestones } from "contents/milestones";
+import { experiences } from "contents/experiences";
 // import { projects } from "contents/projects";
-export const collections = { about };
+export const collections = { about, experiences };
