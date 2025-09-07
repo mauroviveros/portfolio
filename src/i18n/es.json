@@ -3,27 +3,32 @@
   "hero.identity": "Soy <span class=\"text-primary\">{{ name }}</span>",
   "hero.picture_alt": "Foto de {{ name }}",
 
+  "btn.demo": "Demo",
   "btn.download_cv": "Descargar CV",
-  "btn.theme_light": "Claro",
+  "btn.repo": "Código",
   "btn.theme_dark": "Oscuro",
+  "btn.theme_light": "Claro",
   "btn.theme_system": "sistema",
 
-  "label.network": "Visita el perfil de {{username}} en {{network}}",
-  "label.dropdown_theme": "Abre el menú de Temas",
-  "label.dropdown_lang": "Abre el menú de Idiomas",
-  "label.download_cv": "Descargar el CV de {{name}}",
-  "label.send_email": "Enviar un correo a {{email}}",
-  "label.copy_email": "Copia el correo de {{email}}",
   "label.brand": "Porfolio de {{username}}",
+  "label.copy_email": "Copia el correo de {{email}}",
+  "label.demo": "Ver la demo de {{title}}",
+  "label.download_cv": "Descargar el CV de {{name}}",
+  "label.dropdown_lang": "Abre el menú de Idiomas",
+  "label.dropdown_theme": "Abre el menú de Temas",
   "label.language": "Cambiar el idioma a {{language}}",
+  "label.network": "Visita el perfil de {{username}} en {{network}}",
+  "label.repo": "Ver el código fuente de {{title}}",
+  "label.send_email": "Enviar un correo a {{email}}",
 
   "section.about": "Sobre mí",
   "section.contact": "Contáctame",
   "section.experience": "Experiencia",
+  "section.projects": "Proyectos",
 
   "contact.invitation": "Mi correo está abierto a nuevas oportunidades… Si tenés algo en mente, mandá un mail y lo charlamos.",
   "experience.current_date": "Presente",
-  "seo.description": "Porfolio personal de {{name}}. {{role}}. Conocé quién soy, explorá mis proyectos y revisá mi experiencia profesional.",
+  "footer.credit": "Diseñado y construido con ❤️ por <span class=\"text-primary\">{{ name }}</span>",
   "seo.brand": "{{username}} | porfolio",
-  "footer.credit": "Diseñado y construido con ❤️ por <span class=\"text-primary\">{{ name }}</span>"
+  "seo.description": "Porfolio personal de {{name}}. {{role}}. Conocé quién soy, explorá mis proyectos y revisá mi experiencia profesional."
 }

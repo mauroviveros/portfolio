@@ -1,0 +1,74 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import { useTranslations } from '@i18n';
+import { Section } from '@components';
+
+const { currentLocale } = Astro;
+const t = useTranslations(currentLocale);
+const projects = await getCollection('projects');
+if (projects.length === 0) return;
+---
+
+<Section title={t('section.projects')} icon="tabler:code">
+  <ul class="flex flex-col gap-8">
+    {
+      projects.map(async (project) => {
+        const image = import(`../assets/projects/${project.id}.webp`);
+        const { title, techStack, repo, url, description } = project.data;
+
+        return (
+          <li class="flex flex-col gap-8 md:flex-row">
+            <Image
+              src={image}
+              width={480}
+              height={320}
+              class="rounded-lg object-cover"
+              alt={title}
+            />
+
+            <article class="flex flex-1 flex-col gap-4">
+              <h3 class="text-foreground text-4xl font-bold break-words">{title}</h3>
+
+              <div class="text-foreground-light h-full w-full text-xl font-medium text-pretty">
+                {description[(currentLocale as 'es' | 'en') || 'es']}
+              </div>
+
+              <ul class="flex gap-2">
+                {techStack.map((tech) => (
+                  <li>
+                    <Icon name={`skill-icons:${tech}`} size="2rem" />
+                  </li>
+                ))}
+              </ul>
+
+              <nav class="flex gap-4">
+                {repo && (
+                  <a
+                    href={repo}
+                    target="_blank"
+                    aria-label={t('label.repo', { title })}
+                    class="btn bg-primary text-background-hover rounded-lg"
+                  >
+                    {t('btn.repo')} <Icon name="tabler:brand-github" size="1.5rem" />
+                  </a>
+                )}
+                {url && (
+                  <a
+                    href={url}
+                    target="_blank"
+                    aria-label={t('label.demo', { title })}
+                    class="btn bg-primary text-background-hover rounded-lg"
+                  >
+                    {t('btn.demo')} <Icon name="tabler:external-link" size="1.5rem" />
+                  </a>
+                )}
+              </nav>
+            </article>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Section>

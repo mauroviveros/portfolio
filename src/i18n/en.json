@@ -3,25 +3,32 @@
   "hero.identity": "I'm <span class=\"text-primary\">{{ name }}</span>",
   "hero.picture_alt": "Photo of {{ name }}",
 
+  "btn.demo": "Demo",
   "btn.download_cv": "Download CV",
-  "btn.theme_light": "Light",
+  "btn.repo": "Code",
   "btn.theme_dark": "Dark",
+  "btn.theme_light": "Light",
   "btn.theme_system": "System",
 
-  "label.network": "Visit {{username}}'s profile on {{network}}",
-  "label.dropdown_theme": "Open the Theme menu",
-  "label.dropdown_lang": "Open the Language menu",
-  "label.download_cv": "Download {{name}}'s CV",
-  "label.send_email": "Send an email to {{email}}",
-  "label.copy_email": "Copy {{email}}'s email",
   "label.brand": "Portfolio of {{username}}",
+  "label.copy_email": "Copy {{email}}'s email",
+  "label.demo": "View the demo of {{title}}",
+  "label.download_cv": "Download {{name}}'s CV",
+  "label.dropdown_lang": "Open the Language menu",
+  "label.dropdown_theme": "Open the Theme menu",
   "label.language": "Change language to {{language}}",
+  "label.network": "Visit {{username}}'s profile on {{network}}",
+  "label.repo": "View the source code of {{title}}",
+  "label.send_email": "Send an email to {{email}}",
 
   "section.about": "About Me",
   "section.contact": "Contact Me",
+  "section.experience": "Experience",
+  "section.projects": "Projects",
 
   "contact.invitation": "My email is open to new opportunities… If you have something in mind, send an email and we can discuss it.",
-  "seo.description": "Personal portfolio of {{name}}. {{role}}. Get to know who I am, explore my projects, and check out my professional experience.",
+  "experience.current_date": "Current",
+  "footer.credit": "Designed and built with ❤️ by <span class=\"text-primary\">{{ name }}</span>",
   "seo.brand": "{{username}} | portfolio",
-  "footer.credit": "Designed and built with ❤️ by <span class=\"text-primary\">{{ name }}</span>"
+  "seo.description": "Personal portfolio of {{name}}. {{role}}. Get to know who I am, explore my projects, and check out my professional experience."
 }
