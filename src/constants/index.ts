@@ -7,7 +7,7 @@ interface User {
   name: string[];
   surname: string[];
   email: string;
-  role: string;
+  role: Record<string, string>;
   cv_url: Record<string, string>;
 }
 

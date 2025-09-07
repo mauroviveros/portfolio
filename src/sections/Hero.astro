@@ -20,7 +20,9 @@ const name = getName();
         <p set:html={t('hero.identity', { name })} />
       </h1>
 
-      <p class="text-foreground-light text-xl font-bold text-balance md:text-3xl">{role}</p>
+      <p class="text-foreground-light text-xl font-bold text-balance md:text-3xl">
+        {role[Astro.currentLocale || locales[0].code]}
+      </p>
 
       <div class="flex flex-wrap-reverse items-center justify-center gap-4 md:justify-normal">
         <a
