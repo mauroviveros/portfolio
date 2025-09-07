@@ -11,13 +11,13 @@ const { class: className, title, icon } = Astro.props;
 <section class={`relative w-full flex flex-col justify-center px-4 py-16 ${className}`}>
   {
     title && icon && (
-      <h2 class="text-foreground-dark absolute top-0 left-0 ml-4 flex items-center gap-3 text-4xl font-semibold">
-        {icon && <Icon name={icon} size="2rem" />}
+      <h2 class="text-foreground-dark absolute top-0 left-0 ml-4 flex items-center gap-3 text-4xl font-semibold md:ml-8">
+        {icon && <Icon name={icon} size="2.25rem" />}
         {title}
       </h2>
     )
   }
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-10">
     <slot />
   </div>
 </section>
