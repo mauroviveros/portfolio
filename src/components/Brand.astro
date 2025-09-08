@@ -15,6 +15,7 @@ const t = useTranslations(Astro.currentLocale);
     alt={t('label.brand', { username })}
     class="size-8 rounded-full"
     fetchpriority="high"
+    loading="eager"
     decoding="async"
   />
   <span>{t('seo.brand', { username })}</span>

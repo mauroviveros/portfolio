@@ -11,6 +11,16 @@ const t = useTranslations(Astro.currentLocale);
 <html lang={Astro.currentLocale}>
   <head>
     <SEO />
+    <script async type="text/javascript">
+      (function () {
+        // eslint-disable-next-line prettier/prettier
+        const query = window.matchMedia('(prefers-color-scheme: dark)');
+        const theme = localStorage.getItem('theme') || query.matches ? 'dark' : 'light';
+        if (theme && ['dark', 'light'].includes(theme)) {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+      })();
+    </script>
   </head>
   <body>
     <header class="absolute right-0 left-0 z-10 flex h-20 items-center py-4">

@@ -45,27 +45,17 @@ const themes: Theme[] = [
     }
   </ul>
 </article>
-
 <script>
   const query = window.matchMedia('(prefers-color-scheme: dark)');
   const btn = document.querySelector('#dropdown-theme button');
   const ul = document.querySelector('#dropdown-theme ul');
   // eslint-disable-next-line prettier/prettier
   const lis = document.querySelectorAll('#dropdown-theme ul li button');
-
   const setLiActive = (theme: string | null) => {
     lis.forEach((li) => {
       const isActive = li.id.split('-')[1] === (theme || 'system');
       li.setAttribute('data-active', String(isActive));
     });
-  };
-
-  const changeTheme = () => {
-    const localTheme = localStorage.getItem('theme');
-    let theme = query?.matches ? 'dark' : 'light';
-    if (localTheme) theme = localTheme;
-    document.documentElement.setAttribute('data-theme', theme);
-    setLiActive(localTheme);
   };
 
   btn?.addEventListener('click', () => {
@@ -76,11 +66,16 @@ const themes: Theme[] = [
   lis.forEach((li) => {
     li.addEventListener('click', () => {
       ul?.setAttribute('data-active', 'false');
-      const theme = li.id.split('-')[1];
+      let theme = li.id.split('-')[1];
+      setLiActive(theme);
 
-      if (theme === 'system') localStorage.removeItem('theme');
-      else localStorage.setItem('theme', theme);
-      changeTheme();
+      if (theme === 'system') {
+        localStorage.removeItem('theme');
+        theme = query?.matches ? 'dark' : 'light';
+      } else {
+        localStorage.setItem('theme', theme);
+      }
+      document.documentElement.setAttribute('data-theme', theme);
     });
   });
 
@@ -90,7 +85,15 @@ const themes: Theme[] = [
   });
 
   window.onload = () => {
-    query.addEventListener('change', () => changeTheme());
-    changeTheme();
+    const theme = localStorage.getItem('theme');
+    setLiActive(theme);
+
+    query.addEventListener('change', () => {
+      if (!theme || theme === 'system') {
+        let theme = query?.matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        setLiActive('system');
+      }
+    });
   };
 </script>

@@ -30,6 +30,7 @@ html[data-theme=dark]{
 @layer base {
   body {
     @apply bg-background text-foreground font-space-grotesk;
+    @apply transition-colors duration-1000;
     &:after, &:before {
       @apply bg-primary opacity-15 content-[''] fixed w-56 h-56 rounded-full blur-3xl -z-10;
     }
