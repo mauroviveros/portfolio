@@ -8,7 +8,7 @@
   "btn.repo": "Código",
   "btn.theme_dark": "Oscuro",
   "btn.theme_light": "Claro",
-  "btn.theme_system": "sistema",
+  "btn.theme_system": "Sistema",
 
   "label.brand": "Porfolio de {{username}}",
   "label.copy_email": "Copia el correo de {{email}}",
