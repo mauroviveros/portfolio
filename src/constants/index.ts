@@ -25,11 +25,11 @@ interface Network {
   icon: string;
 }
 
-export const getName = () => {
+const getName = () => {
   return `${user.name[0]} ${user.surname[0]}`;
 }
 
-export const getFullName = () => {
+const getFullName = () => {
   return `${user.name.join(' ')} ${user.surname.join(' ')}`;
 }
 

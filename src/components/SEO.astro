@@ -1,13 +1,16 @@
 ---
 import styles from '@styles/global.css?url';
 import image from '@assets/hero.webp';
-import { getFullName, USER, WEBSITE } from '@constants';
-import { useTranslations } from '@i18n';
+import { USER, WEBSITE } from '@constants';
+import { locales, useTranslations } from '@i18n';
 
 const t = useTranslations(Astro.currentLocale);
-const title = t('seo.brand', { username: USER.username });
+const title = t('seo.brand', { username: USER.getName() });
 const keywords = WEBSITE.keywords.join(', ');
-const description = t('seo.description', { name: getFullName(), role: USER.role });
+const description = t('seo.description', {
+  name: USER.getFullName(),
+  role: USER.role[Astro.currentLocale || locales[0].code],
+});
 ---
 
 <title>{title}</title>
@@ -17,7 +20,7 @@ const description = t('seo.description', { name: getFullName(), role: USER.role 
 <meta name="generator" content={Astro.generator} />
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
-<meta name="author" content={getFullName()} />
+<meta name="author" content={USER.getFullName()} />
 <meta name="robots" content="index, follow" />
 <meta name="googlebot" content="index, follow" />
 

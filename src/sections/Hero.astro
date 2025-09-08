@@ -3,11 +3,11 @@ import { Networks, Section } from '@components';
 import image from '@assets/hero.webp';
 import { Picture } from 'astro:assets';
 import { locales, useTranslations } from '@i18n';
-import { getName, USER } from '@constants';
+import { USER } from '@constants';
 
 const { role } = USER;
 const t = useTranslations(Astro.currentLocale);
-const name = getName();
+const name = USER.getName();
 ---
 
 <Section class="relative min-h-dvh pt-20">

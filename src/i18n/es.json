@@ -10,7 +10,7 @@
   "btn.theme_light": "Claro",
   "btn.theme_system": "Sistema",
 
-  "label.brand": "Porfolio de {{username}}",
+  "label.brand": "Portfolio de {{username}}",
   "label.copy_email": "Copia el correo de {{email}}",
   "label.demo": "Ver la demo de {{title}}",
   "label.download_cv": "Descargar el CV de {{name}}",
@@ -29,6 +29,6 @@
   "contact.invitation": "Mi correo está abierto a nuevas oportunidades… Si tenés algo en mente, mandá un mail y lo charlamos.",
   "experience.current_date": "Presente",
   "footer.credit": "Diseñado y construido con ❤️ por <span class=\"text-primary\">{{ name }}</span>",
-  "seo.brand": "{{username}} | porfolio",
-  "seo.description": "Porfolio personal de {{name}}. {{role}}. Conocé quién soy, explorá mis proyectos y revisá mi experiencia profesional."
+  "seo.brand": "{{username}} | portfolio",
+  "seo.description": "Portfolio personal de {{name}}. {{role}}. Conocé quién soy, explorá mis proyectos y revisá mi experiencia profesional."
 }
