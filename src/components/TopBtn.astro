@@ -16,7 +16,6 @@ const t = useTranslations(Astro.currentLocale);
 </button>
 
 <script is:inline>
-  // eslint-disable-next-line prettier/prettier
   const btn = document.querySelector('#top-btn');
   btn?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

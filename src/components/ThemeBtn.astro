@@ -49,7 +49,6 @@ const themes: Theme[] = [
   const query = window.matchMedia('(prefers-color-scheme: dark)');
   const btn = document.querySelector('#dropdown-theme button');
   const ul = document.querySelector('#dropdown-theme ul');
-  // eslint-disable-next-line prettier/prettier
   const lis = document.querySelectorAll('#dropdown-theme ul li button');
   const setLiActive = (theme: string | null) => {
     lis.forEach((li) => {

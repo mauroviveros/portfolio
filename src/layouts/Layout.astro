@@ -13,7 +13,6 @@ const t = useTranslations(Astro.currentLocale);
     <SEO />
     <script async type="text/javascript">
       (function () {
-        // eslint-disable-next-line prettier/prettier
         const query = window.matchMedia('(prefers-color-scheme: dark)');
         const theme = localStorage.getItem('theme') || query.matches ? 'dark' : 'light';
         if (theme && ['dark', 'light'].includes(theme)) {
