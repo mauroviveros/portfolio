@@ -19,12 +19,5 @@
     "url": "https://instagram.com/maurogontier/",
     "color": "#E4405F",
     "icon": "line-md:instagram"
-  },
-  {
-    "network": "linkhub",
-    "username": "Mauro Daniel Viveros",
-    "url": "https://mauroviveros.github.io/",
-    "color": "#454281",
-    "icon": "line-md:link"
   }
 ]
