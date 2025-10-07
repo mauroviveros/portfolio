@@ -1,6 +1,6 @@
 ---
 import SpeedInsights from '@vercel/speed-insights/astro';
-import { Brand, Networks, SEO, TopBtn, ThemeBtn, LangBtn } from '@components';
+import { Brand, Networks, SEO, TopBtn, ThemeBtn, LangBtn, Navigation } from '@components';
 import { useTranslations } from '@i18n';
 import { Contact } from '@sections';
 
@@ -33,6 +33,7 @@ const t = useTranslations(Astro.currentLocale);
     </header>
     <main>
       <slot />
+      <!-- <Navigation /> -->
     </main>
     <footer class="flex h-dvh flex-col items-center justify-center">
       <div class="container mx-auto flex flex-col items-center gap-4 md:gap-8">

@@ -5,3 +5,4 @@ export { default as Section } from "./Section.astro";
 export { default as SEO } from "./SEO.astro";
 export { default as ThemeBtn } from "./ThemeBtn.astro";
 export { default as TopBtn } from "./TopBtn.astro";
+export { default as Navigation } from "./Navigation.astro";
