@@ -8,13 +8,15 @@ export interface Props {
 const { class: className, title, icon } = Astro.props;
 ---
 
-<section class={`relative w-full flex flex-col justify-center px-4 py-16 ${className}`}>
+<section class={`relative w-full flex flex-col justify-center px-4 py-16 pt-0 ${className}`}>
   {
     title && icon && (
-      <h2 class="text-foreground-dark absolute top-0 left-0 ml-4 flex items-center gap-3 text-4xl font-semibold md:ml-8">
-        {icon && <Icon name={icon} size="2.25rem" />}
-        {title}
-      </h2>
+      <header class="container mx-auto h-16 flex items-start">
+        <h2 class="text-foreground-dark top-0 left-0 flex items-center gap-3 text-4xl font-semibold ml-4">
+          {icon && <Icon name={icon} size="2.25rem" />}
+          {title}
+        </h2>
+      </header>
     )
   }
   <div class="container mx-auto px-8">
