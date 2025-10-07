@@ -22,6 +22,7 @@
     "@fontsource-variable/space-grotesk": "5.2.10",
     "@tailwindcss/vite": "4.1.13",
     "@vercel/speed-insights": "1.2.0",
+    "animate.css": "^4.1.1",
     "astro": "5.13.8",
     "astro-icon": "1.1.5",
     "sharp": "0.34.4",

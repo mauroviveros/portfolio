@@ -1,5 +1,7 @@
 ---
-import styles from '@styles/global.css?url';
+import '@styles/global.css';
+import 'animate.css';
+
 import image from '@assets/hero.webp';
 import { USER, WEBSITE } from '@constants';
 import { locales, useTranslations } from '@i18n';
@@ -40,6 +42,3 @@ const description = t('seo.description', {
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <!-- <meta name="apple-mobile-web-app-title" content="mauroviveros" /> -->
 <!-- <link rel="manifest" href="/site.webmanifest" /> -->
-
-<link rel="preload" href={styles} as="style" />
-<link rel="stylesheet" href={styles} />
