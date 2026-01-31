@@ -1,5 +1,6 @@
 ---
 import SpeedInsights from '@vercel/speed-insights/astro';
+import Analytics from '@vercel/analytics/astro'
 import { Brand, Networks, SEO, TopBtn, ThemeBtn, LangBtn, Navigation } from '@components';
 import { useTranslations } from '@i18n';
 import { Contact } from '@sections';
@@ -49,5 +50,6 @@ const t = useTranslations(Astro.currentLocale);
 
     <TopBtn />
     <SpeedInsights />
+    <Analytics />
   </body>
 </html>
