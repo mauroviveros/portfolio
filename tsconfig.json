@@ -10,11 +10,11 @@
       "@layout": ["./layouts/Layout.astro"],
       "@components": ["./components/index.ts"],
       "@constants": ["./constants/index.ts"],
-      "@contents": ["./contents/index.ts"],
+      "@content": ["./content/index.ts"],
       "@sections": ["./sections/index.ts"],
       "@styles/*": ["./styles/*"],
       "@assets/*": ["./assets/*"],
-      "@i18n": ["./i18n"],
+      "@i18n": ["./i18n"]
     }
   }
 }
