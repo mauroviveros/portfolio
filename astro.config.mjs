@@ -13,6 +13,9 @@ export default defineConfig({
   // site: WEBSITE.url,
   adapter: vercel(),
   integrations: [icon()],
+  build: {
+    inlineStylesheets: 'always',
+  },
 
   i18n: {
     locales: localesList,
