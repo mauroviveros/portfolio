@@ -3,13 +3,7 @@ import { useTranslations } from '@i18n';
 import { Icon } from 'astro-icon/components';
 
 const t = useTranslations(Astro.currentLocale);
-
-interface Theme {
-  _id: string;
-  name: string;
-  icon: string;
-}
-
+interface Theme { _id: string; name: string; icon: string; }
 const themes: Theme[] = [
   { _id: 'dark', name: t('btn.theme_dark'), icon: 'tabler:moon-stars' },
   { _id: 'light', name: t('btn.theme_light'), icon: 'tabler:sun-high-filled' },
@@ -20,7 +14,7 @@ const themes: Theme[] = [
 <article class="relative w-fit" id="dropdown-theme">
   <button
     type="button"
-    aria-label={t('label.dropdown.theme')}
+    aria-label={t('label.dropdown_theme')}
     class="hover:bg-background-hover cursor-pointer rounded-lg p-3 transition-all duration-300 ease-in-out"
   >
     <Icon name="tabler:sun-moon" size="1.5rem" />
@@ -83,16 +77,17 @@ const themes: Theme[] = [
     ul?.setAttribute('data-active', 'false');
   });
 
-  window.onload = () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const theme = localStorage.getItem('theme');
     setLiActive(theme);
 
     query.addEventListener('change', () => {
-      if (!theme || theme === 'system') {
-        let theme = query?.matches ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', theme);
+      const currentTheme = localStorage.getItem('theme');
+      if (!currentTheme) {
+        const newTheme = query.matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
         setLiActive('system');
       }
     });
-  };
+  });
 </script>

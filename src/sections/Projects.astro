@@ -3,38 +3,44 @@ import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import { useTranslations } from '@i18n';
-import { Section } from '@components';
 
-const { currentLocale } = Astro;
-const t = useTranslations(currentLocale);
+const t = useTranslations(Astro.currentLocale);
 const projects = await getCollection('projects');
 if (projects.length === 0) return;
 ---
+<section>
+  <header>
 
-<Section title={t('section.projects')} icon="tabler:code">
+    <h2>
+      <Icon name="tabler:briefcase"/>
+      {t('sections.projects')}
+    </h2>
+  </header>
+
   <ul class="flex flex-col gap-8">
     {
       projects.map(async (project) => {
-        const image = import(`../assets/projects/${project.id}.webp`);
-        const { title, techStack, repo, url, description } = project.data;
+        const { title, techStack, repo, url, description, image } = project.data;
 
         return (
           <li class="flex flex-col gap-8 md:flex-row">
-            <Image
-              src={image}
-              width={480}
-              height={320}
-              class="rounded-lg object-cover"
-              alt={title}
-              loading="lazy"
-              decoding="async"
-            />
+            {image && (
+              <Image
+                src={image}
+                width={480}
+                height={320}
+                class="rounded-lg object-cover"
+                alt={title}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
 
             <article class="flex flex-1 flex-col gap-4">
-              <h3 class="text-foreground text-4xl font-bold break-words">{title}</h3>
+              <h3 class="text-foreground text-4xl font-bold wrap-break-words truncate shrink-0">{title}</h3>
 
               <div class="text-foreground-light h-full w-full text-xl font-medium text-pretty">
-                {description[(currentLocale as 'es' | 'en') || 'es']}
+                {description[(Astro.currentLocale as 'es' | 'en') || 'es']}
               </div>
 
               <ul class="flex gap-2">
@@ -73,4 +79,4 @@ if (projects.length === 0) return;
       })
     }
   </ul>
-</Section>
+</section>

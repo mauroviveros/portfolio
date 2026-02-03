@@ -1,55 +1,70 @@
 ---
+import '@styles/global.css';
+import image from '@assets/hero.webp';
 import SpeedInsights from '@vercel/speed-insights/astro';
-import Analytics from '@vercel/analytics/astro'
-import { Brand, Networks, SEO, TopBtn, ThemeBtn, LangBtn, Navigation } from '@components';
+import Analytics from '@vercel/analytics/astro';
 import { useTranslations } from '@i18n';
-import { Contact } from '@sections';
+import { Footer, Header } from './components';
+import { Top } from '@components';
 
 const t = useTranslations(Astro.currentLocale);
+
+const title = t('seo.brand', { username: 'mviveros' });
+const description = t('seo.description', {
+  name: 'Mauro Daniel Viveros',
+  role: t('user.role'),
+});
+const keywords = "portfolio, mauro, daniel, viveros, full-stack, full stack, fullstack, frontend, front end, backend, back end, developer, programmer, software, engineer, web, app, website";
 ---
 
 <!doctype html>
 <html lang={Astro.currentLocale}>
   <head>
-    <SEO />
-    <script async type="text/javascript">
-      (function () {
-        const query = window.matchMedia('(prefers-color-scheme: dark)');
-        const theme = localStorage.getItem('theme') || query.matches ? 'dark' : 'light';
-        if (theme && ['dark', 'light'].includes(theme)) {
-          document.documentElement.setAttribute('data-theme', theme);
-        }
+    <title>{title}</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Mauro Daniel Viveros" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+
+    <meta property="og:image" content={image.src} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:site_name" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+
+    <link rel="canonical" href={Astro.site} />
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <script type="text/javascript">
+      (function(){
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = localStorage.getItem('theme') ?? (prefersDark ? 'dark' : 'light');
+        if(['dark', 'light'].includes(theme)) document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
   </head>
   <body>
-    <header class="absolute right-0 left-0 z-10 flex h-20 items-center py-4 animate__animated animate__backInDown">
-      <div class="container mx-auto flex justify-between px-4">
-        <Brand />
-        <section class="flex gap-2">
-          <LangBtn />
-          <ThemeBtn />
-        </section>
-      </div>
-    </header>
-    <main>
-      <slot />
-      <!-- <Navigation /> -->
+    <Header/>
+    <main class="container mx-auto">
+      <slot/>
+
+      <SpeedInsights />
+      <Analytics />
     </main>
-    <footer class="flex h-dvh flex-col items-center justify-center">
-      <div class="container mx-auto flex flex-col items-center gap-4 md:gap-8">
-        <Contact />
-        <Networks />
+    <Footer/>
 
-        <p
-          class="text-foreground-light max-w-72 text-center font-medium"
-          set:html={t('footer.credit', { name: 'Mauro Daniel Viveros' })}
-        />
-      </div>
-    </footer>
-
-    <TopBtn />
-    <SpeedInsights />
-    <Analytics />
+    <Top />
   </body>
 </html>

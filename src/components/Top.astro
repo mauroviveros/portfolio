@@ -1,7 +1,6 @@
 ---
 import { useTranslations } from '@i18n';
 import { Icon } from 'astro-icon/components';
-
 const t = useTranslations(Astro.currentLocale);
 ---
 
@@ -15,13 +14,13 @@ const t = useTranslations(Astro.currentLocale);
   <Icon name="tabler:arrow-up" size="1.5rem" />
 </button>
 
-<script is:inline>
+<script>
   const btn = document.querySelector('#top-btn');
   btn?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
   window.addEventListener('scroll', () => {
-    const isHidden = window.scrollY < window.innerHeight;
+    const isHidden = window.scrollY < (window.innerHeight / 2);
     btn?.setAttribute('data-hidden', String(isHidden));
   });
 </script>

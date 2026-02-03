@@ -1,19 +1,13 @@
 ---
 import { getCollection, render } from 'astro:content';
-import { Icon } from 'astro-icon/components';
-import { useTranslations } from '@i18n';
-import { Section } from '@components';
+import { useTranslations } from "@i18n";
+import { Icon } from "astro-icon/components";
 
-const { currentLocale } = Astro;
-const t = useTranslations(currentLocale);
-const getDateTime = (date: Date) =>
-  date.toLocaleDateString(currentLocale, { year: 'numeric', month: 'long', day: 'numeric' });
-const getDateFormat = (date: Date) =>
-  date.toLocaleDateString(currentLocale, { year: 'numeric', month: 'long' });
+const t = useTranslations(Astro.currentLocale);
+const getDateTime = (date: Date) => date.toLocaleDateString(Astro.currentLocale, { year: 'numeric', month: 'long', day: 'numeric' });
+const getDateFormat = (date: Date) => date.toLocaleDateString(Astro.currentLocale, { year: 'numeric', month: 'long' });
 
-const collection = await getCollection('experiences', (item) => {
-  return item.id.startsWith(`${currentLocale}/`);
-});
+const collection = await getCollection('experiences', (item) => item.id.startsWith(`${Astro.currentLocale}/`));
 
 collection.sort((a, b) => {
   const dateA = new Date(a.data.startDate);
@@ -23,7 +17,13 @@ collection.sort((a, b) => {
 });
 ---
 
-<Section title={t('section.experience')} icon="tabler:certificate">
+<section>
+  <header>
+    <h2>
+      <Icon name="tabler:certificate"/>
+      {t('sections.experience')}
+    </h2>
+  </header>
   <ol class="border-background-hover relative mx-0 border-s-4 md:mx-10">
     {
       collection.map(async (milestone) => {
@@ -32,7 +32,12 @@ collection.sort((a, b) => {
 
         return (
           <li class="ms-7 mb-7">
-            <div class="bg-primary text-background-hover absolute -start-6 mt-1.5 flex h-11 w-11 items-center justify-center rounded-full">
+            <div
+              class:list={[
+                "text-background-hover absolute -start-6 mt-1.5 flex h-11 w-11 items-center justify-center rounded-full",
+                !endDate ? "bg-primary" : "bg-primary/75",
+              ]}
+            >
               <Icon
                 name={`tabler:${type === 'work' ? 'building-skyscraper' : 'school'}`}
                 size="1.5rem"
@@ -48,8 +53,8 @@ collection.sort((a, b) => {
 
                   <span>-</span>
 
-                  <time datetime={getDateTime(endDate || new Date())}>
-                    {endDate ? getDateFormat(endDate) : t('experience.current_date')}
+                  <time datetime={getDateTime(endDate || new Date())} class:list={[!endDate ? "font-bold" : ""]}>
+                    {endDate ? getDateFormat(endDate) : t('label.current_date')}
                   </time>
                 </div>
               </header>
@@ -62,4 +67,4 @@ collection.sort((a, b) => {
       })
     }
   </ol>
-</Section>
+</section>

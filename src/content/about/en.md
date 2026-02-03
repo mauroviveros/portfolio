@@ -1,9 +1,0 @@
----
-quote: "An expert is a man who has stopped thinking."
-author: "Frank Lloyd Wright"
-lifespan: "1867-1959"
-occupation: American architect
----
-My full name is **Mauro Daniel Viveros**, I live in **Buenos Aires, Argentina**, and I am a full-stack developer with a primary focus on **front-end**. I have **over 5 years of experience** creating web experiences throughout my career. I enjoy sharing knowledge and learning from others; I believe this quality is key in our field. I am fully capable of teaching and training, having trained more than 4 developers and taught the fundamentals of programming to **over 60 students** in 2 courses I have conducted.
-
-I consider myself a person who is very detail-oriented, which is why my focus is not only on designing efficient solutions but also on creating value for users and making the work of other developers easier. My goal is for each person to **enjoy the application** and want to come back to use it, both in the user experience and the development experience.

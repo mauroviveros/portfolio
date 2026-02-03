@@ -3,12 +3,17 @@
   "hero.identity": "Soy <span class=\"text-primary\">{{ name }}</span>",
   "hero.picture_alt": "Foto de {{ name }}",
 
-  "btn.demo": "Demo",
-  "btn.download_cv": "Descargar CV",
-  "btn.repo": "Código",
-  "btn.theme_dark": "Oscuro",
-  "btn.theme_light": "Claro",
-  "btn.theme_system": "Sistema",
+  "footer.contact": "Mi correo está abierto a nuevas oportunidades… Si tenés algo en mente, mandá un mail y lo charlamos.",
+  "footer.credits": "Diseñado y construido con ❤️ por <span class=\"text-primary\">{{ name }}</span>",
+
+  "user.role": "Desarrollador WEB | DEV-OPS",
+
+  "seo.brand": "{{username}} | portfolio",
+  "seo.description": "Portfolio personal de {{name}}. {{role}}. Conocé quién soy, explorá mis proyectos y revisá mi experiencia profesional.",
+
+  "sections.about": "Sobre mí",
+  "sections.experience": "Experiencia",
+  "sections.projects": "Proyectos",
 
   "label.brand": "Portfolio de {{username}}",
   "label.copy_email": "Copia el correo de {{email}}",
@@ -20,15 +25,13 @@
   "label.network": "Visita el perfil de {{username}} en {{network}}",
   "label.repo": "Ver el código fuente de {{title}}",
   "label.send_email": "Enviar un correo a {{email}}",
+  "label.back_to_top": "Volver arriba",
+  "label.current_date": "Actualidad",
 
-  "section.about": "Sobre mí",
-  "section.contact": "Contáctame",
-  "section.experience": "Experiencia",
-  "section.projects": "Proyectos",
-
-  "contact.invitation": "Mi correo está abierto a nuevas oportunidades… Si tenés algo en mente, mandá un mail y lo charlamos.",
-  "experience.current_date": "Presente",
-  "footer.credit": "Diseñado y construido con ❤️ por <span class=\"text-primary\">{{ name }}</span>",
-  "seo.brand": "{{username}} | portfolio",
-  "seo.description": "Portfolio personal de {{name}}. {{role}}. Conocé quién soy, explorá mis proyectos y revisá mi experiencia profesional."
+  "btn.download_cv": "Descargar CV",
+  "btn.repo": "Código",
+  "btn.demo": "Demo",
+  "btn.theme_dark": "Oscuro",
+  "btn.theme_light": "Claro",
+  "btn.theme_system": "Sistema"
 }

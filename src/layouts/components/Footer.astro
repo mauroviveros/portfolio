@@ -1,0 +1,38 @@
+---
+import { Networks } from '@components';
+import { useTranslations } from '@i18n';
+import { Icon } from 'astro-icon/components';
+const t = useTranslations(Astro.currentLocale);
+
+const email = 'maurod.viveros@gmail.com';
+---
+
+<footer class="h-dvh items-center justify-center flex flex-col">
+  <div class="container mx-auto flex flex-col items-center justify-center px-12 py-8 gap-32 h-full">
+    <article class="flex flex-col gap-6">
+      <p class="text-foreground-light my-10 text-center text-2xl text-pretty font-medium max-w-lg">{t('footer.contact')}</p>
+
+      <div class="flex flex-wrap gap-2 justify-center">
+        <span class="flex-1 truncate rounded-lg border border-zinc-800 bg-zinc-300 p-2 text-zinc-800 dark:border-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 max-w-fit">{email}</span>
+
+        <a href={`mailto:${email}`} class="btn bg-primary text-background rounded-lg" aria-label={t('label.send_email', { email })}>
+          <Icon name="tabler:send" class="size-6"/>
+        </a>
+
+        <button type="button" class="btn bg-primary text-background rounded-lg" aria-label={t('label.copy_email', { email })}>
+          <Icon name="tabler:copy" class="size-6"/>
+        </button>
+      </div>
+    </article>
+
+    <div class="flex flex-col gap-2 items-center">
+      <Networks />
+
+      <p
+        class="text-foreground-light max-w-72 text-center font-medium"
+        set:html={t('footer.credits', { name: 'Mauro Daniel Viveros' })}
+      />
+    </div>
+  </div>
+
+</footer>

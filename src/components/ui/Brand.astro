@@ -1,22 +1,19 @@
 ---
-import { useTranslations } from '@i18n';
 import { Image } from 'astro:assets';
-import { USER } from '@constants';
-
-const { username } = USER;
+import { useTranslations } from '@i18n';
 const t = useTranslations(Astro.currentLocale);
+const username = "mviveros";
 ---
-
 <a href="/" class="flex items-center gap-1 font-semibold">
   <Image
     src="/favicon.svg"
     height={32}
     width={32}
-    alt={t('label.brand', { username })}
+    alt={username}
     class="size-8 rounded-full"
     fetchpriority="high"
     loading="eager"
     decoding="async"
   />
-  <span>{t('seo.brand', { username })}</span>
+  {t('seo.brand', { username })}
 </a>

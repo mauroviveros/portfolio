@@ -1,47 +1,76 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 @import "@fontsource-variable/space-grotesk";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
   --color-primary: #241199;
-  --color-background          : var(--color-slate-100);
-  --color-background-hover    : var(--color-slate-200);
-  --color-background-active   : var(--color-slate-300);
-  --color-foreground          : var(--color-slate-800);
-  --color-foreground-light    : var(--color-slate-700);
-  --color-foreground-dark     : var(--color-slate-900);
+  --color-background: var(--color-slate-100);
+  --color-background-hover: var(--color-slate-200);
+  --color-background-active: var(--color-slate-300);
+  --color-foreground: var(--color-slate-800);
+  --color-foreground-light: var(--color-slate-700);
+  --color-foreground-dark: var(--color-slate-900);
 
   --font-space-grotesk: "Space Grotesk Variable", system-ui, sans-serif;
 }
 
-html[data-theme=dark]{
-    --color-primary             : #A89AF4;
-    --color-background          : var(--color-slate-900);
-    --color-background-hover    : var(--color-slate-800);
-    --color-background-active   : var(--color-slate-700);
-    --color-foreground          : var(--color-slate-200);
-    --color-foreground-light    : var(--color-slate-100);
-    --color-foreground-dark     : var(--color-slate-300);
+html[data-theme="dark"] {
+  --color-primary: #a89af4;
+  --color-background: var(--color-slate-900);
+  --color-background-hover: var(--color-slate-800);
+  --color-background-active: var(--color-slate-700);
+  --color-foreground: var(--color-slate-200);
+  --color-foreground-light: var(--color-slate-100);
+  --color-foreground-dark: var(--color-slate-300);
 }
-
 
 @layer base {
   body {
-    @apply bg-background text-foreground font-space-grotesk;
-    @apply transition-colors duration-1000;
-    &:after, &:before {
+    @apply bg-background text-foreground font-space-grotesk transition-colors;
+
+    &:after,
+    &:before {
       @apply bg-primary opacity-15 content-[''] fixed w-56 h-56 rounded-full blur-3xl -z-10;
     }
-    &:after{ @apply top-1/4 right-1/4; }
-    &:before{ @apply bottom-1/4 left-1/4; }
-  }
-
-  .btn{
-    @apply flex gap-2 font-semibold shadow duration-300 hover:shadow-xl hover:-translate-y-1;
-    &.rounded-lg{ @apply py-2 px-4; }
-    &.rounded-full{ @apply p-3; }
+    &:after {
+      @apply top-1/4 right-1/4;
+    }
+    &:before {
+      @apply bottom-1/4 left-1/4;
+    }
   }
 }
 
+@layer components {
+  main > section {
+    /* relative w-full flex flex-col justify-center px-4 py-16 pt-0 relative min-h-dvh pt-20 animate__animated animate__zoomIn */
+    @apply relative px-8 py-16;
+    & > header {
+      @apply h-16 absolute top-0 left-0;
+      & > h2 {
+        @apply text-foreground-dark text-4xl font-semibold flex gap-2;
+        & > svg {
+          @apply size-10;
+        }
+      }
+    }
+  }
+
+  /* <header class="container mx-auto h-16 flex items-start">
+        <h2 class="text-foreground-dark top-0 left-0 flex items-center gap-3 text-4xl font-semibold ml-4">
+          {icon && <Icon name={icon} size="2.25rem" />}
+          {title}
+        </h2>
+      </header> */
+
+  .btn {
+    @apply flex gap-2 font-semibold shadow duration-300 hover:shadow-xl hover:-translate-y-1;
+    &.rounded-lg {
+      @apply py-2 px-4;
+    }
+    &.rounded-full {
+      @apply p-3;
+    }
+  }
+}

@@ -1,14 +1,19 @@
 {
   "hero.greetings": "Hi! ✌️",
-  "hero.identity": "I'm <span class=\"text-primary\">{{ name }}</span>",
+  "hero.identity": "I am <span class=\"text-primary\">{{ name }}</span>",
   "hero.picture_alt": "Photo of {{ name }}",
 
-  "btn.demo": "Demo",
-  "btn.download_cv": "Download CV",
-  "btn.repo": "Code",
-  "btn.theme_dark": "Dark",
-  "btn.theme_light": "Light",
-  "btn.theme_system": "System",
+  "footer.contact": "My email is open to new opportunities… If you have something in mind, send an email and we can discuss it.",
+  "footer.credits": "Designed and built with ❤️ by <span class=\"text-primary\">{{ name }}</span>",
+
+  "user.role": "Web Developer | DEV-OPS",
+
+  "seo.brand": "{{username}} | portfolio",
+  "seo.description": "{{name}}'s personal portfolio. {{role}}. Get to know who I am, explore my projects, and check out my professional experience.",
+
+  "sections.about": "About Me",
+  "sections.experience": "Experience",
+  "sections.projects": "Projects",
 
   "label.brand": "Portfolio of {{username}}",
   "label.copy_email": "Copy {{email}}'s email",
@@ -20,15 +25,13 @@
   "label.network": "Visit {{username}}'s profile on {{network}}",
   "label.repo": "View the source code of {{title}}",
   "label.send_email": "Send an email to {{email}}",
+  "label.back_to_top": "Back to top",
+  "label.current_date": "Present",
 
-  "section.about": "About Me",
-  "section.contact": "Contact Me",
-  "section.experience": "Experience",
-  "section.projects": "Projects",
-
-  "contact.invitation": "My email is open to new opportunities… If you have something in mind, send an email and we can discuss it.",
-  "experience.current_date": "Current",
-  "footer.credit": "Designed and built with ❤️ by <span class=\"text-primary\">{{ name }}</span>",
-  "seo.brand": "{{username}} | portfolio",
-  "seo.description": "Personal portfolio of {{name}}. {{role}}. Get to know who I am, explore my projects, and check out my professional experience."
+  "btn.download_cv": "Download CV",
+  "btn.repo": "Code",
+  "btn.demo": "Demo",
+  "btn.theme_dark": "Dark",
+  "btn.theme_light": "Light",
+  "btn.theme_system": "System"
 }

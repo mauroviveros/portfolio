@@ -5,6 +5,6 @@ import Index from './index.astro';
 export const getStaticPaths = () => {
   return locales.map(({ code }) => ({ params: { locale: code } }));
 };
----
 
+---
 <Index />
