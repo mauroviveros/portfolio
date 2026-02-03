@@ -2,7 +2,7 @@
 title: Kodal.pet
 url: https://kodal-pet.vercel.app/
 # repo: https://github.com/mauroviveros/kodal/
-image: https://drive.google.com/thumbnail?id=1ZV9hWRPUsCZ_XPdUsrJckuGWlSVeEcvx&sz=w960
+image: https://drive.google.com/thumbnail?id=1ZV9hWRPUsCZ_XPdUsrJckuGWlSVeEcvx&sz=w480
 techStack:
   - astro
   - tailwindcss-light
