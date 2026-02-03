@@ -1,21 +1,30 @@
-import eslintPluginAstro from 'eslint-plugin-astro';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import { includeIgnoreFile } from '@eslint/compat';
+import astro from 'eslint-plugin-astro';
+import astro_parser from 'astro-eslint-parser';
+import prettier from 'eslint-plugin-prettier/recommended';
+import ts_parser from '@typescript-eslint/parser';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default [
-  ...eslintPluginAstro.configs.recommended,
-  eslintPluginPrettierRecommended,
+  includeIgnoreFile(path.resolve(__dirname, '.gitignore')),
+  ...astro.configs.recommended,
+  ...astro.configs['jsx-a11y-recommended'],
+  prettier,
   {
-    overrides: [
-      {
-        files: ['*.astro'],
-        parser: "astro-eslint-parser",
-        parserOptions: {
-          parser: "@typescript-eslint/parser",
-        },
+    files: ['**/*.astro'],
+    languageOptions: {
+      parser: astro_parser,
+      parserOptions: {
+        parser: ts_parser,
+        extraFileExtensions: ['.astro'],
       },
-    ],
-    rules: {
-      'prettier/prettier': 'error',
-    }
-  }
+    },
+  },
+  {
+    files: ['**/*.astro/*.ts', '*.astro/*.ts'],
+    rules: { 'prettier/prettier': 'off' },
+  },
 ];

@@ -3,7 +3,11 @@ import { useTranslations } from '@i18n';
 import { Icon } from 'astro-icon/components';
 
 const t = useTranslations(Astro.currentLocale);
-interface Theme { _id: string; name: string; icon: string; }
+interface Theme {
+  _id: string;
+  name: string;
+  icon: string;
+}
 const themes: Theme[] = [
   { _id: 'dark', name: t('btn.theme_dark'), icon: 'tabler:moon-stars' },
   { _id: 'light', name: t('btn.theme_light'), icon: 'tabler:sun-high-filled' },

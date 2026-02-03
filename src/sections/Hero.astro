@@ -1,20 +1,23 @@
 ---
-import { Picture } from "astro:assets";
+import { Picture } from 'astro:assets';
 import image from '@assets/hero.webp';
 import { useTranslations, locales } from '@i18n';
-import { Networks } from "@components";
+import { Networks } from '@components';
 const t = useTranslations(Astro.currentLocale);
 
 const CVs: Record<string, string> = {
-  es: "https://drive.google.com/file/d/1VcraKv9SzyZbt4AdjD0nrj4b5g8gS8LI/view?usp=sharing",
-  en: "https://drive.google.com/file/d/1Cjb48NV1ENIvhqeOpkLUYK9TcXXzh4z_/view?usp=sharing"
+  es: 'https://drive.google.com/file/d/1VcraKv9SzyZbt4AdjD0nrj4b5g8gS8LI/view?usp=sharing',
+  en: 'https://drive.google.com/file/d/1Cjb48NV1ENIvhqeOpkLUYK9TcXXzh4z_/view?usp=sharing',
 };
 
 const cv_url = CVs[Astro.currentLocale || locales[0].code] || CVs[locales[0].code];
 ---
+
 <!-- flex flex-col-reverse items-center justify-center gap-2 md:flex-row md:justify-around md:gap-8 -->
-<section class="h-dvh flex flex-col-reverse items-center justify-center gap-2 md:flex-row md:justify-around md:gap-8">
-  <hgroup class="text-center md:text-left flex flex-col gap-3">
+<section
+  class="flex h-dvh flex-col-reverse items-center justify-center gap-2 md:flex-row md:justify-around md:gap-8"
+>
+  <hgroup class="flex flex-col gap-3 text-center md:text-left">
     <h1 class="text-3xl font-bold md:text-6xl">
       <p>{t('hero.greetings')}</p>
       <p set:html={t('hero.identity', { name: 'Mauro' })} />
@@ -23,7 +26,13 @@ const cv_url = CVs[Astro.currentLocale || locales[0].code] || CVs[locales[0].cod
     <p class="text-foreground-light text-xl font-bold text-balance md:text-3xl">{t('user.role')}</p>
 
     <article class="flex flex-wrap-reverse items-center justify-center gap-4 md:justify-normal">
-      <a href={cv_url} target="_blank" rel="noopener noreferrer" class="btn bg-primary text-background rounded-lg" aria-label={t('label.download_cv', { name: 'Mauro Viveros' })}>
+      <a
+        href={cv_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn bg-primary text-background rounded-lg"
+        aria-label={t('label.download_cv', { name: 'Mauro Viveros' })}
+      >
         {t('btn.download_cv')}
       </a>
 
@@ -31,14 +40,14 @@ const cv_url = CVs[Astro.currentLocale || locales[0].code] || CVs[locales[0].cod
     </article>
   </hgroup>
   <Picture
-      src={image}
-      width={400}
-      height={400}
-      alt={t('hero.picture_alt', { name: 'Mauro Daniel Viveros' })}
-      class="border-primary ms:w-60 w-44 border-4 object-cover md:w-76 lg:w-100"
-      style="border-radius: 63% 37% 48% 52% / 60% 57% 43% 40%;"
-      fetchpriority="high"
-      loading="eager"
-      decoding="async"
-    />
+    src={image}
+    width={400}
+    height={400}
+    alt={t('hero.picture_alt', { name: 'Mauro Daniel Viveros' })}
+    class="border-primary ms:w-60 w-44 border-4 object-cover md:w-76 lg:w-100"
+    style="border-radius: 63% 37% 48% 52% / 60% 57% 43% 40%;"
+    fetchpriority="high"
+    loading="eager"
+    decoding="async"
+  />
 </section>

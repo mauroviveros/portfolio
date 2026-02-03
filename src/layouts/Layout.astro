@@ -14,7 +14,8 @@ const description = t('seo.description', {
   name: 'Mauro Daniel Viveros',
   role: t('user.role'),
 });
-const keywords = "portfolio, mauro, daniel, viveros, full-stack, full stack, fullstack, frontend, front end, backend, back end, developer, programmer, software, engineer, web, app, website";
+const keywords =
+  'portfolio, mauro, daniel, viveros, full-stack, full stack, fullstack, frontend, front end, backend, back end, developer, programmer, software, engineer, web, app, website';
 ---
 
 <!doctype html>
@@ -48,22 +49,23 @@ const keywords = "portfolio, mauro, daniel, viveros, full-stack, full stack, ful
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <script type="text/javascript">
-      (function(){
+      (function () {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') ?? (prefersDark ? 'dark' : 'light');
-        if(['dark', 'light'].includes(theme)) document.documentElement.setAttribute('data-theme', theme);
+        if (['dark', 'light'].includes(theme))
+          document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
   </head>
   <body>
-    <Header/>
+    <Header />
     <main class="container mx-auto">
-      <slot/>
+      <slot />
 
       <SpeedInsights />
       <Analytics />
     </main>
-    <Footer/>
+    <Footer />
 
     <Top />
   </body>

@@ -1,13 +1,17 @@
 ---
 import { getCollection, render } from 'astro:content';
-import { useTranslations } from "@i18n";
-import { Icon } from "astro-icon/components";
+import { useTranslations } from '@i18n';
+import { Icon } from 'astro-icon/components';
 
 const t = useTranslations(Astro.currentLocale);
-const getDateTime = (date: Date) => date.toLocaleDateString(Astro.currentLocale, { year: 'numeric', month: 'long', day: 'numeric' });
-const getDateFormat = (date: Date) => date.toLocaleDateString(Astro.currentLocale, { year: 'numeric', month: 'long' });
+const getDateTime = (date: Date) =>
+  date.toLocaleDateString(Astro.currentLocale, { year: 'numeric', month: 'long', day: 'numeric' });
+const getDateFormat = (date: Date) =>
+  date.toLocaleDateString(Astro.currentLocale, { year: 'numeric', month: 'long' });
 
-const collection = await getCollection('experiences', (item) => item.id.startsWith(`${Astro.currentLocale}/`));
+const collection = await getCollection('experiences', (item) =>
+  item.id.startsWith(`${Astro.currentLocale}/`),
+);
 
 collection.sort((a, b) => {
   const dateA = new Date(a.data.startDate);
@@ -20,7 +24,7 @@ collection.sort((a, b) => {
 <section>
   <header>
     <h2>
-      <Icon name="tabler:certificate"/>
+      <Icon name="tabler:certificate" />
       {t('sections.experience')}
     </h2>
   </header>
@@ -34,8 +38,8 @@ collection.sort((a, b) => {
           <li class="ms-7 mb-7">
             <div
               class:list={[
-                "text-background-hover absolute -start-6 mt-1.5 flex h-11 w-11 items-center justify-center rounded-full",
-                !endDate ? "bg-primary" : "bg-primary/75",
+                'text-background-hover absolute -start-6 mt-1.5 flex h-11 w-11 items-center justify-center rounded-full',
+                !endDate ? 'bg-primary' : 'bg-primary/75',
               ]}
             >
               <Icon
@@ -53,7 +57,10 @@ collection.sort((a, b) => {
 
                   <span>-</span>
 
-                  <time datetime={getDateTime(endDate || new Date())} class:list={[!endDate ? "font-bold" : ""]}>
+                  <time
+                    datetime={getDateTime(endDate || new Date())}
+                    class:list={[!endDate ? 'font-bold' : '']}
+                  >
                     {endDate ? getDateFormat(endDate) : t('label.current_date')}
                   </time>
                 </div>

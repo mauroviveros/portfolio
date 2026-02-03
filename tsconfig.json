@@ -9,7 +9,6 @@
     "paths": {
       "@layout": ["./layouts/Layout.astro"],
       "@components": ["./components/index.ts"],
-      "@constants": ["./constants/index.ts"],
       "@content": ["./content/index.ts"],
       "@sections": ["./sections/index.ts"],
       "@styles/*": ["./styles/*"],

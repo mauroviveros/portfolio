@@ -8,11 +8,11 @@ const t = useTranslations(Astro.currentLocale);
 const projects = await getCollection('projects');
 if (projects.length === 0) return;
 ---
+
 <section>
   <header>
-
     <h2>
-      <Icon name="tabler:briefcase"/>
+      <Icon name="tabler:briefcase" />
       {t('sections.projects')}
     </h2>
   </header>
@@ -37,7 +37,9 @@ if (projects.length === 0) return;
             )}
 
             <article class="flex flex-1 flex-col gap-4">
-              <h3 class="text-foreground text-4xl font-bold wrap-break-words truncate shrink-0">{title}</h3>
+              <h3 class="text-foreground wrap-break-words shrink-0 truncate text-4xl font-bold">
+                {title}
+              </h3>
 
               <div class="text-foreground-light h-full w-full text-xl font-medium text-pretty">
                 {description[(Astro.currentLocale as 'es' | 'en') || 'es']}

@@ -1,12 +1,14 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 ---
 
-<nav class="fixed bottom-4 mx-auto left-0 right-0 w-fit rounded-full border-background-active bg-background shadow-2xl z-50">
-  <ul class="p-2 flex items-center justify-center gap-2">
+<nav
+  class="border-background-active bg-background fixed right-0 bottom-4 left-0 z-50 mx-auto w-fit rounded-full shadow-2xl"
+>
+  <ul class="flex items-center justify-center gap-2 p-2">
     <li>
-      <a href="" class="flex rounded-full p-2 bg-background-hover hover:bg-background-active">
-        <Icon name="tabler:home" size="2rem"/>
+      <a href="#home" class="bg-background-hover hover:bg-background-active flex rounded-full p-2">
+        <Icon name="tabler:home" size="2rem" />
       </a>
     </li>
   </ul>
