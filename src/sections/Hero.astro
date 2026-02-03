@@ -41,8 +41,8 @@ const cv_url = CVs[Astro.currentLocale || locales[0].code] || CVs[locales[0].cod
   </hgroup>
   <Picture
     src={image}
-    width={400}
-    height={400}
+    widths={[176, 240, 304, 400]}
+    sizes="(max-width: 768px) 176px, (max-width: 1024px) 304px, 400px"
     alt={t('hero.picture_alt', { name: 'Mauro Daniel Viveros' })}
     class="border-primary ms:w-60 w-44 border-4 object-cover md:w-76 lg:w-100"
     style="border-radius: 63% 37% 48% 52% / 60% 57% 43% 40%;"
