@@ -7,6 +7,8 @@ import { useTranslations } from '@i18n';
 import { Footer, Header } from './components';
 import { Top } from '@components';
 
+import spaceGroteskWoff2 from '@fontsource-variable/space-grotesk/files/space-grotesk-latin-400-normal.woff2';
+
 const t = useTranslations(Astro.currentLocale);
 
 const title = t('seo.brand', { username: 'mviveros' });
@@ -47,6 +49,8 @@ const keywords =
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <link rel="preload" href={spaceGroteskWoff2} as="font" type="font/woff2" crossorigin />
 
     <script type="text/javascript">
       (function () {
