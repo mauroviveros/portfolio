@@ -7,7 +7,6 @@ export const projects = defineCollection({
     title: z.string(),
     url: z.string().url().optional(),
     repo: z.string().url().optional(),
-    image: z.string().url().optional(),
     techStack: z.array(z.string()),
     description: z.object({
         es: z.string(),

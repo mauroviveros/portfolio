@@ -20,16 +20,17 @@ if (projects.length === 0) return;
   <ul class="flex flex-col gap-8">
     {
       projects.map(async (project) => {
-        const { title, techStack, repo, url, description, image } = project.data;
+        const { title, techStack, repo, url, description } = project.data;
+        const image = import(`../assets/projects/${project.id}.webp`);
 
         return (
-          <li class="flex flex-col gap-8 md:flex-row">
+          <li class="flex flex-col gap-8 lg:flex-row">
             {image && (
               <Image
                 src={image}
-                width={480}
-                height={320}
-                class="rounded-lg object-cover"
+                widths={[320, 480, 640]}
+                sizes="(max-width: 768px) 100vw, 320px"
+                class="w-120 rounded-lg object-cover"
                 alt={title}
                 loading="lazy"
                 decoding="async"
