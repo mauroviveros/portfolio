@@ -32,6 +32,7 @@ const cv_url = CVs[Astro.currentLocale || locales[0].code] || CVs[locales[0].cod
         rel="noopener noreferrer"
         class="btn bg-primary text-background rounded-lg"
         aria-label={t('label.download_cv', { name: 'Mauro Viveros' })}
+        aria-disabled="true"
       >
         {t('btn.download_cv')}
       </a>

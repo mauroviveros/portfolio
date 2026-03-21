@@ -66,11 +66,9 @@ html[data-theme="dark"] {
 
   .btn {
     @apply flex gap-2 font-semibold shadow duration-300 hover:shadow-xl hover:-translate-y-1;
-    &.rounded-lg {
-      @apply py-2 px-4;
-    }
-    &.rounded-full {
-      @apply p-3;
-    }
+    @apply aria-disabled:opacity-50 aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none;
+
+    &.rounded-lg{ @apply py-2 px-4; }
+    &.rounded-full{ @apply p-3; }
   }
 }
