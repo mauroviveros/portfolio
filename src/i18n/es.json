@@ -26,6 +26,9 @@
   "label.repo": "Ver el código fuente de {{title}}",
   "label.send_email": "Enviar un correo a {{email}}",
   "label.back_to_top": "Volver arriba",
+  "404.title": "Página no encontrada",
+  "404.description": "La página que buscas no existe o fue movida.",
+  "404.go_home": "Volver al inicio",
   "label.current_date": "Actualidad",
 
   "btn.download_cv": "Descargar CV",

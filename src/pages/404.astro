@@ -1,0 +1,19 @@
+---
+import Layout from '@layout';
+import { useTranslations } from '@i18n';
+import { Icon } from 'astro-icon/components';
+
+const t = useTranslations(Astro.currentLocale);
+const locale = Astro.currentLocale || 'es';
+---
+
+<Layout>
+  <section class="flex h-dvh flex-col items-center justify-center gap-8 text-center">
+    <h1 class="text-primary text-9xl font-bold">404</h1>
+    <p class="text-foreground-light text-2xl">{t('404.description')}</p>
+    <a href={`/${locale}`} class="btn bg-primary text-background rounded-lg">
+      <Icon name="tabler:arrow-left" size="1.5rem" />
+      {t('404.go_home')}
+    </a>
+  </section>
+</Layout>
