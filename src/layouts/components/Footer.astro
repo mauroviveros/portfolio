@@ -2,6 +2,7 @@
 import { Networks } from '@components';
 import { useTranslations } from '@i18n';
 import { Icon } from 'astro-icon/components';
+import { Button } from '@starwind/button';
 const t = useTranslations(Astro.currentLocale);
 
 const email = 'maurod.viveros@gmail.com';
@@ -10,7 +11,7 @@ const email = 'maurod.viveros@gmail.com';
 <footer class="flex h-dvh flex-col items-center justify-center">
   <div class="container mx-auto flex h-full flex-col items-center justify-center gap-32 px-12 py-8">
     <article class="flex flex-col gap-6">
-      <p class="text-foreground-light my-10 max-w-lg text-center text-2xl font-medium text-pretty">
+      <p class="text-muted-foreground my-10 max-w-lg text-center text-2xl font-medium text-pretty">
         {t('footer.contact')}
       </p>
 
@@ -20,21 +21,21 @@ const email = 'maurod.viveros@gmail.com';
           >{email}</span
         >
 
-        <a
+        <Button
           href={`mailto:${email}`}
-          class="btn bg-primary text-background rounded-lg"
+          variant="primary"
           aria-label={t('label.send_email', { email })}
         >
           <Icon name="tabler:send" class="size-6" />
-        </a>
+        </Button>
 
-        <button
+        <Button
           type="button"
-          class="btn bg-primary text-background rounded-lg"
+          variant="primary"
           aria-label={t('label.copy_email', { email })}
         >
           <Icon name="tabler:copy" class="size-6" />
-        </button>
+        </Button>
       </div>
     </article>
 
@@ -42,7 +43,7 @@ const email = 'maurod.viveros@gmail.com';
       <Networks />
 
       <p
-        class="text-foreground-light max-w-72 text-center font-medium"
+        class="text-muted-foreground max-w-72 text-center font-medium"
         set:html={t('footer.credits', { name: 'Mauro Daniel Viveros' })}
       />
     </div>

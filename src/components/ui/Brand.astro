@@ -1,11 +1,16 @@
 ---
 import { Image } from 'astro:assets';
 import { useTranslations } from '@i18n';
+import Button from '../starwind/button';
 const t = useTranslations(Astro.currentLocale);
 const username = 'mviveros';
 ---
 
-<a href="/" class="flex items-center gap-1 font-semibold">
+<Button
+  href="/"
+  variant="ghost"
+  aria-label={t('label.home')}
+>
   <Image
     src="/favicon.svg"
     height={32}
@@ -17,4 +22,4 @@ const username = 'mviveros';
     decoding="async"
   />
   {t('seo.brand', { username })}
-</a>
+</Button>

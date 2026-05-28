@@ -3,6 +3,7 @@ import { Picture } from 'astro:assets';
 import image from '@assets/hero.webp';
 import { useTranslations, locales } from '@i18n';
 import { Networks } from '@components';
+import { Button } from '@starwind/button';
 const t = useTranslations(Astro.currentLocale);
 
 const CVs: Record<string, string> = {
@@ -23,19 +24,20 @@ const cv_url = CVs[Astro.currentLocale || locales[0].code] || CVs[locales[0].cod
       <p set:html={t('hero.identity', { name: 'Mauro' })} />
     </h1>
 
-    <p class="text-foreground-light text-xl font-bold text-balance md:text-3xl">{t('user.role')}</p>
+    <p class="text-muted-foreground text-xl font-bold text-balance md:text-3xl">{t('user.role')}</p>
 
     <article class="flex flex-wrap-reverse items-center justify-center gap-4 md:justify-normal">
-      <a
+      <Button
         href={cv_url}
         target="_blank"
         rel="noopener noreferrer"
-        class="btn bg-primary text-background rounded-lg"
+        variant="primary"
         aria-label={t('label.download_cv', { name: 'Mauro Viveros' })}
         aria-disabled="true"
+        disabled="true"
       >
         {t('btn.download_cv')}
-      </a>
+      </Button>
 
       <Networks />
     </article>

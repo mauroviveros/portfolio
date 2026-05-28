@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { useTranslations } from '@i18n';
+import { Button } from '@starwind/button';
 const t = useTranslations(Astro.currentLocale);
 
 const NETWORKS = [
@@ -31,16 +32,18 @@ const NETWORKS = [
 <div class="flex gap-2">
   {
     NETWORKS.map(({ network, username, url, color, icon }) => (
-      <a
+      <Button
         href={url}
         target="_blank"
         rel="noopener noreferrer"
+        variant="ghost"
+        size="icon-md"
+        class="rounded-full"
         aria-label={t('label.network', { username, network })}
-        class="btn rounded-full"
         style={`background-color: ${color};`}
       >
         <Icon name={icon} class="text-zinc-100" />
-      </a>
+      </Button>
     ))
   }
 </div>

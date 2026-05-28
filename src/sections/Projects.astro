@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import { useTranslations } from '@i18n';
+import { Button } from '@starwind/button';
 
 const t = useTranslations(Astro.currentLocale);
 const projects = await getCollection('projects');
@@ -42,7 +43,7 @@ if (projects.length === 0) return;
                 {title}
               </h3>
 
-              <div class="text-foreground-light h-full w-full text-xl font-medium text-pretty">
+              <div class="text-muted-foreground h-full w-full text-xl font-medium text-pretty">
                 {description[(Astro.currentLocale as 'es' | 'en') || 'es']}
               </div>
 
@@ -56,24 +57,24 @@ if (projects.length === 0) return;
 
               <nav class="flex gap-4">
                 {repo && (
-                  <a
+                  <Button
                     href={repo}
                     target="_blank"
+                    variant="primary"
                     aria-label={t('label.repo', { title })}
-                    class="btn bg-primary text-background-hover rounded-lg"
                   >
                     {t('btn.repo')} <Icon name="tabler:brand-github" size="1.5rem" />
-                  </a>
+                  </Button>
                 )}
                 {url && (
-                  <a
+                  <Button
                     href={url}
                     target="_blank"
+                    variant="primary"
                     aria-label={t('label.demo', { title })}
-                    class="btn bg-primary text-background-hover rounded-lg"
                   >
                     {t('btn.demo')} <Icon name="tabler:external-link" size="1.5rem" />
-                  </a>
+                  </Button>
                 )}
               </nav>
             </article>

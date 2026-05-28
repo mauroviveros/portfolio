@@ -1,36 +1,37 @@
 ---
 import { locales, useTranslations } from '@i18n';
 import { Icon } from 'astro-icon/components';
+import { Button } from '@starwind/button';
 const t = useTranslations(Astro.currentLocale);
 ---
 
 <article class="relative w-fit" id="dropdown-lang">
-  <button
+  <Button
     type="button"
+    variant="ghost"
+    size="icon"
     aria-label={t('label.dropdown_lang')}
-    class="hover:bg-background-hover cursor-pointer rounded-lg p-3 transition-all duration-300 ease-in-out"
   >
     <Icon name="tabler:language" size="1.5rem" />
-  </button>
+  </Button>
   <ul
     data-active
     class="border-background-hover bg-background absolute top-full right-0 z-10 mt-1 hidden overflow-hidden rounded border data-[active=true]:block"
   >
     {
       locales.map(({ code, language, icon }) => (
-        <li
-          data-active={Astro.currentLocale === code ? 'true' : 'false'}
-          id={`theme-${code}`}
-          class="hover:bg-background-hover data-[active=true]:bg-background-active cursor-pointer font-medium"
-        >
-          <a
+        <li>
+          <Button
+            id={`theme-${code}`}
             href={`/${code}`}
             aria-label={t('label.language', { language })}
-            class="flex items-center gap-2 p-4"
+            variant="ghost"
+            data-active={Astro.currentLocale === code ? 'true' : 'false'}
+            class="w-full justify-start rounded-none data-[active=true]:bg-muted-foreground/20"
           >
             <Icon name={icon} size="1.5rem" />
             <span>{language}</span>
-          </a>
+          </Button>
         </li>
       ))
     }

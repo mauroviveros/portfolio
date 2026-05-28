@@ -5,15 +5,16 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
-    "baseUrl": "./src",
     "paths": {
-      "@layout": ["./layouts/Layout.astro"],
-      "@components": ["./components/index.ts"],
-      "@content": ["./content/index.ts"],
-      "@sections": ["./sections/index.ts"],
-      "@styles/*": ["./styles/*"],
-      "@assets/*": ["./assets/*"],
-      "@i18n": ["./i18n"]
+      "@/*": ["./src/*"],
+      "@starwind/*": ["./src/components/starwind/*"],
+      "@layout": ["./src/layouts/Layout.astro"],
+      "@components": ["./src/components/index.ts"],
+      "@content": ["./src/content/index.ts"],
+      "@sections": ["./src/sections/index.ts"],
+      "@styles/*": ["./src/styles/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@i18n": ["./src/i18n"]
     }
   }
 }

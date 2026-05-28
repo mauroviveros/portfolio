@@ -1,6 +1,7 @@
 ---
 import { useTranslations } from '@i18n';
 import { Icon } from 'astro-icon/components';
+import { Button } from '@starwind/button';
 
 const t = useTranslations(Astro.currentLocale);
 interface Theme {
@@ -16,13 +17,14 @@ const themes: Theme[] = [
 ---
 
 <article class="relative w-fit" id="dropdown-theme">
-  <button
+  <Button
     type="button"
+    variant="ghost"
+    size="icon"
     aria-label={t('label.dropdown_theme')}
-    class="hover:bg-background-hover cursor-pointer rounded-lg p-3 transition-all duration-300 ease-in-out"
   >
     <Icon name="tabler:sun-moon" size="1.5rem" />
-  </button>
+  </Button>
   <ul
     data-active
     class="border-background-hover bg-background absolute top-full right-0 z-10 mt-1 hidden overflow-hidden rounded border data-[active=true]:block"
@@ -30,14 +32,15 @@ const themes: Theme[] = [
     {
       themes.map(({ _id, name, icon }) => (
         <li class="flex">
-          <button
+          <Button
             id={`theme-${_id}`}
             type="button"
-            class="hover:bg-background-hover data-[active=true]:bg-background-active flex grow cursor-pointer items-center gap-2 p-4 font-medium"
+            variant="ghost"
+            class="w-full justify-start rounded-none data-[active=true]:bg-muted-foreground/20"
           >
             <Icon name={icon} size="1.5rem" />
             <span>{name}</span>
-          </button>
+          </Button>
         </li>
       ))
     }

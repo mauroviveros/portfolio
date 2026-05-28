@@ -1,18 +1,25 @@
 ---
 import { useTranslations } from '@i18n';
 import { Icon } from 'astro-icon/components';
+import { Button } from '@starwind/button';
 const t = useTranslations(Astro.currentLocale);
 ---
 
-<button
+<Button
   type="button"
   id="top-btn"
+  variant="outline"
+  size="icon-lg"
   aria-label={t('label.back_to_top')}
   data-hidden="true"
-  class="border-background-active bg-background-hover hover:bg-background-active fixed right-6 bottom-6 cursor-pointer rounded-lg border-2 p-3 transition-all duration-300 ease-in-out data-[hidden=true]:hidden"
->
+  class:list={[
+    "fixed right-6 bottom-6 data-[hidden=true]:hidden border-2",
+    "border-slate-300 bg-slate-200 hover:bg-slate-300 focus-visible:ring-slate-400/50",
+    "dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:focus-visible:ring-slate-600/50",
+  ]}
+  >
   <Icon name="tabler:arrow-up" size="1.5rem" />
-</button>
+</Button>
 
 <script>
   const btn = document.querySelector('#top-btn');
