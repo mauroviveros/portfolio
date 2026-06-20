@@ -1,18 +1,15 @@
 {
-  "prettier.documentSelectors": ["**/*.astro"],
-  "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit"
+    "source.fixAll.eslint": "explicit"
   },
-  "workbench.editor.customLabels.patterns": {
-    "**/src/layouts/**/*.astro": "${filename} - layout 🏗️",
-    "**/src/sections/**/*.astro": "${filename} - section 🧱",
-    "**/src/**/*.astro": "${filename} - components 🧩",
-    "**/src/types/**/*.ts": "${filename} - types 🏷️",
-    "**/*.css": "${filename} - styles 🎨",
-  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact"
+  ],
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#2f16c7",
     "activityBar.background": "#2f16c7",
@@ -32,5 +29,5 @@
     "titleBar.inactiveBackground": "#24119999",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "241199"
+  "peacock.color": "#241199"
 }

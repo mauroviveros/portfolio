@@ -1,27 +1,19 @@
+import tailwindcss from "@tailwindcss/vite";
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
-import icon from 'astro-icon';
-import { locales } from './src/i18n';
+
 import vercel from '@astrojs/vercel';
 
-const localesList = locales.map((locale) => locale.code);
+import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.mauroviveros.com.ar',
-  adapter: vercel(),
-  integrations: [icon()],
-  build: {
-    inlineStylesheets: 'always',
-  },
-
-  i18n: {
-    locales: localesList,
-    defaultLocale: localesList[0],
-  },
+	site: 'https://www.mauroviveros.com.ar',
 
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss()]
   },
+
+  adapter: vercel(),
+  integrations: [icon()]
 });

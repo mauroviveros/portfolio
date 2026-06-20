@@ -7,7 +7,5 @@
   },
   "componentDir": "src/components",
   "utilsDir": "src/lib/utils",
-  "components": [
-    "button"
-  ]
+  "components": []
 }
