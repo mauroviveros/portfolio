@@ -1,56 +1,63 @@
 ---
-import { Picture } from 'astro:assets';
-import image from '@assets/hero.webp';
-import { useTranslations, locales } from '@i18n';
-import { Networks } from '@components';
-import { Button } from '@starwind/button';
-const t = useTranslations(Astro.currentLocale);
+import type { HTMLAttributes } from 'astro/types';
 
-const CVs: Record<string, string> = {
-  es: 'https://drive.google.com/file/d/1VcraKv9SzyZbt4AdjD0nrj4b5g8gS8LI/view?usp=sharing',
-  en: 'https://drive.google.com/file/d/1Cjb48NV1ENIvhqeOpkLUYK9TcXXzh4z_/view?usp=sharing',
-};
+import CodingMantraCard from '@/components/CodingMantraCard.astro';
 
-const cv_url = CVs[Astro.currentLocale || locales[0].code] || CVs[locales[0].code];
+interface Props extends HTMLAttributes<'section'> {}
+const { class: className, ...props } = Astro.props;
 ---
 
-<!-- flex flex-col-reverse items-center justify-center gap-2 md:flex-row md:justify-around md:gap-8 -->
 <section
-  class="flex h-dvh flex-col-reverse items-center justify-center gap-2 md:flex-row md:justify-around md:gap-8"
+  aria-labelledby="hero-title"
+  class:list={[
+    'relative mx-auto px-8',
+    'max-w-5xl lg:max-w-6xl',
+    'pt-12 pb-16 sm:pt-16 sm:pb-20',
+    className,
+  ]}
+  {...props}
 >
-  <hgroup class="flex flex-col gap-3 text-center md:text-left">
-    <h1 class="text-3xl font-bold md:text-6xl">
-      <p>{t('hero.greetings')}</p>
-      <p set:html={t('hero.identity', { name: 'Mauro' })} />
-    </h1>
+  <p
+    class:list={[
+      'text-code-comment font-code inline-flex flex-col text-sm',
+      'mt-24 md:mt-0',
+    ]}
+  >
+    <span>// Engineer focused on building</span>
+    <span>// efficient and valuable experiences</span>
+  </p>
+  <p class="font-code flex space-x-2 text-sm sm:text-base">
+    <span class="text-code-key">const</span>
+    <span class="text-foreground">developer</span>
+    <span class="text-code-punct">&equals;</span>
+    <span class="text-code-string m-0">&quot;Mauro Daniel Viveros&quot;</span>
+    <span class="text-code-punct">;</span>
+  </p>
 
-    <p class="text-muted-foreground text-xl font-bold text-balance md:text-3xl">{t('user.role')}</p>
+  <h1
+    id="hero-title"
+    class="font-code mt-12 min-h-min text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+  >
+    <span class="text-primary">&gt;</span>
+    <span>Frontend Developer</span>
+  </h1>
 
-    <article class="flex flex-wrap-reverse items-center justify-center gap-4 md:justify-normal">
-      <Button
-        href={cv_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        variant="primary"
-        aria-label={t('label.download_cv', { name: 'Mauro Viveros' })}
-        aria-disabled="true"
-        disabled="true"
-      >
-        {t('btn.download_cv')}
-      </Button>
+  <p
+    class="text-muted-foreground mt-10 max-w-xl text-base leading-relaxed sm:text-lg"
+  >
+    Frontend Engineer with 5+ years of experience creating scalable web
+    applications, design systems, internal tools and developer-focused
+    solutions.
+    <span class="text-foreground">
+      Building products people enjoy and developers enjoy maintaining.
+    </span>
+  </p>
 
-      <Networks />
-    </article>
-  </hgroup>
-  <Picture
-    src={image}
-    widths={[176, 240, 304, 400]}
-    sizes="(max-width: 768px) 176px, (max-width: 1024px) 304px, 400px"
-    alt={t('hero.picture_alt', { name: 'Mauro Daniel Viveros' })}
-    class="border-primary ms:w-60 w-44 border-4 object-cover md:w-76 lg:w-100"
-    style="border-radius: 63% 37% 48% 52% / 60% 57% 43% 40%;"
-    fetchpriority="high"
-    loading="eager"
-    decoding="async"
-  />
+  <article class="mt-16 flex flex-wrap gap-3"></article>
+
+  <p class="font-code text-code-comment mt-6 text-sm">
+    // Let's build something amazing together 🚀
+  </p>
+
+  <CodingMantraCard class="top-5 right-8 md:top-1/5 md:right-1/10" />
 </section>

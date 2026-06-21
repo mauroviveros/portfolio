@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'tailwind-animations';
+@plugin '@tailwindcss/forms';
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-background: oklch(0.1304 0.0243 265.94);
+  --color-foreground: oklch(0.9807 0.0051 247.88);
+
+  --color-primary: oklch(0.649869 0.210751 295.1539);
+  --color-primary-foreground: oklch(0.9911 0 0);
+  --color-secondary: oklch(0.7457 0.1488 296.34);
+  --color-secondary-foreground: oklch(0.1511 0.0202 269.18);
+  --color-muted: oklch(0.2491 0.03 267.4);
+  --color-muted-foreground: oklch(0.6995 0.0302 251.55);
+
+  --color-border: oklch(1 0 0 / 10.2%);
+  --color-input: oklch(1 0 0 / 12.2%);
+  --color-ring: var(--color-primary);
+
+  --color-code-key: oklch(0.773 0.1329 297.56);
+  --color-code-string: oklch(0.7791 0.1594 150.2);
+  --color-code-number: oklch(0.7801 0.1499 60.15);
+  --color-code-boolean: oklch(0.7737 0.1337 30.43);
+  --color-code-punct: oklch(0.7503 0.0303 249.85);
+  --color-code-comment: oklch(0.5506 0.0405 249.83);
+}
+
+@theme inline {
+  --font-code: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --shadow-gold-glow:
+    0 10px 30px #fbbf244d,
+    0 15px 40px #0000001a,
+    inset 0 0 20px #fff3;
+}
+
+@theme {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--starwind-accordion-content-height); }
+  }
+
+  @keyframes accordion-up {
+    from { height: var(--starwind-accordion-content-height); }
+    to { height: 0; }
+  }
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth scheme-dark;
+  }
+
+  body {
+    @apply font-sans bg-background text-foreground;
+  }
+
+}
+
+/* html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  } */
