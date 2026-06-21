@@ -1,4 +1,5 @@
 // @ts-check
+import react from '@astrojs/react';
 import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig, fontProviders } from 'astro/config';
@@ -11,7 +12,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   adapter: vercel(),
-  integrations: [icon()],
+  integrations: [icon(), react()],
   fonts: [
     {
       provider: fontProviders.fontsource(),

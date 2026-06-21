@@ -2,6 +2,7 @@
 import type { HTMLAttributes } from 'astro/types';
 
 import CodingMantraCard from '@/components/CodingMantraCard.astro';
+import TypingText from '@/components/TypingText';
 
 interface Props extends HTMLAttributes<'section'> {}
 const { class: className, ...props } = Astro.props;
@@ -33,13 +34,36 @@ const { class: className, ...props } = Astro.props;
     <span class="text-code-string m-0">&quot;Mauro Daniel Viveros&quot;</span>
     <span class="text-code-punct">;</span>
   </p>
+  <p class="font-code flex space-x-2 text-sm sm:text-base">
+    <span class="text-code-key">const</span>
+    <span class="text-foreground">role</span>
+    <span class="text-code-punct">&equals;</span>
+    <span class="text-code-string m-0">&quot;Frontend Developer&quot;</span>
+    <span class="text-code-punct">;</span>
+  </p>
 
   <h1
     id="hero-title"
-    class="font-code mt-12 min-h-min text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+    class:list={[
+      'text-primary font-code font-bold',
+      'mt-12 min-h-min tracking-tight',
+      'text-3xl sm:text-4xl lg:text-5xl',
+      'flex items-center gap-1',
+    ]}
   >
-    <span class="text-primary">&gt;</span>
-    <span>Frontend Developer</span>
+    <span class="mr-3">&gt;</span>
+    <TypingText
+      words={[
+        'Making complex things simple.',
+        'Building scalable interfaces.',
+        'Creating great user experiences.',
+        'Improving developer workflows.',
+        'Writing maintainable code.',
+        'Solving real problems.',
+        'Always learning.',
+      ]}
+      client:only="react"
+    />
   </h1>
 
   <p
