@@ -9,6 +9,9 @@
   --color-background: oklch(0.1304 0.0243 265.94);
   --color-foreground: oklch(0.9807 0.0051 247.88);
 
+  --color-card: oklch(0.1884 0.0302 265.88);
+  --color-card-foreground: oklch(0.9807 0.0051 247.88);
+
   --color-primary: oklch(0.649869 0.210751 295.1539);
   --color-primary-foreground: oklch(0.9911 0 0);
   --color-secondary: oklch(0.7457 0.1488 296.34);
@@ -26,6 +29,10 @@
   --color-code-boolean: oklch(0.7737 0.1337 30.43);
   --color-code-punct: oklch(0.7503 0.0303 249.85);
   --color-code-comment: oklch(0.5506 0.0405 249.83);
+
+  --color-terminal-red: oklch(0.65 0.18 25);
+  --color-terminal-yellow: oklch(0.78 0.15 85);
+  --color-terminal-green: oklch(0.72 0.17 150);
 }
 
 @theme inline {
@@ -50,6 +57,11 @@
     to { height: 0; }
   }
 }
+@utility glass {
+  background: color-mix(in oklab, var(--color-card) 70%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--color-foreground) 8%, transparent);
+}
 
 @layer base {
   html {
@@ -59,7 +71,6 @@
   body {
     @apply font-sans bg-background text-foreground;
   }
-
 }
 
 /* html {

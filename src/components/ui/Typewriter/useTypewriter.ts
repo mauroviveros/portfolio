@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react';
  */
 type Phase = 'typing' | 'deleting';
 
-interface UseTypingTextOptions {
+interface UseTypewriterOptions {
   words: string[];
   /** ms entre cada carácter al tipear (default 70) */
   typeSpeed?: number;
@@ -29,13 +29,13 @@ interface UseTypingTextOptions {
  * - Al vaciar el texto, avanza al siguiente índice de `words` y vuelve a 'typing'.
  * - Si `loop={false}`, al llegar a la última palabra se detiene sin borrar.
  */
-export function useTypingText({
+export function useTypewriter({
   words,
   typeSpeed = 70,
   deleteSpeed = 40,
   holdTime = 1400,
   loop = true,
-}: UseTypingTextOptions) {
+}: UseTypewriterOptions) {
   const [text, setText] = useState('');
   const [phase, setPhase] = useState<Phase>('typing');
   const [index, setIndex] = useState(0);

@@ -1,0 +1,35 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { Icon } from 'astro-icon/components';
+interface Props extends HTMLAttributes<'article'> {}
+const { class: className, ...props } = Astro.props;
+---
+
+<article
+  class:list={[
+    'absolute',
+    'border border-yellow-400/50 bg-yellow-300/95',
+    'shadow-gold-glow rotate-8 backdrop-blur-sm',
+    'w-48 rounded-2xl px-4 py-2',
+    'animate-float animation-duration-[6s]',
+    'animate-iteration-count-infinite animate-ease-in-out',
+    className,
+  ]}
+  {...props}
+>
+  <Icon name="bxs:quote-left" class="mb-1 size-3 text-yellow-600" />
+  <p class="text-xs leading-relaxed font-medium text-black italic">
+    Design with intent. Develop with discipline.
+  </p>
+  <div class="mt-4 flex items-center">
+    <span
+      class:list={[
+        'flex items-center',
+        'text-xs font-semibold tracking-wide text-gray-800',
+        'before:mr-3 before:block before:h-px before:w-8 before:bg-yellow-600',
+      ]}
+    >
+      CODING MANTRA
+    </span>
+  </div>
+</article>

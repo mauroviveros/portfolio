@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
-import { useTypingText } from '@/hooks/useTypingText';
+import { useTypewriter } from './useTypewriter';
 
-interface TypingTextProps {
+interface TypewriterProps {
   words: string[];
   typeSpeed?: number;
   deleteSpeed?: number;
@@ -11,15 +11,15 @@ interface TypingTextProps {
   className?: string;
 }
 
-export default memo(function TypingText({
+export default memo(function Typewriter({
   words,
   typeSpeed = 70,
   deleteSpeed = 40,
   holdTime = 1400,
   loop = true,
   className,
-}: TypingTextProps) {
-  const { text, currentWord } = useTypingText({
+}: TypewriterProps) {
+  const { text, currentWord } = useTypewriter({
     words,
     typeSpeed,
     deleteSpeed,

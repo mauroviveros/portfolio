@@ -1,0 +1,28 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {}
+const { title, class: className, ...props } = Astro.props;
+---
+
+<article
+  class:list={['glass overflow-hidden rounded-xl shadow-2xl', className]}
+  {...props}
+>
+  <div
+    class="border-border/60 bg-background/40 flex items-center gap-2 border-b px-4 py-2.5"
+  >
+    <span class="bg-terminal-red size-3 rounded-full" aria-hidden></span>
+    <span class="bg-terminal-yellow size-3 rounded-full" aria-hidden></span>
+    <span class="bg-terminal-green size-3 rounded-full" aria-hidden></span>
+
+    {
+      title && (
+        <h3 class="text-muted-foreground ml-3 font-mono text-xs">{title}</h3>
+      )
+    }
+  </div>
+  <div class="p-5 font-mono text-sm leading-relaxed">
+    <slot />
+  </div>
+</article>
