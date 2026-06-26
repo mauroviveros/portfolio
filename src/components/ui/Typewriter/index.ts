@@ -1,2 +1,2 @@
 export { default as Typewriter } from './Typewriter.tsx';
-export * from './useTypewriter';
+export * from './useTypewriter.ts';
