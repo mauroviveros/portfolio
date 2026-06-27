@@ -2,14 +2,14 @@ import typescriptParser from '@typescript-eslint/parser';
 import eslintPluginAstro from 'eslint-plugin-astro';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
-import tseslint from 'typescript-eslint';
 import unusedImports from 'eslint-plugin-unused-imports';
+import tseslint from 'typescript-eslint';
 
 export default [
   { ignores: ['dist/', '.astro/', 'node_modules/'] },
 
   // TypeScript recommended rules for .ts/.tsx
-  ...tseslint.configs.recommended.map(conf => ({
+  ...tseslint.configs.recommended.map((conf) => ({
     files: ['**/*.{ts,tsx}'],
     ...conf,
   })),
@@ -24,7 +24,10 @@ export default [
       '@typescript-eslint': tseslint.plugin,
     },
     rules: {
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_' },
+      ],
       '@typescript-eslint/no-explicit-any': 'warn',
     },
   },

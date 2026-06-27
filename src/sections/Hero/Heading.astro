@@ -1,0 +1,166 @@
+---
+/**
+ * Heading.astro — Título typewriter para la sección Hero.
+ *
+ * Muestra un encabezado estilo terminal ("> frase") que cicla
+ * frases orientadas a ingeniería con un efecto de máquina de escribir.
+ * La primera frase se renderiza en servidor (SEO); el resto
+ * se animan del lado del cliente.
+ */
+const phrases = [
+  'Making complex things simple.',
+  'Building scalable interfaces.',
+  'Creating great user experiences.',
+  'Improving developer workflows.',
+  'Writing maintainable code.',
+  'Solving real problems.',
+  'Always learning.',
+];
+---
+
+<h1
+  id="hero-title"
+  class:list={[
+    'text-primary font-code font-bold',
+    'mt-12 min-h-min tracking-tight',
+    'text-3xl sm:text-4xl lg:text-5xl',
+  ]}
+>
+  <span aria-hidden="true">&gt;</span>
+  <span id="typewriter-text" aria-live="polite" aria-atomic="true">
+    {phrases[0]}
+  </span>
+  <span
+    id="typewriter-cursor"
+    class:list={[
+      'mb-2 h-[1em] w-[.55ch]',
+      'inline-block bg-current align-text-bottom',
+      'opacity-0', // Empieza invisible (opacity-0) y se revela con JavaScript.
+      'animate-blink animation-duration-[1.05s]',
+      'animate-ease-in-out animate-iteration-count-infinite',
+    ]}
+    aria-hidden="true"
+  >
+  </span>
+</h1>
+
+<script define:vars={{ phrases }}>
+  /**
+   * Efecto máquina de escribir — cicla una lista de frases,
+   * tipeando y borrando cada una con un cursor parpadeante de terminal.
+   *
+   * ── Cómo funciona ──
+   * El componente usa una máquina de estados simple con dos fases:
+   *   1. Tipeo:  se revelan los caracteres de a uno (→).
+   *   2. Borrado: se eliminan los caracteres de a uno (←).
+   *
+   * ── Ciclo de vida ──
+   *   1. La primera frase se renderiza en servidor (bueno para SEO).
+   *   2. Después de INITIAL_HOLD, la primera frase empieza a borrarse.
+   *   3. Una vez borrada, hay una pausa breve antes de tipear la siguiente.
+   *   4. Cuando la frase está completa, se mantiene HOLD_DURATION antes de borrar.
+   *   5. El ciclo se repite indefinidamente.
+   *
+   * ── Accesibilidad ──
+   * - Respeta `prefers-reduced-motion: reduce` (se congela en la primera frase).
+   * - El texto usa `aria-live="polite"` para que lectores de pantalla anuncien cambios.
+   * - El cursor tiene `aria-hidden="true"` (puramente decorativo).
+   */
+
+  // ═══════════════════════════════════════════════════════════
+  // Configuración de tiempos (todos los valores en milisegundos)
+  // ═══════════════════════════════════════════════════════════
+  const TYPING_SPEED = 70; // Intervalo entre cada carácter al tipear
+  const DELETING_SPEED = 40; // Intervalo entre cada carácter al borrar
+  const HOLD_DURATION = 1400; // Cuánto tiempo se muestra una frase completa
+  const PAUSE_BETWEEN = 300; // Pausa entre borrar una frase y tipear la siguiente
+  const INITIAL_HOLD = 2500; // Tiempo extra antes del primer borrado (para que el usuario lea la frase inicial)
+
+  // ═══════════════════════════════════════════════════════════
+  // Accesibilidad: verificar preferencia de movimiento reducido
+  // Usuarios con trastornos vestibulares pueden preferir contenido estático.
+  // ═══════════════════════════════════════════════════════════
+  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motionQuery.matches) return; // Salir — dejar la primera frase estática tal cual
+
+  // ═══════════════════════════════════════════════════════════
+  // Referencias del DOM
+  // ═══════════════════════════════════════════════════════════
+  const textElement = document.getElementById('typewriter-text');
+  const cursorElement = document.getElementById('typewriter-cursor');
+  if (!textElement || !cursorElement) return;
+
+  // Revelar el cursor — está oculto por defecto para que no parpadee sin sentido cuando JS está deshabilitado
+  cursorElement.classList.remove('opacity-0');
+
+  // ═══════════════════════════════════════════════════════════
+  // Máquina de estados del typewriter
+  // ═══════════════════════════════════════════════════════════
+  let phraseIndex = 0; // Índice de la frase actual en el array `phrases`
+  let charPosition = phrases[0].length; // Cantidad de caracteres visibles actualmente
+  let isDeleting = false; // Fase actual: tipeando (false) o borrando (true)
+
+  /**
+   * Función principal — avanza la animación un carácter por vez.
+   * Se programa a sí misma recursivamente con setTimeout usando el
+   * retardo adecuado según la fase actual (tipeo vs borrado).
+   */
+  function tick() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (!isDeleting) {
+      // ── Fase de tipeo → revelar un carácter más ──
+      charPosition++;
+      textElement.textContent = currentPhrase.slice(0, charPosition);
+
+      // Si la frase está completa, pausar antes de cambiar a modo borrado
+      if (charPosition >= currentPhrase.length) {
+        setTimeout(() => {
+          isDeleting = true;
+          tick();
+        }, HOLD_DURATION);
+        return;
+      }
+
+      // Sino, seguir tipeando el siguiente carácter después de TYPING_SPEED
+      setTimeout(tick, TYPING_SPEED);
+    } else {
+      // ── Fase de borrado → eliminar un carácter ──
+      charPosition--;
+      textElement.textContent = currentPhrase.slice(0, charPosition) || '';
+
+      // Si la frase está completamente borrada, pasar a la siguiente y empezar a tipear
+      if (charPosition <= 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(tick, PAUSE_BETWEEN);
+        return;
+      }
+
+      // Sino, seguir borrando el siguiente carácter después de DELETING_SPEED
+      setTimeout(tick, DELETING_SPEED);
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  // Iniciar la animación
+  // La primera frase ya está completamente visible (renderizada en servidor),
+  // así que empezamos borrándola después de INITIAL_HOLD.
+  // ═══════════════════════════════════════════════════════════
+  setTimeout(() => {
+    isDeleting = true;
+    tick();
+  }, INITIAL_HOLD);
+
+  // ═══════════════════════════════════════════════════════════
+  // Reaccionar a cambios en la preferencia de movimiento reducido
+  // (ej. activar "Reducir movimiento" en config del SO mientras la página está abierta)
+  // ═══════════════════════════════════════════════════════════
+  motionQuery.addEventListener('change', (event) => {
+    if (event.matches) {
+      // El usuario activó movimiento reducido → congelar en la primera frase y ocultar cursor
+      textElement.textContent = phrases[0];
+      cursorElement.classList.add('opacity-0');
+    }
+  });
+</script>
