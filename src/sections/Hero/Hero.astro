@@ -1,5 +1,8 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+import { Icon } from 'astro-icon/components';
+
+import Button from '@/components/starwind/button';
 
 import Heading from './Heading.astro';
 import Mantra from './Mantra.astro';
@@ -13,7 +16,7 @@ const { class: className, ...props } = Astro.props;
   class:list={[
     'relative mx-auto px-8',
     'max-w-5xl lg:max-w-6xl',
-    'flex flex-col justify-evenly',
+    'flex flex-col justify-evenly gap-4 sm:justify-center',
     'pt-12 pb-16 sm:pt-4 sm:pb-20',
     className,
   ]}
@@ -56,12 +59,19 @@ const { class: className, ...props } = Astro.props;
       </span>
     </p>
 
-    <div class="mt-8 flex flex-wrap gap-3"></div>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <Button variant="primary">
+        View my Work
+        <Icon name="tabler:arrow-right" class="ml-2 h-4 w-4" />
+      </Button>
+
+      <Button variant="outline">Contact me</Button>
+    </div>
 
     <p class="font-code text-code-comment mt-8 text-sm">
       // Let's build something amazing together 🚀
     </p>
   </div>
 
-  <Mantra class="top-28 right-6 hidden sm:block md:right-2/12" />
+  <Mantra class="top-36 right-6 hidden sm:block md:right-2/12" />
 </section>
