@@ -1,0 +1,72 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import Button from '@/components/starwind/button';
+
+import Terminal from './Terminal.astro';
+
+const interests = [
+  'UX/UI Design',
+  'Design Systems',
+  'Developer Tooling',
+  'Accessibility',
+  'Performance',
+  'Open Source',
+  'Testing',
+];
+---
+
+<section id="about" class="mx-auto max-w-5xl px-8 pb-16 sm:pb-20 lg:max-w-6xl">
+  <h2 class="font-code text-code-comment mb-10 text-sm">// About me</h2>
+
+  <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+    <Terminal />
+
+    <div class="flex flex-col gap-6 pt-0 lg:pt-2">
+      <h3 class="text-2xl font-semibold">
+        A developer who cares about the details
+      </h3>
+
+      <p class="text-muted-foreground leading-relaxed">
+        I'm a Frontend Engineer based in Buenos Aires, Argentina, with 5+ years
+        building performant and accessible web applications. I specialize in
+        design systems, internal tools, and developer-focused solutions. Every
+        pixel, every interaction — I believe the details make the difference.
+      </p>
+
+      <blockquote
+        class="text-muted-foreground border-primary/60 border-l-2 py-1 pl-4 italic"
+      >
+        I don't just write code that works — I write code that lasts. Clean
+        architecture, thoughtful abstractions, and a great developer experience
+        aren't luxuries; they're the foundation of products people love to use
+        and teams love to build.
+      </blockquote>
+
+      <div>
+        <p class="font-code text-code-comment mb-3 text-sm">// Interests</p>
+        <ul class="flex flex-wrap gap-2" aria-label="Interests">
+          {
+            interests.map((interest) => (
+              <li class="bg-muted text-muted-foreground rounded-full px-3 py-1 text-xs">
+                {interest}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <Button
+          variant="outline"
+          href="/cv-mauro-viveros.pdf"
+          download="Mauro_Viveros_CV.pdf"
+          class="mt-2"
+        >
+          <Icon name="tabler:download" class="size-4.5" />
+          Download CV
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
