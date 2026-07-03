@@ -1,10 +1,11 @@
 ---
+import { About } from '@/sections/About';
 import { Hero } from '@/sections/Hero';
 
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <!--h-[calc(100vh-5rem)] -->
-  <Hero class="mt-20" />
+  <Hero class="mt-20 h-[calc(100dvh-5rem)] max-h-240" />
+  <About />
 </Layout>
