@@ -1,14 +1,15 @@
 import { glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content';
+import { z } from 'astro/zod';
+import { defineCollection } from 'astro:content';
 
 const experiences = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/content/experiences' }),
   schema: z.object({
-    start: z.string(),
-    end: z.string().nullable(),
+    start_date: z.string(),
+    end_date: z.string().nullable(),
     role: z.string(),
     company: z.string(),
-    companyUrl: z.string().url().optional(),
+    company_url: z.url().optional(),
     location: z.string().optional(),
     highlights: z.array(z.string()),
     stack: z.array(z.string()),

@@ -9,8 +9,16 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { start, end, role, company, companyUrl, location, highlights, stack } =
-  entry.data;
+const {
+  start_date,
+  end_date,
+  role,
+  company,
+  company_url,
+  location,
+  highlights,
+  stack,
+} = entry.data;
 
 function formatDate(dateStr: string): string {
   const [year, month] = dateStr.split('-');
@@ -18,8 +26,8 @@ function formatDate(dateStr: string): string {
   return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 }
 
-const startFormatted = formatDate(start);
-const endFormatted = end ? formatDate(end) : 'Present';
+const startFormatted = formatDate(start_date);
+const endFormatted = end_date ? formatDate(end_date) : 'Present';
 const range = `${startFormatted} – ${endFormatted}`;
 ---
 
@@ -36,23 +44,23 @@ const range = `${startFormatted} – ${endFormatted}`;
 
   <time
     class="text-primary font-code mb-1 block text-xs"
-    datetime={`${start}/${end ?? ''}`}
+    datetime={`${start_date}/${end_date ?? ''}`}
   >
     {range}
   </time>
 
   <hgroup
-    class="text-muted-foreground mt-1 flex flex-wrap items-center gap-x-2 text-sm"
+    class="text-muted-foreground mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm"
   >
     <h3 class="text-foreground font-mono text-lg font-semibold sm:text-xl">
       {role}
     </h3>
     {
-      companyUrl ? (
+      company_url ? (
         <Badge
           variant="ghost"
           size="sm"
-          href={companyUrl}
+          href={company_url}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -74,15 +82,15 @@ const range = `${startFormatted} – ${endFormatted}`;
     }
   </hgroup>
 
-  <ul class="text-muted-foreground mt-4 space-y-2 text-sm sm:text-base">
+  <ul class="text-muted-foreground mt-4 space-y-3 text-sm sm:text-base">
     {
       highlights.map((item) => (
-        <li class="flex items-center gap-2">
+        <li class="flex items-start gap-2 text-pretty">
           <span
-            class="bg-primary block size-1 shrink-0 rounded-full"
+            class="bg-primary mt-2 block size-1 shrink-0 rounded-full sm:mt-2.5"
             aria-hidden="true"
           />
-          {item}
+          <p class="pr-8 text-pretty">{item}</p>
         </li>
       ))
     }
