@@ -1,4 +1,5 @@
 // @ts-check
+import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
@@ -12,7 +13,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   adapter: vercel(),
-  integrations: [icon(), react()],
+  integrations: [icon(), react(), mdx()],
   fonts: [
     {
       provider: fontProviders.fontsource(),

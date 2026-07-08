@@ -11,6 +11,10 @@
     {
       "name": "button",
       "version": "2.3.3"
+    },
+    {
+      "name": "badge",
+      "version": "1.4.3"
     }
   ]
 }

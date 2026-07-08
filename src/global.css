@@ -38,9 +38,7 @@
 @theme inline {
   --font-code: var(--font-jetbrains-mono), ui-monospace, monospace;
   --shadow-gold-glow:
-    0 10px 30px #fbbf244d,
-    0 15px 40px #0000001a,
-    inset 0 0 20px #fff3;
+    0 10px 30px #fbbf244d, 0 15px 40px #0000001a, inset 0 0 20px #fff3;
 }
 
 @theme {
@@ -48,13 +46,21 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
   @keyframes accordion-down {
-    from { height: 0; }
-    to { height: var(--starwind-accordion-content-height); }
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--starwind-accordion-content-height);
+    }
   }
 
   @keyframes accordion-up {
-    from { height: var(--starwind-accordion-content-height); }
-    to { height: 0; }
+    from {
+      height: var(--starwind-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
   }
 }
 @utility glass {
@@ -69,7 +75,7 @@
   }
 
   body {
-    @apply font-sans bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }
 

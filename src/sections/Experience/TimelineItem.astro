@@ -1,0 +1,100 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+
+import Badge from '@/components/starwind/badge';
+
+interface Props {
+  entry: CollectionEntry<'experiences'>;
+}
+
+const { entry } = Astro.props;
+const { start, end, role, company, companyUrl, location, highlights, stack } =
+  entry.data;
+
+function formatDate(dateStr: string): string {
+  const [year, month] = dateStr.split('-');
+  const d = new Date(Number(year), Number(month) - 1);
+  return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+}
+
+const startFormatted = formatDate(start);
+const endFormatted = end ? formatDate(end) : 'Present';
+const range = `${startFormatted} – ${endFormatted}`;
+---
+
+<li
+  class="border-border relative pb-10 pl-8 last:pb-0"
+  style="border-left-width: 1px;"
+  aria-label={`${role} at ${company}`}
+>
+  <span
+    class="bg-primary absolute top-1.5 left-[-0.34rem] block size-2.5 rounded-full"
+    aria-hidden="true"
+  >
+  </span>
+
+  <time
+    class="text-primary font-code mb-1 block text-xs"
+    datetime={`${start}/${end ?? ''}`}
+  >
+    {range}
+  </time>
+
+  <hgroup
+    class="text-muted-foreground mt-1 flex flex-wrap items-center gap-x-2 text-sm"
+  >
+    <h3 class="text-foreground font-mono text-lg font-semibold sm:text-xl">
+      {role}
+    </h3>
+    {
+      companyUrl ? (
+        <Badge
+          variant="ghost"
+          size="sm"
+          href={companyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          @{company}
+          <Icon name="tabler:external-link" class="size-3" />
+        </Badge>
+      ) : (
+        <span class="text-foreground/80 font-medium">@{company}</span>
+      )
+    }
+
+    {
+      location && (
+        <span class="text-muted-foreground inline-flex items-center gap-1 text-xs">
+          <Icon name="tabler:map-pin" class="size-3" />
+          {location}
+        </span>
+      )
+    }
+  </hgroup>
+
+  <ul class="text-muted-foreground mt-4 space-y-2 text-sm sm:text-base">
+    {
+      highlights.map((item) => (
+        <li class="flex items-center gap-2">
+          <span
+            class="bg-primary block size-1 shrink-0 rounded-full"
+            aria-hidden="true"
+          />
+          {item}
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="mt-4 flex flex-wrap gap-1.5">
+    {
+      stack.map((tech) => (
+        <Badge variant="outline" size="sm">
+          {tech}
+        </Badge>
+      ))
+    }
+  </div>
+</li>
