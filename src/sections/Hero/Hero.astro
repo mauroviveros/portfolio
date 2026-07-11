@@ -33,14 +33,14 @@ const { class: className, ...props } = Astro.props;
       <span class="text-code-key">const</span>
       <span class="text-foreground">developer</span>
       <span class="text-code-punct">&equals;</span>
-      <span class="text-code-string m-0">&quot;Mauro Daniel Viveros&quot;</span>
+      <span class="text-code-string m-0">&quot;Mauro Viveros&quot;</span>
       <span class="text-code-punct">;</span>
     </p>
     <p class="font-code flex space-x-2 text-sm sm:text-base">
       <span class="text-code-key">const</span>
       <span class="text-foreground">role</span>
       <span class="text-code-punct">&equals;</span>
-      <span class="text-code-string m-0">&quot;Frontend Developer&quot;</span>
+      <span class="text-code-string m-0">&quot;Frontend Engineer&quot;</span>
       <span class="text-code-punct">;</span>
     </p>
 
@@ -60,12 +60,14 @@ const { class: className, ...props } = Astro.props;
     </p>
 
     <div class="mt-8 flex flex-wrap gap-3">
-      <Button variant="primary">
+      <Button variant="primary" href="#experience">
         View my Work
         <Icon name="tabler:arrow-right" class="ml-2 h-4 w-4" />
       </Button>
 
-      <Button variant="outline">Contact me</Button>
+      <Button variant="outline" href="mailto:maurod.viveros@gmail.com"
+        >Contact me</Button
+      >
     </div>
 
     <p class="font-code text-code-comment mt-8 text-sm">

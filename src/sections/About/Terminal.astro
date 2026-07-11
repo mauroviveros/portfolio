@@ -9,9 +9,9 @@ const segments = [
     pauseAfter: 1000,
   },
   { text: '\n{\n', className: 'text-code-punct' },
-  { text: '  name', className: 'text-code-key' },
+  { text: '  fullname', className: 'text-code-key' },
   { text: ': ', className: 'text-code-punct' },
-  { text: '"Mauro Viveros"', className: 'text-code-string' },
+  { text: '"Mauro Daniel Viveros"', className: 'text-code-string' },
   { text: ',\n', className: 'text-code-punct' },
   { text: '  role', className: 'text-code-key' },
   { text: ': ', className: 'text-code-punct' },
@@ -54,6 +54,9 @@ const segments = [
   <script define:vars={{ segments }}>
     const pre = document.getElementById('terminal-content');
     if (!pre) throw new Error('terminal-content not found');
+
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mediaQuery.matches) return;
 
     const SPEED = 15;
     let segIdx = 0;

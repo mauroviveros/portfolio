@@ -1,6 +1,6 @@
 // @ts-check
 import mdx from '@astrojs/mdx';
-import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig, fontProviders } from 'astro/config';
@@ -13,7 +13,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   adapter: vercel(),
-  integrations: [icon(), react(), mdx()],
+  integrations: [icon(), sitemap(), mdx()],
   fonts: [
     {
       provider: fontProviders.fontsource(),
