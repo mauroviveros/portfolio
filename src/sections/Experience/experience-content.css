@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+@reference '@/global.css';
+
+.experience-content > p {
+  @apply pr-8 text-pretty;
+}
+
+.experience-content > p:first-of-type {
+  @apply my-2;
+}
+
+.experience-content > p:last-of-type:not(:only-of-type) {
+  @apply mb-0;
+}
+
+
+
+.experience-content ul {
+  @apply m-0 list-none p-0;
+}
+
+.experience-content ul > li {
+  @apply relative pr-8 pl-4 text-pretty;
+}
+
+.experience-content ul > li:not(:first-child) {
+  @apply mt-2;
+}
+
+.experience-content ul > li::before {
+  content: '';
+  @apply bg-primary absolute top-2 left-0 block size-1 rounded-full sm:top-2.5;
+}
+
+.experience-content a {
+  @apply text-primary/85 no-underline hover:underline;
+}
+
+.experience-content strong {
+  @apply text-foreground/85 font-semibold;
+}

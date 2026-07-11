@@ -1,5 +1,7 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import './experience-content.css';
+
+import { type CollectionEntry, render } from 'astro:content';
 import { Icon } from 'astro-icon/components';
 
 import Badge from '@/components/starwind/badge';
@@ -9,16 +11,10 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const {
-  start_date,
-  end_date,
-  role,
-  company,
-  company_url,
-  location,
-  highlights,
-  stack,
-} = entry.data;
+const { start_date, end_date, role, company, company_url, location, stack } =
+  entry.data;
+
+const { Content } = await render(entry);
 
 function formatDate(dateStr: string): string {
   const [year, month] = dateStr.split('-');
@@ -82,19 +78,9 @@ const range = `${startFormatted} – ${endFormatted}`;
     }
   </hgroup>
 
-  <ul class="text-muted-foreground mt-4 space-y-3 text-sm sm:text-base">
-    {
-      highlights.map((item) => (
-        <li class="flex items-start gap-2 text-pretty">
-          <span
-            class="bg-primary mt-2 block size-1 shrink-0 rounded-full sm:mt-2.5"
-            aria-hidden="true"
-          />
-          <p class="pr-8 text-pretty">{item}</p>
-        </li>
-      ))
-    }
-  </ul>
+  <div class="experience-content text-muted-foreground text-sm sm:text-base">
+    <Content />
+  </div>
 
   <div class="mt-4 flex flex-wrap gap-1.5">
     {

@@ -11,7 +11,6 @@ const experiences = defineCollection({
     company: z.string(),
     company_url: z.url().optional(),
     location: z.string().optional(),
-    highlights: z.array(z.string()),
     stack: z.array(z.string()),
     order: z.number().default(0),
   }),
