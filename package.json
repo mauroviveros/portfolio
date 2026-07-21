@@ -26,7 +26,7 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "2.0.0",
     "animate.css": "^4.1.1",
-    "astro": "6.4.8",
+    "astro": "7.1.0",
     "astro-icon": "1.1.5",
     "sharp": "0.35.3",
     "tailwind-merge": "^3.6.0",
